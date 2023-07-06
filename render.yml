@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: shadcn-rails
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: RAILS_MASTER_KEY
+        sync: false
