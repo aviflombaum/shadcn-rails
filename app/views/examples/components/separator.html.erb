@@ -1,0 +1,27 @@
+<!--prettier-ignore-->
+
+<%= render "layouts/documentation/header",
+  title: "Seperator",
+  description: "Visually or semantically separates content." %>
+<%= render "layouts/documentation/examples" do %>
+<div>
+  <div class="space-y-1">
+    <h4 class="text-sm font-medium leading-none">Radix Primitives</h4>
+    <p class="text-sm text-muted-foreground">An open-source UI component library.</p>
+  </div>
+  <%= render_separator %>
+  <div class="flex h-5 items-center space-x-4 text-sm">
+    <div>Blog</div>
+    <div
+      data-orientation="vertical"
+      role="none"
+      class="shrink-0 bg-border h-full w-[1px]"></div>
+    <div>Docs</div>
+    <div
+      data-orientation="vertical"
+      role="none"
+      class="shrink-0 bg-border h-full w-[1px]"></div>
+    <div>Source</div>
+  </div>
+</div>
+<% end %>

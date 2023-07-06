@@ -1,0 +1,24 @@
+<!--prettier-ignore-->
+
+<%= render "layouts/documentation/header",
+  title: "Badge",
+  description: "Displays a badge or a component that looks like a badge." %>
+
+<%= render "layouts/documentation/examples" do %>
+<div class="w-full mx-auto flex justify-center"><%= render_badge text: "Badge" %></div>
+<div class="w-full mx-auto flex justify-center">
+  <%= render_badge text: "Secondary", variant: :secondary %>
+</div>
+<div class="w-full mx-auto flex justify-center">
+  <%= render_badge text: "Destructive", variant: :destructive %>
+</div>
+<div class="w-full mx-auto flex justify-center">
+  <%= render_badge text: "Outline", variant: :outline %>
+</div>
+<div class="w-full mx-auto flex justify-center">
+  <%= render_badge text: "Ghost", variant: :ghost %>
+</div>
+<div class="w-full mx-auto flex justify-center">
+  <%= render_badge text: "Ghost Link", variant: :ghost, as: :link %>
+</div>
+<% end %>
