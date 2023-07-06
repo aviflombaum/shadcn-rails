@@ -1,14 +1,11 @@
-<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
-  <div class="mx-auto w-full min-w-0">
-    <!--prettier-ignore-->
-    <%= render "layouts/documentation/header",
-          title: "Accordion",
-          description: "A vertically stacked set of interactive headings that each reveal a section of content." %>
-    <%= render "layouts/documentation/examples" do %>
-    <div class="w-full">
-      <%= render_accordion title: "Did you know?", description: "You can wrap shadcn helpers in any
-      component library you want!" %>
-    </div>
-    <% end %>
-  </div>
-</main>
+<!--prettier-ignore-->
+<%= render "layouts/documentation/header",
+  title: "Accordion",
+  description: "A vertically stacked set of interactive headings that each reveal a section of content." %>
+
+<%= render "layouts/documentation/examples" do %>
+<div class="w-full">
+  <%= render_accordion title: "Did you know?", description: "You can wrap shadcn helpers in any
+  component library you want!" %>
+</div>
+<% end %>

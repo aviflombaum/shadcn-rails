@@ -1,0 +1,11 @@
+<!--prettier-ignore-->
+<% case as %>
+<% when :link %>
+ <%= link_to href, class: button_classes do %>
+    <%= text %>
+  <% end %>
+<% when :button %>
+  <%= button_tag class: button_classes do %>
+    <%= text %>
+  <% end %>
+<% end %>
