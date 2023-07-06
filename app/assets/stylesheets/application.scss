@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+.st-accordion {
+  .st-accordion__icon:before {
+    content: "▼";
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 80%;
+    text-decoration: none;
+    transform: rotate(-90deg);
+  }
+  .st-accordion__icon--opened:before {
+    transform: rotate(0deg);
+  }
+
+  .st-accordion__content:not(.st-accordion__content--visible) {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+  .st-accordion__content.st-accordion__content--visible {
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+}

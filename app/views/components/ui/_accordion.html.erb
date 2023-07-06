@@ -2,22 +2,18 @@
   class="w-full"
   data-orientation="vertical">
   <div
-    data-state="open"
     data-orientation="vertical"
-    class="border-b">
+    class="border-b st-accordion"
+    data-controller="ui--accordion">
     <h3
       data-orientation="vertical"
-      data-state="open"
       class="flex">
-      <button
-        type="button"
-        aria-controls="radix-:r1a:"
+      <a
+        href="content-1"
+        data-action="ui--accordion#toggle"
         aria-expanded="true"
-        data-state="open"
         data-orientation="vertical"
-        id="radix-:r19:"
-        class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&amp;[data-state=open]>svg]:rotate-180"
-        data-radix-collection-item="">
+        class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180">
         Is it accessible?<svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -31,21 +27,85 @@
           class="h-4 w-4 shrink-0 transition-transform duration-200">
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
-      </button>
+      </a>
     </h3>
     <div
-      data-state="open"
-      id="radix-:r1a:"
+      data-accordion-id="content-1"
       role="region"
-      aria-labelledby="radix-:r19:"
       data-orientation="vertical"
-      class="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
-      style="
-        --radix-accordion-content-height: var(--radix-collapsible-content-height);
-        --radix-accordion-content-width: var(--radix-collapsible-content-width);
-        --radix-collapsible-content-height: 36px;
-        --radix-collapsible-content-width: 475.296875px;
-      ">
+      class="st-accordion__content overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+      <div class="pb-4 pt-0">Yes. It adheres to the WAI-ARIA design pattern.</div>
+    </div>
+  </div>
+  <div
+    data-orientation="vertical"
+    class="border-b st-accordion"
+    data-controller="ui--accordion">
+    <h3
+      data-orientation="vertical"
+      class="flex">
+      <a
+        href="content-1"
+        data-action="ui--accordion#toggle"
+        aria-expanded="true"
+        data-orientation="vertical"
+        class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180">
+        Is it styled?<svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4 shrink-0 transition-transform duration-200">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+    </h3>
+    <div
+      data-accordion-id="content-1"
+      role="region"
+      data-orientation="vertical"
+      class="st-accordion__content overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+      <div class="pb-4 pt-0">Yes. It adheres to the WAI-ARIA design pattern.</div>
+    </div>
+  </div>
+  <div
+    data-orientation="vertical"
+    class="border-b st-accordion"
+    data-controller="ui--accordion">
+    <h3
+      data-orientation="vertical"
+      class="flex">
+      <a
+        href="content-1"
+        data-action="ui--accordion#toggle"
+        aria-expanded="true"
+        data-orientation="vertical"
+        class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180">
+        Is it animated?<svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4 shrink-0 transition-transform duration-200">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+    </h3>
+    <div
+      data-accordion-id="content-1"
+      role="region"
+      data-orientation="vertical"
+      class="st-accordion__content overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
       <div class="pb-4 pt-0">Yes. It adheres to the WAI-ARIA design pattern.</div>
     </div>
   </div>
