@@ -1,12 +1,7 @@
 ---
 name: Alert
+description: Displays a callout for user attention.
 ---
-
-# Alert
-
-Displays a callout for user attention.
-
-## Usage
 
 ```erb
 <%= render_alert
