@@ -1,0 +1,67 @@
+<div class="pb-12 pt-8">
+  <section>
+    <h2
+      class="font-heading mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0"
+      id="examples">
+      Examples
+    </h2>
+    <div class="group relative my-4 flex flex-col space-y-2">
+      <div
+        dir="ltr"
+        data-orientation="horizontal"
+        class="relative mr-auto w-full">
+        <div class="flex items-center justify-between pb-3">
+          <div
+            role="tablist"
+            aria-orientation="horizontal"
+            class="inline-flex h-9 items-center text-muted-foreground w-full justify-start rounded-none border-b bg-transparent p-0"
+            tabindex="0"
+            data-orientation="horizontal"
+            style="outline: none">
+            <button
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="radix-:r2e:-content-preview"
+              data-state="active"
+              id="radix-:r2e:-trigger-preview"
+              class="inline-flex items-center justify-center whitespace-nowrap py-1 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
+              tabindex="-1"
+              data-orientation="horizontal"
+              data-radix-collection-item="">
+              Preview</button
+            ><button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="radix-:r2e:-content-code"
+              data-state="inactive"
+              id="radix-:r2e:-trigger-code"
+              class="inline-flex items-center justify-center whitespace-nowrap py-1 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
+              tabindex="-1"
+              data-orientation="horizontal"
+              data-radix-collection-item="">
+              Code
+            </button>
+          </div>
+        </div>
+        <div
+          data-state="active"
+          data-orientation="horizontal"
+          role="tabpanel"
+          aria-labelledby="radix-:r2e:-trigger-preview"
+          id="radix-:r2e:-content-preview"
+          tabindex="0"
+          class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 relative rounded-md border"
+          style="animation-duration: 0s">
+          <div class="theme-zinc w-full">
+            <div
+              class="preview flex min-h-[350px] w-full justify-center p-10 items-center flex-col gap-y-8">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
