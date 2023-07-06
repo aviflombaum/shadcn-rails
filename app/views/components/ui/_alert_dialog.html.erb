@@ -7,7 +7,7 @@
     data-aria-hidden="true"
     aria-hidden="true"></div>
 
-  <%= render_button "Open Dialog", variant: :outline, data: {action: "ui--dialog#open" } %>
+  <%= trigger %>
   <div
     role="alertdialog"
     data-state="closed"
@@ -19,14 +19,8 @@
       <h2 class="text-lg font-semibold"><%= label %></h2>
       <p class="text-sm text-muted-foreground"><%= description %></p>
     </div>
-    <% if actions %>
     <div class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
-      <!--prettier-ignore-->
-      <%= render_button("Cancel", class: "mt-2 sm:mt-0", data: {action: "ui--dialog#close"}) %>
-      <% actions.each do |action| %>
-        <%= action %>
-      <% end %>
+      <%= cancel %> <%= continue %>
     </div>
-    <% end %>
   </div>
 </div>

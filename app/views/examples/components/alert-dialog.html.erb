@@ -2,17 +2,17 @@
 <%= render "layouts/documentation/header",
   title: "Alert Dialog",
   description: "A modal dialog that interrupts the user with important content and expects a response." %>
+
 <%= render "layouts/documentation/examples" do %>
 <div class="w-full flex justify-center">
   <!--prettier-ignore-->
 
   <!--prettier-ignore-->
-  <%= render "components/ui/alert-dialog",
+  <%= render_alert_dialog(
+    trigger: render_button("Open Dialog", variant: :outline, data: {action: "ui--dialog#open" }),
+    continue: render_button("Continue"),
     label: "Are you absolutely sure?",
     description: "This action cannot be undone. This will permanently delete your account and remove your data from our servers.",
-    open: true,
-    actions: [
-      render_button("Continue")
-    ] %>
+  ) %>
 </div>
 <% end %>

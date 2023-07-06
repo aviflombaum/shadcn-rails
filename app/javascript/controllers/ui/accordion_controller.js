@@ -1,3 +1,4 @@
+// Inspired by https://github.com/kanety/stimulus-accordion
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {

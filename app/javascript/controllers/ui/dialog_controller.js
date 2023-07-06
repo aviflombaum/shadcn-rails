@@ -1,3 +1,4 @@
+// Inspired by https://github.com/kanety/stimulus-dialog
 import { Controller } from "@hotwired/stimulus";
 import "@kanety/stimulus-static-actions";
 
@@ -6,8 +7,6 @@ export default class extends Controller {
   static actions = [
     ["element", "keydown@window->closeByKey"],
     ["modal", "click->closeByModal"],
-    ["drag", "mousedown->dragStart"],
-    ["drag", "touchstart->dragStart"],
   ];
 
   initialize() {}
