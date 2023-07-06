@@ -1,0 +1,157 @@
+<!--prettier-ignore-->
+<%= render "layouts/documentation/header",
+  title: "Card",
+  description: "Displays a card with header, content, and footer." %>
+
+<%= render "layouts/documentation/examples" do %>
+<div class="w-full flex justify-center"><%= render_card body: "The Most Basic of Cards" %></div>
+<div class="w-full flex justify-center">
+  <%= render_card title: "Did you know?", body: "You can embed any HTML in the body of a card by
+  yielding to a block for the body?", subtitle: "This is important." %>
+</div>
+
+<div class="w-full flex justify-center">
+  <%= render_card title: "Card with Form" do %>
+  <div class="p-6 pt-0">
+    <form>
+      <div class="grid w-full items-center gap-4">
+        <div class="flex flex-col space-y-1.5">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="name"
+            >Name</label
+          ><input
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            id="name"
+            placeholder="Name of your project" />
+        </div>
+        <div class="flex flex-col space-y-1.5">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="name"
+            >Framework</label
+          ><button
+            type="button"
+            role="combobox"
+            aria-controls="radix-:r76:"
+            aria-expanded="false"
+            aria-autocomplete="none"
+            dir="ltr"
+            data-state="closed"
+            data-placeholder=""
+            class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+            <span style="pointer-events: none">Select</span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-4 w-4 opacity-50"
+              aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg></button
+          ><select
+            aria-hidden="true"
+            tabindex="-1"
+            style="
+              position: absolute;
+              border: 0px;
+              width: 1px;
+              height: 1px;
+              padding: 0px;
+              margin: -1px;
+              overflow: hidden;
+              clip: rect(0px, 0px, 0px, 0px);
+              white-space: nowrap;
+              overflow-wrap: normal;
+            ">
+            <option value=""></option>
+            <option value="next">Next.js</option>
+            <option value="sveltekit">SvelteKit</option>
+            <option value="astro">Astro</option>
+            <option value="nuxt">Nuxt.js</option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="items-center p-6 pt-0 flex justify-between">
+    <button
+      class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+      Cancel</button
+    ><button
+      class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+      Deploy
+    </button>
+  </div>
+  <% end %>
+</div>
+<div class="w-full flex justify-center">
+  <%= render_card title: "Notifications", footer: render_button(text: "Mark all as read", class:
+  "w-full") do %>
+  <div class="p-6 pt-0 grid gap-4">
+    <div class="flex items-center space-x-4 rounded-md border p-4">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-bell-ring">
+        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+        <path d="M4 2C2.8 3.7 2 5.7 2 8"></path>
+        <path d="M22 8c0-2.3-.8-4.3-2-6"></path>
+      </svg>
+      <div class="flex-1 space-y-1">
+        <p class="text-sm font-medium leading-none">Push Notifications</p>
+        <p class="text-sm text-muted-foreground">Send notifications to device.</p>
+      </div>
+      <button
+        type="button"
+        role="switch"
+        aria-checked="false"
+        data-state="unchecked"
+        value="on"
+        class="peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input">
+        <span
+          data-state="unchecked"
+          class="pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0"></span>
+      </button>
+    </div>
+    <div>
+      <div class="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+        <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+        <div class="space-y-1">
+          <p class="text-sm font-medium leading-none">Your call has been confirmed.</p>
+          <p class="text-sm text-muted-foreground">1 hour ago</p>
+        </div>
+      </div>
+      <div class="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+        <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+        <div class="space-y-1">
+          <p class="text-sm font-medium leading-none">You have a new message!</p>
+          <p class="text-sm text-muted-foreground">1 hour ago</p>
+        </div>
+      </div>
+      <div class="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
+        <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"></span>
+        <div class="space-y-1">
+          <p class="text-sm font-medium leading-none">Your subscription is expiring soon!</p>
+          <p class="text-sm text-muted-foreground">2 hours ago</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<% end %>

@@ -13,7 +13,7 @@ module Components::ButtonHelper
     when :ghost
       " hover:bg-accent hover:text-accent-foreground  "
     end
-    button_classes << " #{varianet_classes}"
+    button_classes << " #{varianet_classes} #{options[:class]}"
     text = label if label.present?
     render "components/ui/button", text:, button_classes:, as:, href:, data:, **options
   end
