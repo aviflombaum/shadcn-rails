@@ -1,0 +1,2 @@
+module Components::AlertDialogHelper
+end

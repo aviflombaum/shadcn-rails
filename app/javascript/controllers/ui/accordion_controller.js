@@ -16,7 +16,6 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log("Hello");
     this.init();
   }
 
