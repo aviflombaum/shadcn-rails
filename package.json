@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "prettier": "^2.8.8",
+    "tailwindcss-animate": "^1.0.6"
+  }
+}
