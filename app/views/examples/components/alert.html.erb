@@ -31,31 +31,9 @@
           "
           >Displays a callout for user attention.</span
         >
-        <script>
-          self.__wrap_b = (e, t, r) => {
-            let n = (r = r || document.querySelector(`[data-br="${e}"]`)).parentElement,
-              a = (e) => (r.style.maxWidth = e + "px");
-            r.style.maxWidth = "";
-            let o = n.clientWidth,
-              l = n.clientHeight,
-              i = o / 2 - 0.25,
-              s = o + 0.5,
-              u;
-            if (o) {
-              for (; i + 1 < s; )
-                a((u = Math.round((i + s) / 2))), n.clientHeight === l ? (s = u) : (i = u);
-              a(s * t + o * (1 - t));
-            }
-            r.__wrap_o ||
-              ("undefined" != typeof ResizeObserver &&
-                (r.__wrap_o = new ResizeObserver(() => {
-                  self.__wrap_b(0, +r.dataset.brr, r);
-                })).observe(n));
-          };
-          self.__wrap_b(":r24:", 1);
-        </script>
       </p>
     </div>
+    <div><%= ComponentPage.find("/components/alert.html.md").page.request_url %></div>
     <div class="pb-12 pt-8">
       <section>
         <h2

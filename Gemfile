@@ -67,3 +67,5 @@ group :development do
   # gem "spring"
 end
 
+
+gem "sitepress-rails", "~> 3.2"
