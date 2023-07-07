@@ -43,9 +43,10 @@ export default class extends Controller {
 
         // Update URL with the tab ID if it has one
         // This will be automatically selected on page load
-        if (tab.id) {
-          location.hash = tab.id;
-        }
+        // - Breaks any other anchors
+        // if (tab.id) {
+        //   location.hash = tab.id;
+        // }
       } else {
         panel.classList.add("hidden");
         tab.classList.remove(...this.activeTabClasses);

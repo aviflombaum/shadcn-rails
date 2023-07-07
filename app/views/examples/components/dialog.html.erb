@@ -1,6 +1,7 @@
 <%= render_component_header title: "Dialog",
       description: "A window overlaid on either the primary window or another dialog window, rendering the content underneath inert." %>
-<% content_for :examples do %>
+
+<% content_for :examples, flush: true do %>
   <div class="w-full flex justify-center">
     <%= render_dialog do %>
       <%= dialog_trigger do %>
@@ -13,6 +14,35 @@
       <% end %>
     <% end %>
   </div>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("dialog/code/preview", :erb) %>
+<% end %>
+
+<%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+
+<%= code_sample(language: "sh") do %>
+rails generate shadcn-ui dialog
+<% end %>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage"><a href="/docs/components/dialog#usage">Usage</a></h2>
+
+<%= code_partial("dialog/code/usage", :erb) %>
+
+<%= render_usage("dialog") %>
+
+<div class="pb-12 pt-8">
+  <section>
+    <h2
+      class="font-heading mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0"
+      id="examples">
+      Examples
+    </h2>
+
+<% content_for :examples, flush: true do %>
   <div class="w-full flex justify-center">
     <%= render_dialog do %>
       <%= dialog_trigger do %>
@@ -48,6 +78,15 @@
       <% end %>
     <% end %>
   </div>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("dialog/code/notifications", :erb) %>
+<% end %>
+
+<%= render_example %>
+
+<% content_for :examples, flush: true do %>
   <div class="w-full flex justify-center">
     <%= render_dialog do %>
       <%= dialog_trigger do %>
@@ -76,33 +115,34 @@
               class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 col-span-3"
               id="name"
               value="Pedro Duarte">
-            </div>
-            <div class="grid grid-cols-4 items-center gap-4">
-              <label
+          </div>
+          <div class="grid grid-cols-4 items-center gap-4">
+            <label
               class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-right"
               for="username">Username
-              </label>
-              <input
+            </label>
+            <input
               class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 col-span-3"
               id="username"
               value="@peduarte">
-              </div>
-              <div class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
-                <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+          </div>
+          <div class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
+            <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
               type="submit">
-                  Save changes
-                </button>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
+              Save changes
+            </button>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-    <% content_for :code do %>
-      <%= code_sample("dialog_preview", :erb) %>
-    <% end %>
-    <%= render_example %>
-    <%#= render_dialog( trigger: render_button("Open Dialog", variant:
-:outline, data: {action: "ui--dialog#open" }), continue: render_button("Continue"), label: "Are you
-absolutely sure?", description: "This action cannot be undone. This will permanently delete your
-account and remove your data from our servers.", ) %>
+  </div>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("dialog/code/form", :erb) %>
+<% end %>
+
+<%= render_example %>
+
+</section>
+</div>

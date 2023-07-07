@@ -1,6 +1,10 @@
 /* Lambda Studio — Whiteout */
-
+.hljs .language-xml {
+  color: rgba(255, 255, 255, 0.533);
+}
 .hljs {
+  background: #000;
+  color: #fff;
 }
 
 .hljs-link {
@@ -14,12 +18,12 @@
 .hljs-meta-keyword,
 .hljs-name,
 .hljs-selector-tag {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.533);
 }
 
 .hljs-string,
 .hljs-symbol {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.533);
 }
 
 .hljs-bullet,
@@ -30,11 +34,11 @@
 .hljs-regexp,
 .hljs-tag,
 .hljs-variable {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.533);
 }
 
 .hljs-class .hljs-title {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.533);
 }
 
 .hljs-doctag,
@@ -54,7 +58,7 @@
 .hljs-punctuation,
 .hljs-section,
 .hljs-selector-pseudo {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.533);
 }
 
 .hljs-addition,
@@ -86,7 +90,7 @@
 .hljs-built_in-name,
 .hljs-builtin-name,
 .hljs-keyword {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.533);
 }
 
 .hljs-section,
@@ -124,5 +128,9 @@
 .hljs-selector-pseudo,
 .hljs-selector-comment,
 .hljs-meta .hljs-meta-string {
-  color: #0004;
+  color: rgba(255, 255, 255, 0.533);
+}
+
+.language-ruby .hljs-keyword {
+  color: #fff;
 }

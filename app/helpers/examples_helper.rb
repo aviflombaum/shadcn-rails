@@ -7,11 +7,35 @@ module ExamplesHelper
     render "layouts/documentation/examples"
   end
 
-  def code_sample(name, language)
-    content_tag :pre, class: "code-sample", data: {controller: "highlight"} do
+  def render_preview
+    render "layouts/documentation/preview"
+  end
+
+  def render_usage(name)
+    render "examples/components/#{name}/usage"
+  end
+
+  def code_partial(name, language)
+    content_tag :pre, class: "code-sample py-4 px-4", data: {controller: "highlight"} do
       content_tag :code, class: "language-#{language}" do
-        html_escape(File.read(Rails.root.join("app", "views", "examples", "components", "code", "#{name}.erb")))
+        html_escape(File.read(Rails.root.join("app", "views", "examples", "components", "#{name}.erb")))
       end
     end
   end
+
+  def code_sample(content = "", language:, &block)
+    content_tag :pre, class: "code-sample px-4 my-2 pb-5", data: {controller: "highlight"} do
+      content_tag :code, class: "language-#{language}" do
+        content
+        yield if block
+      end
+    end
+  end
+
+  def inline_code(content = nil, &block)
+    content_tag :code, class: "relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono font-semibold" do
+      content || yield(block)
+    end
+  end
+  alias_method :code, :inline_code
 end

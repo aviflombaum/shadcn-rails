@@ -1,0 +1,28 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Dialog component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/dialog_helper.rb") %></li>
+  <li><%= code("app/views/components/ui/_dialog.html.erb") %></li>
+  <li><%= code("app/javascript/controllers/ui/dialog_controller.js") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+The method <%= code("render_dialog") %> defined in <%= code("app/helpers/components/dialog_helper.rb") %>
+accepts a blog for the inner components  of the dialog.It renders the partial
+<%= code("app/views/components/ui/_dialog.html.erb") %> which contains the model structure and
+a close button.
+</p>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+The modal is composed of two components with corresponding helper methods, <%= code("dialog_trigger") %>,
+which accepts a block for the element that will trigger the modal,  and <%= code("dialog_body") %>,
+which accepts a block for the body of the modal.
+</p>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+<%= code("dialog_trigger") %> and <%= code("dialog_body") %> must be called nested within
+<%= code("render_dialog") %>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+<%= code("app/javascript/controllers/ui/dialog_controller.js") %> is a stimulus controller that provides
+the functionality of the modal.</p>
