@@ -1,8 +1,10 @@
-//github.com/excid3/tailwindcss-stimulus-components/blob/master/src/tabs.js
-https: import { Controller } from "@hotwired/stimulus";
+// https://github.com/excid3/tailwindcss-stimulus-components/blob/master/src/tabs.js
+import { Controller } from "@hotwired/stimulus";
+import "@kanety/stimulus-static-actions";
 
 export default class extends Controller {
   static targets = ["tab", "panel"];
+  static actions = [["tab", "click->change"]];
 
   connect() {
     this.activeTabClasses = (this.data.get("activeTab") || "active").split(" ");
@@ -36,6 +38,8 @@ export default class extends Controller {
         panel.classList.remove("hidden");
         tab.classList.remove(...this.inactiveTabClasses);
         tab.classList.add(...this.activeTabClasses);
+        tab.dataset.state = "active";
+        panel.dataset.state = "active";
 
         // Update URL with the tab ID if it has one
         // This will be automatically selected on page load
@@ -46,6 +50,8 @@ export default class extends Controller {
         panel.classList.add("hidden");
         tab.classList.remove(...this.activeTabClasses);
         tab.classList.add(...this.inactiveTabClasses);
+        tab.dataset.state = "inactive";
+        panel.dataset.state = "inactive";
       }
     });
   }

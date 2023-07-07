@@ -3,16 +3,15 @@ import { Controller } from "@hotwired/stimulus";
 import "@kanety/stimulus-static-actions";
 
 export default class extends Controller {
-  static targets = ["dialog", "modal", "focus", "drag", "backdrop"];
+  static targets = ["dialog", "modal", "focus", "drag", "backdrop", "closeButton"];
   static actions = [
     ["element", "keydown@window->closeByKey"],
     ["modal", "click->closeByModal"],
+    ["closeButton", "click->close"],
   ];
 
   initialize() {}
-  connect() {
-    console.log("hello");
-  }
+  connect() {}
   open(e) {
     this.openBy(e.target);
     e.preventDefault();

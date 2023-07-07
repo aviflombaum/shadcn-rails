@@ -1,3 +1,6 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "lambda.light", "data-turbo-track": "reload" %>
+<% end %>
 <div class="pb-12 pt-8">
   <section>
     <h2
@@ -5,7 +8,7 @@
       id="examples">
       Examples
     </h2>
-    <div class="group relative my-4 flex flex-col space-y-2">
+    <div class="group relative my-4 flex flex-col space-y-2" data-controller="tabs">
       <div
         dir="ltr"
         data-orientation="horizontal"
@@ -20,23 +23,25 @@
             style="outline: none">
             <button
               type="button"
+              data-tabs-target="tab"
               role="tab"
               aria-selected="true"
-              aria-controls="radix-:r2e:-content-preview"
+              aria-controls="content-preview"
               data-state="active"
-              id="radix-:r2e:-trigger-preview"
+              id="trigger-preview"
               class="inline-flex items-center justify-center whitespace-nowrap py-1 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
               tabindex="-1"
               data-orientation="horizontal"
               data-radix-collection-item="">
-              Preview</button
-            ><button
+              Preview</button>
+            <button
               type="button"
               role="tab"
+              data-tabs-target="tab"
               aria-selected="false"
-              aria-controls="radix-:r2e:-content-code"
+              aria-controls="content-code"
               data-state="inactive"
-              id="radix-:r2e:-trigger-code"
+              id="trigger-code"
               class="inline-flex items-center justify-center whitespace-nowrap py-1 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
               tabindex="-1"
               data-orientation="horizontal"
@@ -47,17 +52,35 @@
         </div>
         <div
           data-state="active"
+          data-tabs-target="panel"
           data-orientation="horizontal"
           role="tabpanel"
-          aria-labelledby="radix-:r2e:-trigger-preview"
-          id="radix-:r2e:-content-preview"
+          aria-labelledby="trigger-preview"
+          id="content-preview"
           tabindex="0"
           class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 relative rounded-md border"
           style="animation-duration: 0s">
           <div class="theme-zinc w-full">
             <div
               class="preview flex min-h-[350px] w-full justify-center p-10 items-center flex-col gap-y-8">
-              <%= yield %>
+              <%= yield(:examples) %>
+            </div>
+          </div>
+        </div>
+        <div
+          data-state="inactive"
+          data-tabs-target="panel"
+          data-orientation="horizontal"
+          role="tabpanel"
+          aria-labelledby="trigger-code"
+          id="content-code"
+          tabindex="1"
+          class="hidden mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 relative rounded-md border"
+          style="animation-duration: 0s">
+          <div class="theme-zinc w-full">
+            <div
+              class="code min-h-[350px] w-full overflow-hidden font-mono">
+              <%= yield(:code) %>
             </div>
           </div>
         </div>
