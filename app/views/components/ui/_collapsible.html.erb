@@ -1,12 +1,14 @@
 <div
   data-state="closed"
-  class="w-[350px] space-y-2">
-  <div class="flex items-center justify-between space-x-4 px-4">
+  class="w-[350px] space-y-2"
+  data-controller="ui--collapsible">
+  <div
+    class="flex items-center justify-between space-x-4 px-4"
+    data-action="click->ui--collapsible#toggle">
     <h4 class="text-sm font-semibold"><%= trigger %></h4>
     <button
       class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md w-9 p-0"
       type="button"
-      aria-controls="radix-:r1c:"
       aria-expanded="false"
       data-state="closed">
       <svg
@@ -28,11 +30,9 @@
   </div>
   <%= yield :preview %>
   <div
+    data-ui--collapsible-target="item"
     data-state="closed"
-    id="radix-:r1c:"
-    class="space-y-2"
-    style="--radix-collapsible-content-height: 100px; --radix-collapsible-content-width: 350px"
-    hidden="">
+    class="space-y-2 hidden">
     <%= yield :body %>
   </div>
 </div>
