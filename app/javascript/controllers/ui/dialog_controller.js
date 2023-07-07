@@ -68,7 +68,7 @@ export default class extends Controller {
     if (visible) {
       this.dialogTarget.classList.remove("hidden");
       this.dialogTarget.dataset.state = "open";
-      if (this.hasBackgropTarget) {
+      if (this.hasBackdropTarget) {
         this.backdropTarget.classList.remove("hidden");
         this.backdropTarget.dataset.state = "open";
       }
@@ -79,7 +79,7 @@ export default class extends Controller {
     } else {
       this.dialogTarget.classList.add("hidden");
       this.dialogTarget.dataset.state = "closed";
-      if (this.hasBackgropTarget) {
+      if (this.hasBackdropTarget) {
         this.backdropTarget.classList.add("hidden");
         this.backdropTarget.dataset.state = "closed";
       }

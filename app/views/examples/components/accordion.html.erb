@@ -1,11 +1,17 @@
-<!--prettier-ignore-->
-<%= render "layouts/documentation/header",
+<%= render "layouts/documentation/component_header",
   title: "Accordion",
   description: "A vertically stacked set of interactive headings that each reveal a section of content." %>
 
-<%= render "layouts/documentation/examples" do %>
+<% content_for :examples, flush: true do %>
 <div class="w-full">
   <%= render_accordion title: "Did you know?", description: "You can wrap shadcn helpers in any
   component library you want!" %>
+  <%= render_accordion title: "Use the generators.", description: "Add components with #{code("rails g shadcn_ui add accordion")}".html_safe %>
 </div>
 <% end %>
+
+<%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage"><a href="/docs/components/dialog#usage">Usage</a></h2>

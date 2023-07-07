@@ -1,9 +1,9 @@
 <!--prettier-ignore-->
-<%= render "layouts/documentation/header",
+<%= render "layouts/documentation/component_header",
   title: "Card",
   description: "Displays a card with header, content, and footer." %>
 
-<%= render "layouts/documentation/examples" do %>
+<%= content_for :examples, flush: true do %>
 <div class="w-full flex justify-center"><%= render_card body: "The Most Basic of Cards" %></div>
 <div class="w-full flex justify-center">
   <%= render_card title: "Did you know?", body: "You can embed any HTML in the body of a card by
@@ -18,19 +18,15 @@
         <div class="flex flex-col space-y-1.5">
           <label
             class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            for="name"
-            >Name</label
-          ><input
+            for="name">Name</label><input
             class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             id="name"
-            placeholder="Name of your project" />
+            placeholder="Name of your project">
         </div>
         <div class="flex flex-col space-y-1.5">
           <label
             class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            for="name"
-            >Framework</label
-          ><button
+            for="name">Framework</label><button
             type="button"
             role="combobox"
             aria-controls="radix-:r76:"
@@ -40,8 +36,7 @@
             data-state="closed"
             data-placeholder=""
             class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
-            <span style="pointer-events: none">Select</span
-            ><svg
+            <span style="pointer-events: none">Select</span><svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -54,8 +49,7 @@
               class="h-4 w-4 opacity-50"
               aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
-            </svg></button
-          ><select
+            </svg></button><select
             aria-hidden="true"
             tabindex="-1"
             style="
@@ -83,8 +77,7 @@
   <div class="items-center p-6 pt-0 flex justify-between">
     <button
       class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
-      Cancel</button
-    ><button
+      Cancel</button><button
       class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
       Deploy
     </button>
@@ -155,3 +148,9 @@
   <% end %>
 </div>
 <% end %>
+
+<%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage"><a href="/docs/components/dialog#usage">Usage</a></h2>

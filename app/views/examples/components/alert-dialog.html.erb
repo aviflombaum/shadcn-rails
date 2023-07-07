@@ -1,9 +1,9 @@
 <!--prettier-ignore-->
-<%= render "layouts/documentation/header",
+<%= render "layouts/documentation/component_header",
   title: "Alert Dialog",
   description: "A modal dialog that interrupts the user with important content and expects a response." %>
 
-<%= render "layouts/documentation/examples" do %>
+<%= content_for :examples, flush: true do %>
 <div class="w-full flex justify-center">
   <!--prettier-ignore-->
 
@@ -16,3 +16,9 @@
   ) %>
 </div>
 <% end %>
+
+<%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage"><a href="/docs/components/dialog#usage">Usage</a></h2>

@@ -1,10 +1,10 @@
 <!--prettier-ignore-->
 
-<%= render "layouts/documentation/header",
+<%= render "layouts/documentation/component_header",
   title: "Button",
   description: "Displays a button or a component that looks like a button." %>
 
-<%= render "layouts/documentation/examples" do %>
+<%= content_for :examples, flush: true do %>
 <div class="w-full mx-auto flex justify-center"><%= render_button text: "Button" %></div>
 <div class="w-full mx-auto flex justify-center">
   <%= render_button text: "Link", as: :link, href: "/" %>
@@ -25,3 +25,9 @@
   <%= render_button text: "Ghost Link", variant: :ghost, as: :link %>
 </div>
 <% end %>
+
+<%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage"><a href="/docs/components/dialog#usage">Usage</a></h2>

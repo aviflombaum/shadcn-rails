@@ -1,20 +1,24 @@
 <!--prettier-ignore-->
-<%= render "layouts/documentation/header",
+<%= render "layouts/documentation/component_header",
   title: "Collapsible",
   description: "An interactive component which expands/collapses a panel." %>
 
-<%= render "layouts/documentation/examples" do %>
+<%= content_for :examples, flush: true do %>
 <div class="w-full flex justify-center">
-  <!--prettier-ignore-->
   <%= render_collapsible trigger: "@peduarte starred 3 repositories" do %>
-  <% content_for :preview do %>
-  <div class="rounded-md border px-4 py-3 font-mono text-sm">@radix-ui/primitives</div>
-  <% end %> <% content_for :body do %>
-
-  <div class="rounded-md border px-4 py-3 font-mono text-sm">@radix-ui/colors</div>
-  <div class="rounded-md border px-4 py-3 font-mono text-sm">@stitches/react</div>
-
-  <% end %> <% end %>
-  <!--prettier-ignore-->
+    <% content_for :preview do %>
+      <div class="rounded-md border px-4 py-3 font-mono text-sm">@radix-ui/primitives</div>
+    <% end %>
+    <% content_for :body do %>
+      <div class="rounded-md border px-4 py-3 font-mono text-sm">@radix-ui/colors</div>
+      <div class="rounded-md border px-4 py-3 font-mono text-sm">@stitches/react</div>
+    <% end %>
+  <% end %>
 </div>
 <% end %>
+
+<%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage"><a href="/docs/components/dialog#usage">Usage</a></h2>

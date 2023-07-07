@@ -1,9 +1,9 @@
 <!--prettier-ignore-->
 
-<%= render "layouts/documentation/header",
+<%= render "layouts/documentation/component_header",
   title: "Seperator",
   description: "Visually or semantically separates content." %>
-<%= render "layouts/documentation/examples" do %>
+<%= content_for :examples, flush: true do %>
 <div>
   <div class="space-y-1">
     <h4 class="text-sm font-medium leading-none">Radix Primitives</h4>
@@ -25,3 +25,9 @@
   </div>
 </div>
 <% end %>
+
+<%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage"><a href="/docs/components/dialog#usage">Usage</a></h2>
