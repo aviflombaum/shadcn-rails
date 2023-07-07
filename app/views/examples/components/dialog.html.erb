@@ -8,11 +8,55 @@
   <!--prettier-ignore-->
 
   <!--prettier-ignore-->
-  <%= render_dialog(
-    trigger: render_button("Open Dialog", variant: :outline, data: {action: "ui--dialog#open" }),
-    continue: render_button("Continue"),
-    label: "Are you absolutely sure?",
-    description: "This action cannot be undone. This will permanently delete your account and remove your data from our servers.",
-  ) %>
+  <%= render_dialog do %>
+  <%= content_for :trigger do %>
+    <%= render_button("Open Dialog", variant: :outline) %>
+  <% end %>
+  <%= content_for :body do %>
+  <div class="flex flex-col space-y-1.5 text-center sm:text-left">
+    <h2
+      id="radix-:r7m:"
+      class="text-lg font-semibold leading-none tracking-tight">
+      Edit profile
+    </h2>
+    <p
+      id="radix-:r7n:"
+      class="text-sm text-muted-foreground">
+      Make changes to your profile here. Click save when you're done.
+    </p>
+  </div>
+  <div class="grid gap-4 py-4">
+    <div class="grid grid-cols-4 items-center gap-4">
+      <label
+        class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-right"
+        for="name"
+        >Name</label
+      ><input
+        class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 col-span-3"
+        id="name"
+        value="Pedro Duarte" />
+    </div>
+    <div class="grid grid-cols-4 items-center gap-4">
+      <label
+        class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-right"
+        for="username"
+        >Username</label
+      ><input
+        class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 col-span-3"
+        id="username"
+        value="@peduarte" />
+    </div>
+  </div>
+  <div class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
+    <button
+      class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+      type="submit">
+      Save changes
+    </button>
+  </div>
+  <% end %> <% end %>
 </div>
-<% end %>
+<% end %> <%#= render_dialog( trigger: render_button("Open Dialog", variant: :outline, data:
+{action: "ui--dialog#open" }), continue: render_button("Continue"), label: "Are you absolutely
+sure?", description: "This action cannot be undone. This will permanently delete your account and
+remove your data from our servers.", ) %>
