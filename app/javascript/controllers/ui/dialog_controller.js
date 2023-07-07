@@ -69,20 +69,24 @@ export default class extends Controller {
     if (visible) {
       this.dialogTarget.classList.remove("hidden");
       this.dialogTarget.dataset.state = "open";
-      this.backdropTarget.classList.remove("hidden");
-      this.backdropTarget.dataset.state = "open";
+      if (this.hasBackgropTarget) {
+        this.backdropTarget.classList.remove("hidden");
+        this.backdropTarget.dataset.state = "open";
+      }
       if (this.hasModalTarget) {
-        this.modalTarget.classList.add("st-dialog-modal--visible");
-        document.body.classList.add("st-dialog--disable-scroll");
+        this.modalTarget.classList.remove("hidden");
+        this.modalTarget.dataset.state = "open";
       }
     } else {
       this.dialogTarget.classList.add("hidden");
       this.dialogTarget.dataset.state = "closed";
-      this.backdropTarget.classList.add("hidden");
-      this.backdropTarget.dataset.state = "closed";
+      if (this.hasBackgropTarget) {
+        this.backdropTarget.classList.add("hidden");
+        this.backdropTarget.dataset.state = "closed";
+      }
       if (this.hasModalTarget) {
-        this.modalTarget.classList.remove("st-dialog-modal--visible");
-        document.body.classList.remove("st-dialog--disable-scroll");
+        this.modalTarget.classList.add("hidden");
+        this.modalTarget.dataset.state = "closed";
       }
     }
   }
