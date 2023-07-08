@@ -1,7 +1,7 @@
 <%= render_component_header title: "Dropdown Menu",
       description: "Displays a menu to the user — such as a set of actions or functions — triggered by a button." %>
 
-<%= content_for :examples, flush: true do %>
+<%= content_for :preview, flush: true do %>
   <% render_dropdown_menu do %>
       <%= dropdown_menu_trigger do %>
         <%= render_button "Open Dropdown", variant: :outline %>

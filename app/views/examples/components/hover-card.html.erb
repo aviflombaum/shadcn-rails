@@ -1,0 +1,24 @@
+<%= render_component_header title: "Hover Card",
+      description: "For sighted users to preview content available behind a link." %>
+
+<% content_for :preview, flush: true do %>
+  <%= render_hover_card do %>
+    <%= hover_card_trigger do %>
+      <%= render_button "@rails", variant: :ghost %>
+    <% end %>
+    <%= hover_card_content do %>
+      <div class="grid gap-2">
+        <div class="space-y-2">
+          <h4 class="font-medium leading-none">Ruby on Rails</h4>
+          <p class="text-sm text-muted-foreground">The Web framework that changed the world.</p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% content_for :code, flush: true do %>
+
+<% end %>
+
+<%= render_preview %>
