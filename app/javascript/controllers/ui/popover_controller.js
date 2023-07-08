@@ -24,32 +24,4 @@ export default class extends Controller {
       ],
     });
   }
-
-  // Show the popover
-  show() {
-    this.contentTarget.classList.remove("hidden");
-    this.contentTarget.dataset.state = "open";
-  }
-
-  // Hide the popover
-  hide() {
-    this.contentTarget.classList.add("hidden");
-    this.contentTarget.dataset.state = "closed";
-  }
-
-  // Toggle the popover on demand
-  toggle(event) {
-    this.popperInstance.update();
-    if (this.contentTarget.classList.contains("hidden")) {
-      this.show();
-
-      if (this.hasDismissAfterValue) {
-        setTimeout(() => {
-          this.hide();
-        }, this.dismissAfterValue);
-      }
-    } else {
-      this.hide();
-    }
-  }
 }

@@ -4,7 +4,7 @@
 <% content_for :preview, flush: true do %>
   <%= render_hover_card do %>
     <%= hover_card_trigger do %>
-      <%= render_button "@rails", variant: :ghost %>
+      <%= content_tag :span, "@rails" %>
     <% end %>
     <%= hover_card_content do %>
       <div class="grid gap-2">

@@ -7,16 +7,9 @@ import { useHover } from "stimulus-use";
 
 export default class UIHoverCardController extends Controller {
   static debounces = ["mouseEnter", "mouseLeave"];
-
-  static values = {
-    dismissAfter: Number,
-  };
   static targets = ["content", "wrapper", "trigger"];
 
-  // Sets the popover offset using Stimulus data map objects.
-
   connect() {
-    console.log("hi");
     useDebounce(this);
     useHover(this, { element: this.triggerTarget });
     this.popperInstance = createPopper(this.triggerTarget, this.contentTarget, {
@@ -32,33 +25,15 @@ export default class UIHoverCardController extends Controller {
     });
   }
 
-  // Show the popover
   mouseEnter() {
     this.popperInstance.update();
-    this.contentTarget.classList.remove("hidden");
     this.contentTarget.dataset.state = "open";
+    this.contentTarget.classList.remove("hidden");
   }
 
-  // Hide the popover
   mouseLeave() {
     this.popperInstance.update();
-
-    this.contentTarget.classList.add("hidden");
     this.contentTarget.dataset.state = "closed";
-  }
-
-  // Toggle the popover on demand
-  toggle(event) {
-    if (this.contentTarget.classList.contains("hidden")) {
-      this.show();
-
-      if (this.hasDismissAfterValue) {
-        setTimeout(() => {
-          this.hide();
-        }, this.dismissAfterValue);
-      }
-    } else {
-      this.hide();
-    }
+    this.contentTarget.classList.add("hidden");
   }
 }

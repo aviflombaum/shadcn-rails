@@ -1,0 +1,23 @@
+<%= render_component_header title: "Tooltip",
+      description: "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it." %>
+
+<% content_for :preview, flush: true do %>
+  <%= render_tooltip do %>
+    <%= tooltip_trigger do %>
+      <%= render_button "Hover", variant: :outline %>
+    <% end %>
+    <%= tooltip_content do %>
+      <div class="grid gap-2">
+        <div class="space-y-2">
+          <p class="text-sm text-muted-foreground">More will be revealed.</p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% content_for :code, flush: true do %>
+
+<% end %>
+
+<%= render_preview %>
