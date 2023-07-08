@@ -8,7 +8,8 @@ module Components::PopoverHelper
     content_for :popover_trigger, capture(&block), flush: true
   end
 
-  def popover_content(&block)
+  def popover_content(options = {}, &block)
+    content_for :popover_content_class, options[:class], flush: true
     content_for :popover_content, capture(&block), flush: true
   end
 end

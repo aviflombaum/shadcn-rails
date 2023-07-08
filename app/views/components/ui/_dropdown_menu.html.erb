@@ -1,0 +1,9 @@
+<%= render_popover do %>
+  <%= popover_trigger do %>
+    <%= content_for(:dropdown_menu_trigger) %>
+  <% end %>
+  <%= popover_content class: "p-1 w-56" do %>
+    <% if content_for?(:dropdown_menu_label) %><div class="px-2 py-1.5 text-sm font-semibold"><%= content_for(:dropdown_menu_label) %></div><% end %>
+    <%= content_for(:dropdown_menu_content) %>
+  <% end %>
+<% end %>
