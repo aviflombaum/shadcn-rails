@@ -1,0 +1,37 @@
+<div data-controller="ui--checkbox">
+  <div class="flex items-center space-x-2">
+    <button
+      type="button"
+      role="checkbox"
+      aria-checked="false"
+      data-state="unchecked"
+      value="on"
+      class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+      for="<%= name %>"
+      data-action="click->ui--checkbox#toggle">
+      <span
+        class="flex items-center justify-center text-current hidden"
+        style="pointer-events: none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </span>
+    </button>
+    <label
+      for="<%= name %>"
+      data-action="click->ui--checkbox#toggle"
+      class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+      <%= label %>
+    </label>
+  </div>
+</div>

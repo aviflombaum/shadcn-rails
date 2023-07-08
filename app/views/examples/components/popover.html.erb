@@ -1,7 +1,7 @@
 <%= render_component_header title: "Popover",
       description: "Displays rich content in a portal, triggered by a button." %>
 
-<% content_for :examples, flush: true do %>
+<% content_for :preview, flush: true do %>
   <%= render_popover do %>
     <%= popover_trigger do %>
       <%= render_button "Open Popover", variant: :outline %>

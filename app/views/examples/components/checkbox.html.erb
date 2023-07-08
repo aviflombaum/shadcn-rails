@@ -1,0 +1,8 @@
+<%= render_component_header title: "Checkbox",
+      description: "A control that allows the user to toggle between checked and not checked." %>
+
+<%= content_for :preview, flush: true do %>
+  <%= render_checkbox label: "Accept terms and conditions", name: "terms" %>
+<% end %>
+
+<%= render_preview %>
