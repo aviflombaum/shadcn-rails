@@ -8,7 +8,7 @@ module Components::DialogHelper
     content_for :dialog_trigger, capture(&block), flush: true
   end
 
-  def dialog_body(&block)
-    content_for :dialog_body, capture(&block), flush: true
+  def dialog_content(&block)
+    content_for :dialog_content, capture(&block), flush: true
   end
 end

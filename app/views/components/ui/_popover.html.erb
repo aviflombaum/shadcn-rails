@@ -1,0 +1,19 @@
+<div data-controller="ui--popover">
+  <div class="popover-trigger" data-ui--popover-target="trigger" data-action="click->ui--popover#toggle">
+    <%= content_for(:popover_trigger) %>
+  </div>
+
+  <div class="popover-wrapper" data-ui--popover-target="wrapper">
+    <div
+      date-side="left"
+      data-controller="ui--transition"
+      data-ui--popover-target="content"
+      data-align="center"
+      data-state="closed"
+      role="dialog"
+      class="hidden z-50  rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none  w-80"
+      tabindex=" -1 ">
+      <%= content_for(:popover_content) %>
+    </div>
+  </div>
+</div>
