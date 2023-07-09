@@ -77,6 +77,14 @@ provides with examples of teh components rendered.
 
 For now, this convention should be followed when developing new components.
 
+## `[shadcn-ui](https://ui.shadcn.com)`
+
+These components are based on the components provided by [shadcn/ui](https://ui.shadcn.com). Because
+`shadcn-ui` is so heavily reliant on Radix and React, these components are most likely not going to
+be 1:1 copies of the components provided by `shadcn-ui`. However, the goal is to provide the same
+components with the same API and the same accessibility features. If you are looking for a React
+component library, I highly recommend checking out [shadcn/ui](https://ui.shadcn.com).
+
 ## License
 
 Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.md).
