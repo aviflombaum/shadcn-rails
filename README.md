@@ -1,24 +1,16 @@
-# README
+# shadcn/ui on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Gem Version](https://badge.fury.io/rb/shadcn-ui.svg)](https://badge.fury.io/rb/shadcn-ui)
 
-Things you may want to cover:
+Accessible and customizable components that you can copy and paste into your apps. Free. Open
+Source. **Use this to build your own component library**.
 
-* Ruby version
+![hero](public/og.jpg)
 
-* System dependencies
+## Documentation
 
-* Configuration
+Visit https://avi.nyc/shadcn-on-rails to view the documentation.
 
-* Database creation
+## License
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.md).

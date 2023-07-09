@@ -1,0 +1,12 @@
+<%= render_component_header title: "Textarea",
+      description: "Displays a form textarea or a component that looks like a textarea." %>
+
+<% content_for :preview, flush: true do %>
+  <%= render_textarea name: "sample_textarea" %>
+<% end %>
+
+<% content_for :code, flush: true do %>
+
+<% end %>
+
+<%= render_preview %>
