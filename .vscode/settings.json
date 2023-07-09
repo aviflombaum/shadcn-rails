@@ -4,5 +4,8 @@
   },
   "[erb]": {
     "editor.defaultFormatter": "manuelpuyol.erb-linter"
+  },
+  "[rbs]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

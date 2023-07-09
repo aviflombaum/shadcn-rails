@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/shadcn-ui/version"
+require_relative "lib/shadcn-ui/shadcn-ui"
 
 Gem::Specification.new do |spec|
   spec.name = "shadcn-ui"
@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
         f.start_with?(*%w[bin/ test/ spec/ features/ .git .circleci appveyor Gemfile])
     end
   end
-  spec.bindir = "exe"
+  spec.bindir = "bin"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
