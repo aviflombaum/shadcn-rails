@@ -1,0 +1,12 @@
+<%= render_component_header title: "Skeleton",
+      description: "Use to show a placeholder while content is loading." %>
+
+<% content_for :preview, flush: true do %>
+  <%= render_skeleton %>
+<% end %>
+
+<% content_for :code, flush: true do %>
+
+<% end %>
+
+<%= render_preview %>
