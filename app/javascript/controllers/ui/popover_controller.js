@@ -3,7 +3,7 @@
 import { Controller } from "@hotwired/stimulus";
 import { createPopper } from "@popperjs/core";
 
-export default class extends Controller {
+export default class UIPopover extends Controller {
   static values = {
     dismissAfter: Number,
   };
@@ -23,6 +23,7 @@ export default class extends Controller {
         },
       ],
     });
+  }
 
   // Show the popover
   show() {
@@ -50,6 +51,5 @@ export default class extends Controller {
     } else {
       this.hide();
     }
-  }
   }
 }
