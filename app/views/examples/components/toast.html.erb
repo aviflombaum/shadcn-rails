@@ -1,0 +1,15 @@
+<%= render_component_header title: "Toast",
+      description: "A succinct message that is displayed temporarily." %>
+
+<% content_for :preview, flush: true do %>
+  <%= render_button "Trigger Toast", variant: "outline", data: {controller: "ui--toast", action: "ui--toast#test"} %>
+  <%= render_toast header: "Scheduled: Catch up",
+    description: "Friday, February 10, 2023 at 5:57 PM",
+    action: render_button("Undo", variant: :outline) %>
+<% end %>
+
+<% content_for :code, flush: true do %>
+
+<% end %>
+
+<%= render_preview %>
