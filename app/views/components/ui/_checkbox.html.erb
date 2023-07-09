@@ -27,11 +27,6 @@
         </svg>
       </span>
     </button>
-    <label
-      for="<%= name %>"
-      data-action="click->ui--checkbox#toggle"
-      class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-      <%= label %>
-    </label>
+    <%= render_label name: name, label: label, data: {action: "click->ui--checkbox#toggle"} %>
   </div>
 </div>

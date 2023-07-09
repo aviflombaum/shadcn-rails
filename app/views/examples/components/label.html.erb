@@ -2,6 +2,7 @@
       description: "Displays a form input field or a component that looks like an input field." %>
 
 <% content_for :preview, flush: true do %>
+  <%= render_label name: "sample_input", label: "Sample Input", class: "block text-left w-full" %>
   <%= render_input name: "sample_input", id: "sample_input" %>
 <% end %>
 
