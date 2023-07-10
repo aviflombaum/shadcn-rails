@@ -2,7 +2,7 @@
 import { Controller } from "@hotwired/stimulus";
 import "@kanety/stimulus-static-actions";
 
-export default class extends Controller {
+export default class UIDialog extends Controller {
   static targets = ["dialog", "modal", "focus", "drag", "backdrop", "closeButton"];
   static actions = [
     ["element", "keydown@window->closeByKey"],
