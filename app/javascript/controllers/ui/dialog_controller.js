@@ -64,6 +64,8 @@ export default class UIDialog extends Controller {
     this.dispatch("closed", { detail: { target: target } });
   }
 
+  // Refactor Me
+  // This needs to be combined with the toggle method in sheet_controller
   toggleClass(visible) {
     if (visible) {
       this.dialogTarget.classList.remove("hidden");

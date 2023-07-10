@@ -1,6 +1,4 @@
-
-
-<div data-controller="ui--sheet">
+<div data-controller="ui--sheet" id="<%= options[:id] %>">
   <div data-action="click->ui--sheet#open"><%= content_for(:sheet_trigger) %></div>
 
   <%= render "components/ui/shared/backdrop", as: "modal" %>
@@ -9,13 +7,11 @@
     role="dialog"
     data-state="closed"
     data-ui--sheet-target="dialog"
-    class="fixed z-50 gap-4 bg-background p-6 shadow-lg
-          inset-y-0 <%= direction %>-0 h-full w-3/4 border-l  sm:max-w-sm
-          data-[state=closed]:hidden data-[state=open]:block
-          transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500
-          data-[state=closed]:slide-out-to-<%= direction %> data-[state=open]:slide-in-from-<%= direction %>" tabindex="-1"
+    class="data-[state=closed]:hidden data-[state=open]:block fixed z-50 gap-4 bg-background p-6 shadow-lg
+        transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500
+        inset-y-0 <%= options[:direction] %>-0 h-full <%= options[:width] %> border-l data-[state=closed]:slide-out-to-<%= options[:direction] %> data-[state=open]:slide-in-from-<%= options[:direction] %> sm:max-w-sm" tabindex="-1"
     style="pointer-events: auto">
-      <div><%= content_for(:sheet_content) %></div>
+      <div data-ui--sheet-target="content"><%= content_for(:sheet_content) %></div>
       <button
         data-ui--sheet-target="closeButton"
         type="button"

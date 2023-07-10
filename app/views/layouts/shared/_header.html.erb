@@ -1,3 +1,13 @@
+<%= render_sheet id: "sidebar_sheet", direction: "left", width: "w-auto" do %>
+  <div class="overflow-y-scroll h-full">
+  <%= sheet_content do %>
+    <div class="overflow-y-auto h-full">
+      <%= render 'layouts/shared/components' %>
+    </div>
+  <% end %>
+  </div>
+<% end %>
+
 <header
   class="supports-backdrop-blur:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
   <div class="container flex h-14 items-center">
@@ -45,13 +55,16 @@
           href="https://github.com/aviflombaum/shadcn-rails">GitHub</a>
       </nav>
     </div>
+
     <button
       class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-9 py-2 mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
       type="button"
       aria-haspopup="dialog"
       aria-expanded="false"
-      aria-controls="radix-:R15hja:"
-      data-state="closed">
+      data-state="closed"
+      data-controller="ui--sheet"
+      data-action="click->ui--sheet#toggleOutlet"
+      data--ui-sheet-outlet="#sidebar_sheet">
       <svg
         width="15"
         height="15"
