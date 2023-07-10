@@ -1,7 +1,8 @@
 module Components::SheetHelper
   def render_sheet(**options, &block)
+    direction = options[:direction] || "left"
     content = capture(&block) if block
-    render "components/ui/sheet", content: content, **options
+    render "components/ui/sheet", content: content, direction:, **options
   end
 
   def sheet_trigger(&block)
