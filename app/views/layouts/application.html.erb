@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ShadcnRails</title>
+    <title><%= page_title %></title>
     <meta
       name="viewport"
       content="width=device-width,initial-scale=1">
@@ -21,9 +21,8 @@
       <div class="flex-1">
         <div class="border-b">
           <div
-            class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
+            class="container flex-1 items-start ">
             <!--prettier-ignore-->
-            <%= render 'layouts/sidebar' %>
             <%= yield %>
           </div>
         </div>

@@ -37,23 +37,12 @@
         <span class="hidden font-bold sm:inline-block">shadcn/ui on Rails</span>
       </a>
       <nav class="flex items-center space-x-6 text-sm font-medium">
+        <%= link_to "Home", root_path, class: "transition-colors hover:text-foreground/80  #{params[:controller] == 'application' ? "text-foreground" : "text-foreground/60"}" %>
+        <%= link_to "Documentation", documentation_path, class: "transition-colors hover:text-foreground/80 text-foreground/60 #{params[:controller] == 'documentation' ? "text-foreground" : "text-foreground/60"}" %>
+        <%= link_to "Components", component_path("accordion"), class: "transition-colors hover:text-foreground/80 text-foreground/60 #{params[:controller] == 'components' ? "text-foreground" : "text-foreground/60"}" %>
         <a
-          class="transition-colors hover:text-foreground/80 text-foreground/60"
-          href="/docs"
-          >Documentation</a
-        ><a
-          class="transition-colors hover:text-foreground/80 text-foreground"
-          href="/docs/components"
-          >Components</a
-        ><a
-          class="transition-colors hover:text-foreground/80 text-foreground/60"
-          href="/examples"
-          >Examples</a
-        ><a
           class="hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block"
-          href="https://github.com/shadcn/ui"
-          >GitHub</a
-        >
+          href="https://github.com/aviflombaum/shadcn-rails">GitHub</a>
       </nav>
     </div>
     <button
@@ -79,23 +68,12 @@
       <span class="sr-only">Toggle Menu</span>
     </button>
     <div class="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-      <div class="w-full flex-1 md:w-auto md:flex-none">
-        <button
-          class="inline-flex items-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64">
-          <span class="hidden lg:inline-flex">Search documentation...</span
-          ><span class="inline-flex lg:hidden">Search...</span
-          ><kbd
-            class="pointer-events-none absolute right-1.5 top-1.5 hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex"
-            ><span class="text-xs">⌘</span>K</kbd
-          >
-        </button>
-      </div>
+
       <nav class="flex items-center">
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/shadcn/ui"
-          ><div
+          href="https://github.com/aviflombaum/shadcn-rails"><div
             class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0">
             <svg
               viewBox="0 0 438.549 438.549"
@@ -110,8 +88,7 @@
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://twitter.com/shadcn"
-          ><div
+          href="https://twitter.com/aviflombaum"><div
             class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +106,9 @@
           id="radix-:Rtlhja:"
           aria-haspopup="menu"
           aria-expanded="false"
-          data-state="closed">
+          data-state="closed"
+          data-controller="theme"
+          data-action="theme#toggle">
           <svg
             width="15"
             height="15"
