@@ -1,7 +1,13 @@
 module Components::SheetHelper
   def render_sheet(**options, &block)
+    options[:direction] ||= "left"
+    options[:width] ||= "w-3/4"
+
+    content_for :sheet_trigger, "", flush: true
+    content_for :sheet_content, "", flush: true
+
     content = capture(&block) if block
-    render "components/ui/sheet", content: content, **options
+    render "components/ui/sheet", content: content, options: options
   end
 
   def sheet_trigger(&block)
