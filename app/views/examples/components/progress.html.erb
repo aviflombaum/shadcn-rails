@@ -1,0 +1,12 @@
+<%= render_component_header title: "Progress",
+      description: "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar." %>
+
+<% content_for :preview, flush: true do %>
+  <%= render_progress value: 37 %>
+<% end %>
+
+<% content_for :code, flush: true do %>
+
+<% end %>
+
+<%= render_preview %>
