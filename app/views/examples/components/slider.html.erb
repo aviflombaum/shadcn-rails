@@ -1,8 +1,12 @@
-  <% if slider %>
-<input type="range" min="1" max="100" value="50" class="hidden">
-  <div
-    class="absolute top-0 left-[50%] w-4 h-4 rounded-full bg-white shadow-lg border border-gray-900 z-50 cursor-pointer"
-    style="transform: translateX(-50%)"
-    data-action="ui--progress#click->dragStart"
-    data-ui--progress-target="slider"></div>
-  <% end %>
+<%= render_component_header title: "Slider",
+      description: "An input where the user selects a value from within a given range." %>
+
+<% content_for :preview, flush: true do %>
+  <%= render_slider name: "sample_slider", id: "sample_slider", value: 23 %>
+<% end %>
+
+<% content_for :code, flush: true do %>
+
+<% end %>
+
+<%= render_preview %>
