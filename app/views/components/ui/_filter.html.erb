@@ -1,0 +1,9 @@
+<%= render_card do %>
+  <div class="flex items-center">
+    <%= content_for :filter_icon %>
+  <%= render_input name: "filter", placeholder: "Filter items...", style: :borderless, class: input_class %></div>
+  <%= render_separator %>
+  <div class="<%= options[:class] %>">
+    <%= render_list(items) %>
+  </div>
+<% end %>

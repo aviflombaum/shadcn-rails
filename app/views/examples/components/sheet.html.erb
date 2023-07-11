@@ -3,7 +3,7 @@
 
 <% content_for :preview, flush: true do %>
   <div class="w-full flex justify-center">
-    <%= render_sheet do %>
+    <%= render_sheet direction: "right" do %>
       <%= sheet_trigger do %>
         <%= render_button("Open Sidebar", variant: :outline) %>
       <% end %>

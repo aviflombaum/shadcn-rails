@@ -23,7 +23,7 @@ export default class extends UIDialog {
       modalTarget.dataset.state = "open";
     } else {
       document.body.classList.remove("overflow-hidden");
-      mainTarget.classList.remove("overflow-y-scroll", "h-full");
+      contentTarget.classList.remove("overflow-y-scroll", "h-full");
       dialogTarget.classList.add("hidden");
       dialogTarget.dataset.state = "closed";
       modalTarget.classList.add("hidden");
