@@ -1,9 +1,14 @@
+<div data-controller="ui--filter">
 <%= render_card do %>
   <div class="flex items-center">
     <%= content_for :filter_icon %>
-  <%= render_input name: "filter", placeholder: "Filter items...", style: :borderless, class: input_class %></div>
+  <%= render_input name: "filter", placeholder: "Filter items...", style: :borderless, class: input_class, data: {"ui--filter-target": "source", action: "input->ui--filter#filter"} %></div>
   <%= render_separator %>
   <div class="<%= options[:class] %>">
-    <%= render_list(items) %>
+    <%= content_tag :div, role: "group" do
+      items.each do |item| %>
+        <div data-ui--filter-target="item"><%= list_item(value: item[:value], name: item[:name], selected: item[:selected]) %></div>
+      <% end
+    end %>
   </div>
 <% end %>

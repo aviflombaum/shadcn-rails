@@ -1,10 +1,8 @@
 
-<input
-  class="<%= options[:class] %>"
-  placeholder="<%= options[:placeholder] %>"
-  type="<%= type %>"
-  name="<%= name %>"
-  id="<%= id %>"
-  <%= options[:disabled] ? "disabled" : "" %>
-  <%= options[:required] ? "required" : "" %>
-  <%= options[:readonly] ? "readonly" : "" %>>
+<%= text_field_tag name, value, type: type, id: id,
+              class: options[:class],
+              placeholder: options[:placeholder],
+              disabled: options[:disabled],
+              required: options[:required],
+              readonly: options[:readonly],
+              data: options[:data] %>
