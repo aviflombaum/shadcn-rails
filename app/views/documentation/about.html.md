@@ -1,4 +1,4 @@
-## About
+# About
 
 <subtitle>Powered by amazing open source projects.</subtitle>
 
