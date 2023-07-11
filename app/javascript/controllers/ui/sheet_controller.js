@@ -1,4 +1,4 @@
-import UIDialog from "./dialog_controller.js";
+import UIDialog from "controllers/ui/dialog_controller";
 import "@kanety/stimulus-static-actions";
 
 export default class extends UIDialog {
