@@ -1,4 +1,4 @@
-class ComponentsController < ApplicationController
+class ComponentsController < ActionController::Base
   layout "component"
 
   def show

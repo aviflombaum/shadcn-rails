@@ -23,6 +23,12 @@
       "options": {
         "parser": "html"
       }
+    },
+    {
+      "files": "*.md.html",
+      "options": {
+        "parser": "markdown"
+      }
     }
   ]
 }

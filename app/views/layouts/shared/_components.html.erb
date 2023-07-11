@@ -5,245 +5,55 @@
       <div class="pb-4">
         <h4 class="mb-1 rounded-md px-2 py-1 text-sm font-semibold">Getting Started</h4>
         <div class="grid grid-flow-row auto-rows-max text-sm">
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline font-medium text-foreground"
-            target=""
-            rel=""
-            href="/docs">Introduction</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/installation">Installation</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/theming">Theming</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/dark-mode">Dark mode</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/changelog">Changelog</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/about">About</a>
+          <%= sidebar_link "Introduction", documentation_index_path %>
+          <%= sidebar_link "Installation", documentation_path("installation") %>
+          <%= sidebar_link "About", documentation_path("about") %>
         </div>
       </div>
       <div class="pb-4">
         <h4 class="mb-1 rounded-md px-2 py-1 text-sm font-semibold">Components</h4>
         <div class="grid grid-flow-row auto-rows-max text-sm">
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/accordion">✅ Accordion</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/alert">✅ Alert</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/alert-dialog">✅ Alert Dialog</a>
-          <span
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel="">❌ Aspect Ratio</span>
-          <span
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/avatar">❌ Avatar</span>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/badge">✅ Badge</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/button">✅ Button</a>
-          <span
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/calendar">❌ Calendar</span>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/card">✅ Card</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/checkbox">✅ Checkbox</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/collapsible">✅ Collapsible</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/combobox">Combobox</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/command">Command</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/context-menu">Context Menu</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/data-table">Data Table</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/date-picker">Date Picker</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/dialog">✅ Dialog</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/dropdown-menu">Dropdown Menu</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/filter">➕ Filter</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/form">Form</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/hover-card">✅ Hover Card</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/input">✅ Input</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/label">✅ Label</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/menubar">Menubar</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/navigation-menu">Navigation Menu</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/popover">✅ Popover</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/progress">✅ Progress</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/radio-group">Radio Group</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/scroll-area">Scroll Area</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/select">Select</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/separator">✅ Separator</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/sheet">✅ Sheet</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/skeleton">✅ Skeleton</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/slider">✅ Slider</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/switch">Switch</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/table">Table</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/tabs">Tabs</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/textarea">✅ Textarea</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/toast">✅ Toast</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/toggle">✅ Toggle</a>
-          <a
-            class="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline text-muted-foreground"
-            target=""
-            rel=""
-            href="/docs/components/tooltip">✅ Tooltip</a>
+          <%= sidebar_link "✅ Accordion", "/docs/components/accordion" %>
+          <%= sidebar_link "✅ Alert", "/docs/components/alert" %>
+          <%= sidebar_link "✅ Alert Dialog", "/docs/components/alert-dialog" %>
+          <%= sidebar_link "❌ Aspect Ratio", "/docs/components/aspect-ratio" %>
+          <%= sidebar_link "❌ Avatar", "/docs/components/avatar" %>
+          <%= sidebar_link "✅ Badge", "/docs/components/badge" %>
+          <%= sidebar_link "✅ Button", "/docs/components/button" %>
+          <%= sidebar_link "❌ Calendar", "/docs/components/calendar" %>
+          <%= sidebar_link "✅ Card", "/docs/components/card" %>
+          <%= sidebar_link "✅ Checkbox", "/docs/components/checkbox" %>
+          <%= sidebar_link "✅ Collapsible", "/docs/components/collapsible" %>
+          <%= sidebar_link "Combobox", "/docs/components/combobox" %>
+          <%= sidebar_link "Command", "/docs/components/command" %>
+          <%= sidebar_link "Context Menu", "/docs/components/context-menu" %>
+          <%= sidebar_link "Data Table", "/docs/components/data-table" %>
+          <%= sidebar_link "Date Picker", "/docs/components/date-picker" %>
+          <%= sidebar_link "✅ Dialog", "/docs/components/dialog" %>
+          <%= sidebar_link "Dropdown Menu", "/docs/components/dropdown-menu" %>
+          <%= sidebar_link "➕ Filter", "/docs/components/filter" %>
+          <%= sidebar_link "Form", "/docs/components/form" %>
+          <%= sidebar_link "✅ Hover Card", "/docs/components/hover-card" %>
+          <%= sidebar_link "✅ Input", "/docs/components/input" %>
+          <%= sidebar_link "✅ Label", "/docs/components/label" %>
+          <%= sidebar_link "Menubar", "/docs/components/menubar" %>
+          <%= sidebar_link "Navigation Menu", "/docs/components/navigation-menu" %>
+          <%= sidebar_link "✅ Popover", "/docs/components/popover" %>
+          <%= sidebar_link "✅ Progress", "/docs/components/progress" %>
+          <%= sidebar_link "Radio Group", "/docs/components/radio-group" %>
+          <%= sidebar_link "Scroll Area", "/docs/components/scroll-area" %>
+          <%= sidebar_link "Select", "/docs/components/select" %>
+          <%= sidebar_link "✅ Separator", "/docs/components/separator" %>
+          <%= sidebar_link "✅ Sheet", "/docs/components/sheet" %>
+          <%= sidebar_link "✅ Skeleton", "/docs/components/skeleton" %>
+          <%= sidebar_link "✅ Slider", "/docs/components/slider" %>
+          <%= sidebar_link "Switch", "/docs/components/switch" %>
+          <%= sidebar_link "Table", "/docs/components/table" %>
+          <%= sidebar_link "Tabs", "/docs/components/tabs" %>
+          <%= sidebar_link "✅ Textarea", "/docs/components/textarea" %>
+          <%= sidebar_link "✅ Toast", "/docs/components/toast" %>
+          <%= sidebar_link "✅ Toggle", "/docs/components/toggle" %>
+          <%= sidebar_link "✅ Tooltip", "/docs/components/tooltip" %>
         </div>
       </div>
     </div>

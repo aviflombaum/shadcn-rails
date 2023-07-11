@@ -48,7 +48,7 @@
       </a>
       <nav class="flex items-center space-x-6 text-sm font-medium">
         <%= link_to "Home", root_path, class: "transition-colors hover:text-foreground/80  #{params[:controller] == 'application' ? "text-foreground" : "text-foreground/60"}" %>
-        <%= link_to "Documentation", documentation_path, class: "transition-colors hover:text-foreground/80 text-foreground/60 #{params[:controller] == 'documentation' ? "text-foreground" : "text-foreground/60"}" %>
+        <%= link_to "Documentation", documentation_index_path, class: "transition-colors hover:text-foreground/80 text-foreground/60 #{params[:controller] == 'documentation' ? "text-foreground" : "text-foreground/60"}" %>
         <%= link_to "Components", component_path("accordion"), class: "transition-colors hover:text-foreground/80 text-foreground/60 #{params[:controller] == 'components' ? "text-foreground" : "text-foreground/60"}" %>
         <a
           class="hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block"
