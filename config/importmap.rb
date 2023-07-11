@@ -1,6 +1,10 @@
 # Pin npm packages by running ./bin/importmap
 
 pin "application", preload: true
+pin "ui/popover_controller.js", preload: true
+pin "ui/popover_controller", preload: true
+pin "controllers/ui/popover_controller", preload: true
+pin "controllers/ui/popover_controller.js", preload: true
 pin "ui/popover", to: "controllers/ui/popover_controller", preload: true
 pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
 pin "@hotwired/stimulus", to: "https://ga.jspm.io/npm:@hotwired/stimulus@3.2.1/dist/stimulus.js"
