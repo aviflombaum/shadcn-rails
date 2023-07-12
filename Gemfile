@@ -76,6 +76,8 @@ group :development do
   # gem "spring"
 end
 
+gem "sassc", "~> 2.4"
+
 gem "redcarpet", "~> 3.6"
 
 gem "rouge", "~> 4.1"
