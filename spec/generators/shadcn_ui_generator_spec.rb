@@ -1,19 +1,27 @@
 require "rails_helper"
-require "generator_spec"
 require_relative "../../lib/generators/shadcn_ui_generator"
 
 RSpec.describe ShadcnUiGenerator, type: :generator do
-  destination File.expand_path("../../spec/tmp/dummy_app", __dir__)
+  let(:component_name) { "accordion" }
+  let(:rails_root) { "#{Rails.root}/spec/dummy_app" }
 
-  before(:all) do
-    prepare_destination
-    run_generator
+  before do
+    FileUtils.mkdir_p("#{rails_root}/tmp/app")
+    FileUtils.mkdir_p("#{rails_root}/tmp/app/views/components/ui")
+    FileUtils.mkdir_p("#{rails_root}/tmp/app/helpers/components")
+    FileUtils.mkdir_p("#{rails_root}/tmp/app/javascript/controllers/ui")
+    allow_any_instance_of(described_class).to receive(:component).and_return(component_name)
   end
 
-  context "when generating a component" do
-    it "copies the component files to the correct destination" do
-      expect(File.exist?("spec/tmp/dummy_app/app/views/components/ui/_accordion.html.erb")).to be_truthy
-      expect(File.exist?("spec/tmp/dummy_app/app/javascript/controllers/ui/accordion_controller.js")).to be_truthy
-    end
+  after do
+    FileUtils.rm_rf(rails_root)
+  end
+
+  it "copies the component files to the correct destination" do
+    described_class.start(["#{component_name}:install", rails_root])
+
+    expect(File).to exist("#{rails_root}/app/views/components/ui/_#{component_name}.html.erb")
+    expect(File).to exist("#{rails_root}/app/javascript/controllers/ui/#{component_name}_controller.js")
+    expect(File).to exist("#{rails_root}/app/helpers/components/#{component_name}_helper.rb")
   end
 end
