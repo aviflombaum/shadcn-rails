@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    shadcn-ui (0.0.1)
+    shadcn-ui (0.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -233,8 +233,6 @@ GEM
     rubocop-ast (1.29.0)
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
-    sassc (2.4.0)
-      ffi (~> 1.9)
     smart_properties (1.17.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
@@ -291,7 +289,6 @@ DEPENDENCIES
   rouge (~> 4.1)
   rspec (~> 3.0)
   rspec-rails
-  sassc (~> 2.4)
   shadcn-ui!
   sprockets-rails
   sqlite3 (~> 1.4)
