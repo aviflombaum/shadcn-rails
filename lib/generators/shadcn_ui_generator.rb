@@ -121,11 +121,10 @@ class ShadcnUiGenerator < Rails::Generators::Base
     tailwind_file_path = File.join(target_rails_root, "app/assets/stylesheets/application.tailwind.css")
 
     if File.file?(tailwind_file_path)
-      matched_file = File.readlines(tailwind_file_path).include?("shadcn.css") # Read the first line of the file
-
-      if matched_file
+      matched_file = File.readlines(tailwind_file_path).any? { |s| s.include?("shadcn.css") }
+      if !matched_file
         puts "Importing shadcn.css into application.tailwind.css..."
-        insert_import_line(tailwind_file_path, expected_line)
+        insert_import_line(tailwind_file_path, "@import \"shadcn.css\";")
       end
     else
       puts "application.tailwind.css does not exist."
