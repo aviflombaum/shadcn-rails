@@ -1,4 +1,129 @@
-# Alpha Usage/Installation
+# Installation
+
+The more automated way to install the components into your application is via the gem packaged
+within this application. The gem provides generators that will setup your applications as best as
+possible without potentially overwriting any existing code as well as copy components and their
+dependencies to your application.
+
+## Add the Gem
+
+First step is adding the gem to your gemfile.
+
+```sh
+bundle add shadcn-ui
+bundle install
+```
+
+## Install and Setup Dependencies
+
+### TailwindCSS
+
+The components need a few things in order to render and function properly
+
+1. Tailwindcss must be installed in your application. If it's not already, I recommend just using
+   the `tailwindcss-rails` gem and running its installer to bootstrap your application with
+   TailwindCSS.
+
+2. A few tailwindcss npm packages are required by the theme and the best way to get them is to add
+   them to your package.json or even if you're application doesn't use node packages because you use
+   importmaps or something else, having a package.json will still work only to allow the tailwind
+   cli to compile the themes. The easiest way I've found to include everything you need is by
+   including only one package that will include the rest of them, `tailwind-animate`. Create a
+   package.json if you need via `echo '{}' >> package.json`.
+
+```
+npm install -D tailwind-animate
+```
+
+These are the requirements if you want to add them individually:
+
+```
+@tailwindcss/forms
+@tailwindcss/aspect-ratio
+@tailwindcss/typography
+@tailwindcss/container-queries
+tailwindcss-animate
+```
+
+### shadcn CSS - Required
+
+#### shadcn.css
+
+These steps were not automated and are required to be done manually.
+
+The components also require a few CSS variables to be set in order to render properly. It's a two
+step process, first, the gem installation should have added `app/assets/stylesheets/shadcn.css` to
+your application. You need to make sure this is included within `application.tailwind.css`, which
+should have happened automatically, but double check.
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "shadcn.css";
+```
+
+The tailwind documentation says that `@import` has to be on the first line but I've found this to
+work. I'll update if that turns out to not be reliable.
+
+#### shadcn.tailwind.js
+
+The installation also should have added a `config/shadcn.tailwind.js` file to your application. This
+file is required to be included in your `tailwind.config.js` file. The best way to include it is to
+`require` it in your `tailwind.config.js` file and expand the configuration settings. This is what a
+newly setup `tailwind.config.js` file should look like after the inclusion of the
+`shadcn.tailwind.js` settings.
+
+```js
+const defaultTheme = require("tailwindcss/defaultTheme");
+const shadcnConfig = require("./shadcn.tailwind.js");
+
+module.exports = {
+  content: [
+    "./public/*.html",
+    "./app/helpers/**/*.rb",
+    "./app/javascript/**/*.js",
+    "./app/views/**/*.{erb,haml,html,slim}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+      },
+    },
+  },
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/container-queries"),
+  ],
+  ...shadcnConfig,
+};
+```
+
+You could also just use the shadcnConfig as the default Tailwind settings needed are also defined
+there..
+
+```js
+const shadcnConfig = require("./shadcn.tailwind.js");
+
+module.exports = {
+  ...shadcnConfig,
+};
+```
+
+After that feel free to add further customizatios to your tailwind config. For an existing tailwind
+config, just add shadcnConfig to the end of the config object. It will override any settings needed
+by being at the end. And obviously feel free to inspect shadcnConfig and keep only what's reui
+
+## End
+
+That's it! You are now set to start
+[installing components via the generator]("/documentation/generators") and rendering them into your
+views.
+
+# Manual Installation
 
 Prior to the initial gem release, you can use this as an alpha by cloning this repository and
 starting up the app as you would a standard rails app.
@@ -220,7 +345,7 @@ Add the following to your app/assets/stylesheets/application.tailwind.css file.
 }
 ```
 
-### Copy a a component's files to your application
+### Copy Component Files
 
 For example, if you want to use the Accordion component, you would copy the following files to your
 application:
@@ -247,3 +372,9 @@ See the component's demo page in `app/views/examples/components/accordion.html.e
 examples.
 
 This will be similar for each component.
+
+# Conclusion
+
+You can freely mix and match both styles as your application evolves. The end goal of each of them
+is to get the component code into your application so you can further customize and take ownership
+of your design system.
