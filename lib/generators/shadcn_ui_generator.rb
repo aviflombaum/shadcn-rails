@@ -71,27 +71,45 @@ class ShadcnUiGenerator < Rails::Generators::Base
   end
 
   def copy_files
-    if component_valid?
-      puts "Installing #{component_name} component..."
-      component_data["files"].each do |file|
-        source_path = File.expand_path(File.join("../../", file), __dir__)
-        destination_path = File.expand_path(File.join(target_rails_root, file))
-        if File.exist?(source_path)
-          FileUtils.mkdir_p(File.dirname(destination_path))
-          puts "...copying #{file}"
-          FileUtils.cp(source_path, destination_path)
-        end
+    return unless component_valid?
+    puts "Installing #{component_name} component..."
+
+    install_component_files(component_name)
+    component_data["dependencies"]&.each do |dependency|
+      if dependency.is_a?(String)
+        copy_file(dependency)
+      elsif dependency.is_a?(Hash)
+        install_component_files(dependency["component"])
       end
-      puts "#{component_name.capitalize} component installed!"
+    end
+    puts "#{component_name.capitalize} component installed!"
+  end
+
+  def install_component_files(key)
+    return unless component_valid?(key)
+
+    available_components[key]["files"].each do |file|
+      copy_file(file)
     end
   end
 
-  def component_data
+  def copy_file(file)
+    source_path = File.expand_path(File.join("../../", file), __dir__)
+    destination_path = File.expand_path(File.join(target_rails_root, file))
+    if File.exist?(source_path)
+      FileUtils.mkdir_p(File.dirname(destination_path))
+      puts "...copying #{file}"
+      FileUtils.cp(source_path, destination_path)
+    end
+  end
+
+  def component_data(name = nil)
     @component_data ||= available_components[component_name]
   end
 
-  def component_valid?
-    component_name.present? && available_components.key?(component_name) && component_data
+  def component_valid?(name = nil)
+    name ||= component_name
+    name.present? && available_components.key?(name) && component_data
   end
 
   def check_for_tailwind
