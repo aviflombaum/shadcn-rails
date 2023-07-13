@@ -24,9 +24,8 @@ module ExamplesHelper
   end
 
   def code_sample(content = "", language:, &block)
-    content_tag :pre, class: "code-sample px-4 my-2 pb-5", data: {controller: "highlight"} do
+    content_tag :pre, class: "code-sample px-4 my-2 pb-5 min-h-fit", data: {controller: "highlight"} do
       content_tag :code, class: "language-#{language}" do
-        content
         yield if block
       end
     end

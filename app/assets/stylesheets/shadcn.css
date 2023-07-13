@@ -28,6 +28,15 @@
     --destructive: 0 100% 50%;
     --destructive-foreground: 210 40% 98%;
 
+    --success: 132, 95.3%, 33.3%, 0.74;
+    --success-foreground: 109 55% 28%;
+
+    --info: 223 78% 42%;
+    --info-foreground: 225 100% 50%;
+
+    --attention: 35 91% 32%;
+    --attention-foreground: 60 98.4% 48.8% 0.82;
+
     --ring: 215 20.2% 65.1%;
 
     --radius: 0.5rem;
@@ -61,6 +70,8 @@
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
+    --success: 109 55% 28%;
+
     --ring: 216 34% 17%;
 
     --radius: 0.5rem;
@@ -80,6 +91,10 @@
 
   .code-sample {
     @apply max-h-[650px] min-h-[350px] overflow-x-auto rounded-lg border bg-zinc-950 dark:bg-zinc-900;
+  }
+
+  .code-sample pre {
+    @apply min-h-[350px];
   }
 
   .code-sample span {
