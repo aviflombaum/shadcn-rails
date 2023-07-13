@@ -102,9 +102,13 @@
     "name": "dropdown-menu",
     "type": "components:ui",
     "files": [
-      "app/helpers/components/dropdown-menu_helper.rb",
-      "app/views/components/ui/_dropdown-menu.html.erb",
-      "app/javascript/controllers/ui/dropdown-menu_controller.js"
+      "app/helpers/components/dropdown_menu_helper.rb",
+      "app/views/components/ui/_dropdown_menu.html.erb",
+      "app/javascript/controllers/ui/dropdown_controller.js"
+    ],
+    "dependencies": [
+      { "component": "popover" },
+      "app/views/components/ui/shared/_menu_item.html.erb"
     ]
   },
   "hover-card": {
