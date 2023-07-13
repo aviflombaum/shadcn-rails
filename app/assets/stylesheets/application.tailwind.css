@@ -14,6 +14,9 @@ article.documentation h1 {
   @apply scroll-m-20 text-4xl font-bold tracking-tight;
 }
 
+article.documentation p + h1 {
+  @apply mt-12;
+}
 article.documentation h2 {
   @apply scroll-m-20 text-3xl font-bold tracking-tight my-8;
 }
@@ -43,4 +46,12 @@ article.documentation :where(code):not(:where([class~="not-prose"] *)):after {
 
 article.documentation p a {
   @apply underline hover:text-pink;
+}
+
+article.documentation pre {
+  @apply code-sample text-white py-4 px-8 rounded-lg my-4;
+}
+
+article.documentation p > code {
+  @apply text-white bg-black p-1 rounded;
 }
