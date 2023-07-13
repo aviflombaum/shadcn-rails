@@ -14,7 +14,7 @@
         aria-expanded="true"
         data-orientation="vertical"
         class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180">
-        <%= title || content_for :title %><svg
+        <%= title || content_for(:title) %><svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -34,7 +34,7 @@
       role="region"
       data-orientation="vertical"
       class="st-accordion__content overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-      <div class="pb-4 pt-0"><%= description || content_for :description %></div>
+      <div class="pb-4 pt-0"><%= description || content_for(:description) %></div>
     </div>
   </div>
 </div>

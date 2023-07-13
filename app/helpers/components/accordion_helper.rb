@@ -8,7 +8,7 @@ module Components::AccordionHelper
   end
 
   def render_accordion(title: nil, description: nil, &block)
-    if title
+    if title && !description
       content_for :description, capture(&block), flush: true
     elsif !title && !description
       capture(&block)

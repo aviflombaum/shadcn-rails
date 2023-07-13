@@ -49,7 +49,7 @@ article.documentation p a {
 }
 
 article.documentation pre {
-  @apply code-sample text-white py-4 px-8 rounded-lg my-4;
+  @apply max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 dark:bg-zinc-900 text-white py-4 px-8 rounded-lg my-4;
 }
 
 article.documentation p > code {

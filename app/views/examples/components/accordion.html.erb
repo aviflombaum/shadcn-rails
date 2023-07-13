@@ -24,6 +24,30 @@ rails generate shadcn-ui accodordion
 
 <h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage"><a href="/docs/components/dialog#usage">Usage</a></h2>
 
-<%= code_partial("dialog/code/usage", :erb) %>
+<%= code_partial("accordion/code/usage", :erb) %>
 
-<%= render_usage("dialog") %>
+<%= render_usage("accordion") %>
+
+<% content_for :examples, flush: true do %>
+  <div class="w-full flex justify-center">
+    <%= render "examples/components/accordion/code/description" %>
+  </div>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("accordion/code/_description.html", :erb) %>
+<% end %>
+
+<%= render_example %>
+
+<% content_for :examples, flush: true do %>
+  <div class="w-full flex justify-center">
+    <%= render "examples/components/accordion/code/block" %>
+  </div>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("accordion/code/_block.html", :erb) %>
+<% end %>
+
+<%= render_example %>
