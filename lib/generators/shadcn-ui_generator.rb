@@ -2,18 +2,20 @@ require "json"
 require "rails/generators/base"
 
 class ShadcnUiGenerator < Rails::Generators::Base
+  namespace "shadcn-ui"
+
   attr_reader :component_name, :target_rails_root, :options
 
   argument :component, required: false, desc: "The name of the component to install"
   argument :rails_root, required: false, desc: "Path to the Rails root directory"
 
   def self.banner
-    "rails generate shadcn_ui <component_name>[:install] [--remove] [rails_root_path]"
+    "rails generate shadcn-ui <component_name> [--remove] [rails_root_path]"
   end
 
   def initialize(args, *options)
     super
-    @component_name = (component.present? && component.include?(":")) ? component.split(":").first : component
+    @component_name = component
     @target_rails_root = rails_root || Rails.root
     @options = options.first
   end
