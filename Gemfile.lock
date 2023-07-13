@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    shadcn-ui (0.0.1)
+    shadcn-ui (0.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -87,9 +87,6 @@ GEM
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
-    debug (1.8.0)
-      irb (>= 1.5.0)
-      reline (>= 0.3.1)
     diff-lcs (1.5.0)
     erb_lint (0.4.0)
       activesupport
@@ -108,9 +105,6 @@ GEM
     importmap-rails (1.2.1)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
-    io-console (0.6.0)
-    irb (1.7.1)
-      reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -142,9 +136,9 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.15.2-arm64-darwin)
+    nokogiri (1.15.3-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.15.2-x86_64-linux)
+    nokogiri (1.15.3-x86_64-linux)
       racc (~> 1.4)
     parallel (1.23.0)
     parser (3.2.2.3)
@@ -155,7 +149,7 @@ GEM
       method_source (~> 1.0)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
-    puma (5.6.6)
+    puma (6.3.0)
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (2.2.7)
@@ -202,8 +196,6 @@ GEM
     redcarpet (3.6.0)
     redis (4.8.1)
     regexp_parser (2.8.1)
-    reline (0.3.5)
-      io-console (~> 0.5)
     rexml (3.2.5)
     rouge (4.1.2)
     rspec (3.12.0)
@@ -215,10 +207,18 @@ GEM
     rspec-expectations (3.12.3)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
-    rspec-mocks (3.12.5)
+    rspec-mocks (3.12.6)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
-    rspec-support (3.12.0)
+    rspec-rails (6.0.3)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.12)
+      rspec-expectations (~> 3.12)
+      rspec-mocks (~> 3.12)
+      rspec-support (~> 3.12)
+    rspec-support (3.12.1)
     rubocop (1.54.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -276,13 +276,13 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  debug
   erb_lint
   htmlbeautifier
   importmap-rails
   jbuilder
+  pry
   pry-rails
-  puma (~> 5.0)
+  puma (~> 6.0)
   rails (~> 7.0.6)
   rails_live_reload
   rake (~> 13.0)
@@ -290,6 +290,7 @@ DEPENDENCIES
   redis (~> 4.0)
   rouge (~> 4.1)
   rspec (~> 3.0)
+  rspec-rails
   sassc (~> 2.4)
   shadcn-ui!
   sprockets-rails

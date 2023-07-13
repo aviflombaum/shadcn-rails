@@ -1,0 +1,301 @@
+{
+  "accordion": {
+    "name": "accordion",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/accordion_helper.rb",
+      "app/views/components/ui/_accordion.html.erb",
+      "app/javascript/controllers/ui/accordion_controller.js"
+    ]
+  },
+  "alert": {
+    "name": "alert",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/alert_helper.rb",
+      "app/views/components/ui/_alert.html.erb",
+      "app/javascript/controllers/ui/alert_controller.js"
+    ]
+  },
+  "alert-dialog": {
+    "name": "alert-dialog",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/alert-dialog_helper.rb",
+      "app/views/components/ui/_alert-dialog.html.erb",
+      "app/javascript/controllers/ui/alert-dialog_controller.js"
+    ]
+  },
+  "badge": {
+    "name": "badge",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/badge_helper.rb",
+      "app/views/components/ui/_badge.html.erb",
+      "app/javascript/controllers/ui/badge_controller.js"
+    ]
+  },
+  "button": {
+    "name": "button",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/button_helper.rb",
+      "app/views/components/ui/_button.html.erb",
+      "app/javascript/controllers/ui/button_controller.js"
+    ]
+  },
+  "card": {
+    "name": "card",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/card_helper.rb",
+      "app/views/components/ui/_card.html.erb",
+      "app/javascript/controllers/ui/card_controller.js"
+    ]
+  },
+  "checkbox": {
+    "name": "checkbox",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/checkbox_helper.rb",
+      "app/views/components/ui/_checkbox.html.erb",
+      "app/javascript/controllers/ui/checkbox_controller.js"
+    ]
+  },
+  "collapsible": {
+    "name": "collapsible",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/collapsible_helper.rb",
+      "app/views/components/ui/_collapsible.html.erb",
+      "app/javascript/controllers/ui/collapsible_controller.js"
+    ]
+  },
+  "command": {
+    "name": "command",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/command_helper.rb",
+      "app/views/components/ui/_command.html.erb",
+      "app/javascript/controllers/ui/command_controller.js"
+    ]
+  },
+  "context-menu": {
+    "name": "context-menu",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/context-menu_helper.rb",
+      "app/views/components/ui/_context-menu.html.erb",
+      "app/javascript/controllers/ui/context-menu_controller.js"
+    ]
+  },
+  "dialog": {
+    "name": "dialog",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/dialog_helper.rb",
+      "app/views/components/ui/_dialog.html.erb",
+      "app/javascript/controllers/ui/dialog_controller.js"
+    ]
+  },
+  "dropdown-menu": {
+    "name": "dropdown-menu",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/dropdown-menu_helper.rb",
+      "app/views/components/ui/_dropdown-menu.html.erb",
+      "app/javascript/controllers/ui/dropdown-menu_controller.js"
+    ]
+  },
+  "hover-card": {
+    "name": "hover-card",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/hover-card_helper.rb",
+      "app/views/components/ui/_hover-card.html.erb",
+      "app/javascript/controllers/ui/hover-card_controller.js"
+    ]
+  },
+  "input": {
+    "name": "input",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/input_helper.rb",
+      "app/views/components/ui/_input.html.erb",
+      "app/javascript/controllers/ui/input_controller.js"
+    ]
+  },
+  "label": {
+    "name": "label",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/label_helper.rb",
+      "app/views/components/ui/_label.html.erb",
+      "app/javascript/controllers/ui/label_controller.js"
+    ]
+  },
+  "menubar": {
+    "name": "menubar",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/menubar_helper.rb",
+      "app/views/components/ui/_menubar.html.erb",
+      "app/javascript/controllers/ui/menubar_controller.js"
+    ]
+  },
+  "navigation-menu": {
+    "name": "navigation-menu",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/navigation-menu_helper.rb",
+      "app/views/components/ui/_navigation-menu.html.erb",
+      "app/javascript/controllers/ui/navigation-menu_controller.js"
+    ]
+  },
+  "popover": {
+    "name": "popover",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/popover_helper.rb",
+      "app/views/components/ui/_popover.html.erb",
+      "app/javascript/controllers/ui/popover_controller.js"
+    ]
+  },
+  "progress": {
+    "name": "progress",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/progress_helper.rb",
+      "app/views/components/ui/_progress.html.erb",
+      "app/javascript/controllers/ui/progress_controller.js"
+    ]
+  },
+  "radio-group": {
+    "name": "radio-group",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/radio-group_helper.rb",
+      "app/views/components/ui/_radio-group.html.erb",
+      "app/javascript/controllers/ui/radio-group_controller.js"
+    ]
+  },
+  "scroll-area": {
+    "name": "scroll-area",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/scroll-area_helper.rb",
+      "app/views/components/ui/_scroll-area.html.erb",
+      "app/javascript/controllers/ui/scroll-area_controller.js"
+    ]
+  },
+  "select": {
+    "name": "select",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/select_helper.rb",
+      "app/views/components/ui/_select.html.erb",
+      "app/javascript/controllers/ui/select_controller.js"
+    ]
+  },
+  "separator": {
+    "name": "separator",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/separator_helper.rb",
+      "app/views/components/ui/_separator.html.erb",
+      "app/javascript/controllers/ui/separator_controller.js"
+    ]
+  },
+  "sheet": {
+    "name": "sheet",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/sheet_helper.rb",
+      "app/views/components/ui/_sheet.html.erb",
+      "app/javascript/controllers/ui/sheet_controller.js"
+    ]
+  },
+  "skeleton": {
+    "name": "skeleton",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/skeleton_helper.rb",
+      "app/views/components/ui/_skeleton.html.erb",
+      "app/javascript/controllers/ui/skeleton_controller.js"
+    ]
+  },
+  "slider": {
+    "name": "slider",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/slider_helper.rb",
+      "app/views/components/ui/_slider.html.erb",
+      "app/javascript/controllers/ui/slider_controller.js"
+    ]
+  },
+  "switch": {
+    "name": "switch",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/switch_helper.rb",
+      "app/views/components/ui/_switch.html.erb",
+      "app/javascript/controllers/ui/switch_controller.js"
+    ]
+  },
+  "table": {
+    "name": "table",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/table_helper.rb",
+      "app/views/components/ui/_table.html.erb",
+      "app/javascript/controllers/ui/table_controller.js"
+    ]
+  },
+  "tabs": {
+    "name": "tabs",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/tabs_helper.rb",
+      "app/views/components/ui/_tabs.html.erb",
+      "app/javascript/controllers/ui/tabs_controller.js"
+    ]
+  },
+  "textarea": {
+    "name": "textarea",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/textarea_helper.rb",
+      "app/views/components/ui/_textarea.html.erb",
+      "app/javascript/controllers/ui/textarea_controller.js"
+    ]
+  },
+  "toast": {
+    "name": "toast",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/toast_helper.rb",
+      "app/views/components/ui/_toast.html.erb",
+      "app/javascript/controllers/ui/toast_controller.js",
+      "app/javascript/controllers/ui/use-toast.js",
+      "app/javascript/controllers/ui/toaster.js"
+    ]
+  },
+  "toggle": {
+    "name": "toggle",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/toggle_helper.rb",
+      "app/views/components/ui/_toggle.html.erb",
+      "app/javascript/controllers/ui/toggle_controller.js"
+    ]
+  },
+  "tooltip": {
+    "name": "tooltip",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/tooltip_helper.rb",
+      "app/views/components/ui/_tooltip.html.erb",
+      "app/javascript/controllers/ui/tooltip_controller.js"
+    ]
+  }
+}
