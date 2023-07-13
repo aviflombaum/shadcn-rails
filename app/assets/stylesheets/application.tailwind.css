@@ -4,9 +4,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --pink: 301, 98%, 50%, 0.88;
+  }
+}
+
 article.documentation h1 {
   @apply scroll-m-20 text-4xl font-bold tracking-tight;
 }
+
+article.documentation h2 {
+  @apply scroll-m-20 text-3xl font-bold tracking-tight my-8;
+}
+
+article.documentation h3 {
+  @apply scroll-m-20 text-2xl font-bold tracking-tight my-4;
+}
+
+article.documentation h4 {
+  @apply scroll-m-20 text-xl font-bold tracking-tight my-2;
+}
+
 article.documentation subtitle {
   @apply text-lg text-muted-foreground;
 }
@@ -20,4 +39,8 @@ article.documentation :where(code):not(:where([class~="not-prose"] *)):before {
 
 article.documentation :where(code):not(:where([class~="not-prose"] *)):after {
   content: "";
+}
+
+article.documentation p a {
+  @apply underline hover:text-pink;
 }
