@@ -124,7 +124,7 @@ class ShadcnUiGenerator < Rails::Generators::Base
       matched_file = File.readlines(tailwind_file_path).any? { |s| s.include?("shadcn.css") }
       if !matched_file
         puts "Importing shadcn.css into application.tailwind.css..."
-        insert_import_line(tailwind_file_path, "@import \"shadcn.css\";")
+        insert_import_first_line(tailwind_file_path, "@import \"shadcn.css\";")
       end
     else
       puts "application.tailwind.css does not exist."
@@ -134,6 +134,12 @@ class ShadcnUiGenerator < Rails::Generators::Base
   def insert_import_line(file_path, line)
     file_contents = File.read(file_path)
     new_contents = file_contents.gsub(/@tailwind\s+utilities;/, "\\0\n#{line}\n")
+    File.write(file_path, new_contents)
+  end
+
+  def insert_import_first_line(file_path, line)
+    file_contents = File.read(file_path)
+    new_contents = "#{line}\n#{file_contents}"
     File.write(file_path, new_contents)
   end
 

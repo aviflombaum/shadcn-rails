@@ -57,14 +57,11 @@ your application. You need to make sure this is included within `application.tai
 should have happened automatically, but double check.
 
 ```
+@import "shadcn.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "shadcn.css";
 ```
-
-The tailwind documentation says that `@import` has to be on the first line but I've found this to
-work. I'll update if that turns out to not be reliable.
 
 #### shadcn.tailwind.js
 
