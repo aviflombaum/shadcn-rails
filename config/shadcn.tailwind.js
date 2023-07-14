@@ -44,7 +44,7 @@ module.exports = {
           foreground: "hsl(var(--info-foreground))",
         },
         attention: {
-          DEFAULT: "hsl(var(--attention))",
+          DEFAULT: "var(--yellow-50)",
           foreground: "hsl(var(--attention-foreground))",
         },
         muted: {
