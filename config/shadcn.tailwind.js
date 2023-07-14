@@ -8,7 +8,6 @@ module.exports = {
     "./app/javascript/**/*.js",
     "./app/views/**/*.{erb,haml,html,slim}",
   ],
-  safelist: ["left-0", "right-0"],
   theme: {
     container: {
       center: true,
