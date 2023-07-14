@@ -1,0 +1,9 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Checkbox component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/checkbox_helper.rb") %></li>
+  <li><%= code("app/views/components/ui/_checkbox.html.erb") %></li>
+  <li><%= code("app/javascript/controllers/ui/checkbox_controller.js") %></li>
+</ul>
+
+<p>The Checkbox controller accepts two required arguments, one for the <%= code("name:") %> of the checkbox which will pair with <%= code("label:") %> of the checkbox. The toggle functionality is controller by <%= code("app/javascript/controllers/ui/checkbox_controller.js") %>.</p>
