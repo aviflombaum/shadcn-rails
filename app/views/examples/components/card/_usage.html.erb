@@ -1,0 +1,21 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Card component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/card_helper.rb") %></li>
+  <li><%= code("app/views/components/ui/_card.html.erb") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+
+<p>The method <%= code("render_card") %> defined in <%= code("app/helpers/components/card_helper.rb") %>
+accepts optional keyword arguments for each section of content in the card, offering maximum flexibility. </p>
+
+<p>The sections are.</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("title:") %>, for the header of the card, will be rendered in a large bold font.</li>
+  <li><%= code("subtitle:") %> for a muted title under the main title..</li>
+  <li>A <%= code("body:") %> The main content section. Without providing either a keyword argument or a block, an empty card will be rendered.</li>
+</ul>
+
+<p><em>Note:</em> Padding to the body is applied logically leaving you to define it when a block is passed with the presence of a title, otherwise, a default padding is provided to simplify the markup. Feel free to edit this in <%= code("app/views/components/ui/_card.html.erb") %>,
