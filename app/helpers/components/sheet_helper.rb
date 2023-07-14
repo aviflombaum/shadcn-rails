@@ -17,4 +17,13 @@ module Components::SheetHelper
   def sheet_content(&block)
     content_for :sheet_content, capture(&block), flush: true
   end
+
+  def direction_class(direction)
+    mappings = {
+      "left": 'left-0',
+      "right": 'right-0'
+    }
+
+    mappings[direction.to_sym]
+  end
 end
