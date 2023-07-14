@@ -1,0 +1,19 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Button component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/button_helper.rb") %></li>
+  <li><%= code("app/views/components/ui/_button.html.erb") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+
+<p>The method <%= code("render_button") %> defined in <%= code("app/helpers/components/button_helper.rb") %>
+accepts a first argument for the text of the button or as a <%= code("text:") %> keyword argument.</p>
+
+<p>Optional arguments for the button include:
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("variant:") %>, including <%= code(":secondary") %>, <%= code(":destructive") %>, <%= code(":outline") %>, and <%= code(":ghost") %></li>
+  <li><%= code("as:") %> which allows the button to be rendered as a <%= code("<a>") %> tag.</li>
+  <li>A <%= code("block") %> can be passed to render the text including other elements such as icons.</li>
+</ul>

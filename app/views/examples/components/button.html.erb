@@ -5,12 +5,13 @@
   description: "Displays a button or a component that looks like a button." %>
 
 <%= content_for :preview, flush: true do %>
-<div class="w-full mx-auto flex justify-center"><%= render_button text: "Button" %></div>
+<div class="w-full mx-auto flex justify-center"><%= render_button "Button" %></div>
 <div class="w-full mx-auto flex justify-center">
-  <%= render_button text: "Link", as: :link, href: "/" %>
-</div>
-<div class="w-full mx-auto flex justify-center">
-  <%= render_button text: "Secondary", variant: :secondary %>
+  <%= render_button variant: :secondary do %>
+  <svg class="h-4 w-4 mr-2 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd"></path>
+  </svg> Secondary with Icon
+  <% end %>
 </div>
 <div class="w-full mx-auto flex justify-center">
   <%= render_button text: "Destructive", variant: :destructive %>
@@ -22,12 +23,25 @@
   <%= render_button text: "Ghost", variant: :ghost %>
 </div>
 <div class="w-full mx-auto flex justify-center">
+  <%= render_button "Link", as: :link, href: "/" %>
+</div>
+<div class="w-full mx-auto flex justify-center">
   <%= render_button text: "Ghost Link", variant: :ghost, as: :link %>
 </div>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("button/code/preview", :erb) %>
 <% end %>
 
 <%= render_preview %>
 
 <h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui button
+<% end %>
 
-<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage"><a href="/docs/components/dialog#usage">Usage</a></h2>
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
+<%= code_partial("button/code/usage", :erb) %>
+
+<%= render_usage("button") %>
