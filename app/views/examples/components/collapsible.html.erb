@@ -6,10 +6,10 @@
 <%= content_for :preview, flush: true do %>
 <div class="w-full flex justify-center">
   <%= render_collapsible trigger: "@peduarte starred 3 repositories" do %>
-    <% content_for :preview do %>
+    <% collapsible_preview do %>
       <div class="rounded-md border px-4 py-3 font-mono text-sm">@radix-ui/primitives</div>
     <% end %>
-    <% content_for :body do %>
+    <% collapsible_body do %>
       <div class="rounded-md border px-4 py-3 font-mono text-sm">@radix-ui/colors</div>
       <div class="rounded-md border px-4 py-3 font-mono text-sm">@stitches/react</div>
     <% end %>
@@ -17,8 +17,18 @@
 </div>
 <% end %>
 
+<% content_for :code, flush: true do %>
+  <%= code_partial("collapsible/code/preview", :erb) %>
+<% end %>
+
 <%= render_preview %>
 
 <h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui collapsible
+<% end %>
 
-<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage"><a href="/docs/components/dialog#usage">Usage</a></h2>
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
+<%= code_partial("collapsible/code/usage", :erb) %>
+
+<%= render_usage("collapsible") %>

@@ -4,6 +4,7 @@ class DocumentationController < ActionController::Base
   end
 
   def show
+    binding.pry
     render "documentation/#{params[:id]}"
   end
 end

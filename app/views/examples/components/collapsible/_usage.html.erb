@@ -1,0 +1,16 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Collapsible component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/collapsible_helper.rb") %></li>
+  <li><%= code("app/views/components/ui/_collapsible.html.erb") %></li>
+  <li><%= code("app/javascript/controllers/ui/collapsible_controller.js") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  Collapsible introduces the <%= code("render_collapsible") %> method that accepts an argument
+  <%= code("trigger:") %> which is the text you want to show that will trigger the collapsible menu and
+  a block. Within the block of collapsible, you can call <%= code("collapsible_preview") %> to
+  define an element that is visible from the collapsible menu via a block. Similarly, you can call
+  <%= code("collapsible_body") %> and pass it a block for the elements that are hidden that will be
+  made visible when the trigger is pressed.
+</p>
