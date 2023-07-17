@@ -1,0 +1,15 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Hover Card component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/hover_card_helper.rb") %></li>
+  <li><%= code("app/views/components/ui/_hover_card.html.erb") %></li>
+  <li><%= code("app/javascript/controllers/ui/hover-card_controller.js") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+The method <%= code("render_hover_card") %> defined in <%= code("app/helpers/components/hover_card_helper.rb") %>
+accepts a block for the two inner components, <%= code("hover_card_trigger") %> and <%= code("hover_card_content") %>. Each of those accepts a block for their respective content.
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+<%= code("app/javascript/controllers/ui/hover-card_controller.js") %> is a stimulus controller that provides
+the functionality of the popover.</p>

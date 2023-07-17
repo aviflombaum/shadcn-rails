@@ -1,0 +1,13 @@
+<%= render_hover_card do %>
+  <%= hover_card_trigger do %>
+    <%= content_tag :span, "@rails" %>
+  <% end %>
+  <%= hover_card_content do %>
+    <div class="grid gap-2">
+      <div class="space-y-2">
+        <h4 class="font-medium leading-none">Ruby on Rails</h4>
+        <p class="text-sm text-muted-foreground">The Web framework that changed the world.</p>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -4,15 +4,11 @@
   description: "Displays a card with header, content, and footer." %>
 
 <%= content_for :preview, flush: true do %>
-  <div class="w-full flex justify-center"><%= render_card body: "The Most Basic of Cards" %></div>
-  <div class="w-full flex justify-center">
-    <%= render_card title: "Did you know?", body: "You can embed any HTML in the body of a card by
-    yielding to a block for the body?", subtitle: "This is important.", footer: "Have a great day!" %>
-  </div>
+  <%= render_code_preview('card') %>
 <% end %>
 
 <% content_for :code, flush: true do %>
-  <%= code_partial("card/code/preview", :erb) %>
+  <%= code_partial("card/preview", :erb) %>
 <% end %>
 
 <%= render_preview %>
@@ -23,7 +19,7 @@
 <% end %>
 
 <h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
-<%= code_partial("card/code/usage", :erb) %>
+<%= code_partial("card/usage", :erb) %>
 
 <%= render_usage("card") %>
 
@@ -32,7 +28,7 @@
 <% end %>
 
 <% content_for :code, flush: true do %>
-  <%= code_partial("card/code/_form", :erb) %>
+  <%= code_partial("card/form", :erb) %>
 <% end %>
 
 <%= render_example %>
@@ -42,7 +38,7 @@
 <% end %>
 
 <% content_for :code, flush: true do %>
-  <%= code_partial("card/code/_notifications", :erb) %>
+  <%= code_partial("card/notifications", :erb) %>
 <% end %>
 
 <%= render_example %>

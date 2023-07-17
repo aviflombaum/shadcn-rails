@@ -2,23 +2,21 @@
       description: "For sighted users to preview content available behind a link." %>
 
 <% content_for :preview, flush: true do %>
-  <%= render_hover_card do %>
-    <%= hover_card_trigger do %>
-      <%= content_tag :span, "@rails" %>
-    <% end %>
-    <%= hover_card_content do %>
-      <div class="grid gap-2">
-        <div class="space-y-2">
-          <h4 class="font-medium leading-none">Ruby on Rails</h4>
-          <p class="text-sm text-muted-foreground">The Web framework that changed the world.</p>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+  <%= render_code_preview('hover-card') %>
 <% end %>
 
 <% content_for :code, flush: true do %>
-
+  <%= code_partial("hover-card/preview", :erb) %>
 <% end %>
 
 <%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui hover-card
+<% end %>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
+<%= code_partial("hover-card/usage", :erb) %>
+
+<%= render_usage("hover-card") %>

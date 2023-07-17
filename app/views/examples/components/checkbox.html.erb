@@ -2,11 +2,11 @@
       description: "A control that allows the user to toggle between checked and not checked." %>
 
 <%= content_for :preview, flush: true do %>
-  <%= render_checkbox label: "Accept terms and conditions", name: "terms" %>
+  <%= render_code_preview('checkbox') %>
 <% end %>
 
 <% content_for :code, flush: true do %>
-  <%= code_partial("checkbox/code/preview", :erb) %>
+  <%= code_partial("checkbox/preview", :erb) %>
 <% end %>
 
 <%= render_preview %>
@@ -17,6 +17,6 @@
 <% end %>
 
 <h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
-<%= code_partial("checkbox/code/usage", :erb) %>
+<%= code_partial("checkbox/usage", :erb) %>
 
 <%= render_usage("checkbox") %>

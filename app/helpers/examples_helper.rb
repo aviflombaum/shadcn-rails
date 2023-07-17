@@ -15,10 +15,15 @@ module ExamplesHelper
     render "examples/components/#{name}/usage"
   end
 
+  def render_code_preview(name)
+    render "examples/components/#{name}/code/preview"
+  end
+
   def code_partial(name, language)
+    component, partial = name.split("/")
     content_tag :pre, class: "code-sample py-4 px-4", data: {controller: "highlight"} do
       content_tag :code, class: "language-#{language}" do
-        html_escape(File.read(Rails.root.join("app", "views", "examples", "components", "#{name}.erb")))
+        html_escape(File.read(Rails.root.join("app", "views", "examples", "components", "#{component}/code/_#{partial}.erb")))
       end
     end
   end

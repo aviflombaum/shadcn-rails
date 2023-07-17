@@ -8,6 +8,12 @@
     <% end %>
   </div>
   <% end %>
-  <div class="p-0 <%= "p-6 pt-0" if !block && title %> <%= "p-6" if !block && !title %> "><%= body %></div>
+  <% if !block && !title %>
+    <%= content_tag( :div, class: "p-6" ){ body } %>
+  <% elsif !block %>
+    <%= content_tag( :div, class: "px-6" ){ body } %>
+  <% else %>
+    <%= body %>
+  <% end %>
   <% if footer %><footer class="mx-6 mb-6"><%= footer %></footer><% end %>
 </div>

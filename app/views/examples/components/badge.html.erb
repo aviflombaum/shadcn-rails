@@ -5,23 +5,11 @@
   description: "Displays a badge or a component that looks like a badge." %>
 
 <%= content_for :preview, flush: true do %>
-<div class="w-full mx-auto flex justify-center"><%= render_badge text: "Badge" %></div>
-<div class="w-full mx-auto flex justify-center">
-  <%= render_badge text: "Secondary", variant: :secondary %>
-</div>
-<div class="w-full mx-auto flex justify-center">
-  <%= render_badge text: "Destructive", variant: :destructive %>
-</div>
-<div class="w-full mx-auto flex justify-center">
-  <%= render_badge text: "Outline", variant: :outline %>
-</div>
-<div class="w-full mx-auto flex justify-center">
-  <%= render_badge text: "Ghost", variant: :ghost %>
-</div>
+  <%= render_code_preview('badge') %>
 <% end %>
 
 <% content_for :code, flush: true do %>
-  <%= code_partial("badge/code/preview", :erb) %>
+  <%= code_partial("badge/preview", :erb) %>
 <% end %>
 
 <%= render_preview %>
@@ -32,6 +20,6 @@
 <% end %>
 
 <h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
-<%= code_partial("badge/code/usage", :erb) %>
+<%= code_partial("badge/usage", :erb) %>
 
 <%= render_usage("badge") %>

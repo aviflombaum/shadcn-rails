@@ -5,25 +5,24 @@
 
 <% content_for :preview, flush: true do %>
   <div class="w-full">
-    <%= render_alert title: "Did you know?", description: "You can wrap shadcn helpers in any
-  component library you want!" %>
+    <%= render_code_preview('alert') %>
   </div>
 <% end %>
 
 <% content_for :code, flush: true do %>
-  <%= code_partial("alert/code/preview", :erb) %>
+  <%= code_partial("alert/preview", :erb) %>
 <% end %>
 
 <%= render_preview %>
 
 <h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
 <%= code_sample(language: "sh") do %>
-  rails generate shadcn-ui accodordion
+rails generate shadcn-ui alert
 <% end %>
 
 <h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage"><a href="/docs/components/dialog#usage">Usage</a></h2>
 
-<%= code_partial("alert/code/usage", :erb) %>
+<%= code_partial("alert/usage", :erb) %>
 
 <%= render_usage("alert") %>
 
@@ -40,7 +39,7 @@
 <% end %>
 
 <% content_for :code, flush: true do %>
-  <%= code_partial("alert/code/_success", :erb) %>
+  <%= code_partial("alert/success", :erb) %>
 <% end %>
 <%= render_example %>
 
@@ -57,7 +56,7 @@
 <% end %>
 
 <% content_for :code, flush: true do %>
-  <%= code_partial("alert/code/_info", :erb) %>
+  <%= code_partial("alert/info", :erb) %>
 <% end %>
 
 <%= render_example %>
@@ -75,7 +74,7 @@
 <% end %>
 
 <% content_for :code, flush: true do %>
-  <%= code_partial("alert/code/_attention", :erb) %>
+  <%= code_partial("alert/attention", :erb) %>
 <% end %>
 
 <%= render_example %>
@@ -87,7 +86,7 @@
 <% end %>
 
 <% content_for :code, flush: true do %>
-  <%= code_partial("alert/code/_destructive", :erb) %>
+  <%= code_partial("alert/destructive", :erb) %>
 <% end %>
 
 <%= render_example %>
@@ -99,7 +98,7 @@
 <% end %>
 
 <% content_for :code, flush: true do %>
-  <%= code_partial("alert/code/_no_icon", :erb) %>
+  <%= code_partial("alert/no_icon", :erb) %>
 <% end %>
 
 <%= render_example %>

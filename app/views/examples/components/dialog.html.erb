@@ -3,21 +3,12 @@
 
 <% content_for :preview, flush: true do %>
   <div class="w-full flex justify-center">
-    <%= render_dialog do %>
-      <%= dialog_trigger do %>
-        <%= render_button("Open Typography", variant: :outline) %>
-      <% end %>
-      <%= dialog_content do %>
-        <h2 class="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">The King's Plan</h2>
-        <p class="leading-7 [&:not(:first-child)]:mt-6">The king thought long and hard, and finally came up with <a href="#" class="font-medium text-primary underline underline-offset-4">a brilliant plan</a>: he would tax the jokes in the kingdom.</p>
-        <blockquote class="mt-6 border-l-2 pl-6 italic">"After all," he said, "everyone enjoys a good joke, so it's only fair that they should pay for the privilege."</blockquote>
-      <% end %>
-    <% end %>
+    <%= render_code_preview('dialog') %>
   </div>
 <% end %>
 
 <% content_for :code, flush: true do %>
-  <%= code_partial("dialog/code/preview", :erb) %>
+  <%= code_partial("dialog/preview", :erb) %>
 <% end %>
 
 <%= render_preview %>
@@ -30,7 +21,7 @@ rails generate shadcn_ui dialog
 
 <h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage"><a href="/docs/components/dialog#usage">Usage</a></h2>
 
-<%= code_partial("dialog/code/usage", :erb) %>
+<%= code_partial("dialog/usage", :erb) %>
 
 <%= render_usage("dialog") %>
 
@@ -81,7 +72,7 @@ rails generate shadcn_ui dialog
 <% end %>
 
 <% content_for :code, flush: true do %>
-  <%= code_partial("dialog/code/notifications", :erb) %>
+  <%= code_partial("dialog/notifications", :erb) %>
 <% end %>
 
 <%= render_example %>
@@ -139,7 +130,7 @@ rails generate shadcn_ui dialog
 <% end %>
 
 <% content_for :code, flush: true do %>
-  <%= code_partial("dialog/code/form", :erb) %>
+  <%= code_partial("dialog/form", :erb) %>
 <% end %>
 
 <%= render_example %>
