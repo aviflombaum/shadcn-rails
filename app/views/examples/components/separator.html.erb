@@ -1,33 +1,40 @@
 <!--prettier-ignore-->
 
 <%= render "layouts/documentation/component_header",
-  title: "Seperator",
+  title: "Separator",
   description: "Visually or semantically separates content." %>
 <%= content_for :preview, flush: true do %>
-<div>
-  <div class="space-y-1">
-    <h4 class="text-sm font-medium leading-none">Radix Primitives</h4>
-    <p class="text-sm text-muted-foreground">An open-source UI component library.</p>
+  <div class="w-full flex justify-center">
+    <%= render_code_preview('separator') %>
   </div>
-  <%= render_separator class: "my-4" %>
-  <div class="flex h-5 items-center space-x-4 text-sm">
-    <div>Blog</div>
-    <div
-      data-orientation="vertical"
-      role="none"
-      class="shrink-0 bg-border h-full w-[1px]"></div>
-    <div>Docs</div>
-    <div
-      data-orientation="vertical"
-      role="none"
-      class="shrink-0 bg-border h-full w-[1px]"></div>
-    <div>Source</div>
-  </div>
+<% end %>
+
+<% content_for :code, flush: true do %>
+<div class="w-full flex justify-center">
+  <%= code_partial("separator/preview", :erb) %>
 </div>
 <% end %>
 
 <%= render_preview %>
 
 <h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui separator
+<% end %>
 
 <h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage"><a href="/docs/components/dialog#usage">Usage</a></h2>
+<%= code_partial("separator/usage", :erb) %>
+
+<%= render_usage("separator") %>
+
+<% content_for :examples, flush: true do %>
+  <div class="w-full flex justify-center">
+    <%= render "examples/components/separator/code/fancy" %>
+  </div>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("separator/fancy", :erb) %>
+<% end %>
+
+<%= render_example %>

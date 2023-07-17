@@ -2,33 +2,37 @@
       description: "Displays rich content in a portal, triggered by a button." %>
 
 <% content_for :preview, flush: true do %>
-  <%= render_popover do %>
-    <%= popover_trigger do %>
-      <%= render_button "Open Popover", variant: :outline %>
-    <% end %>
-    <%= popover_content do %>
-      <div class="grid gap-4">
-        <div class="space-y-2">
-          <h4 class="font-medium leading-none">Dimensions</h4>
-          <p class="text-sm text-muted-foreground">Set the dimensions for the layer.</p>
-        </div>
-        <div class="grid gap-2">
-          <div class="grid grid-cols-3 items-center gap-4">
-            <label
-              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              for="width">Width</label><input
-              class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 col-span-2 h-8"
-              id="width"
-              value="100%">
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+<div class="w-full flex justify-center">
+  <%= render_code_preview('popover') %>
+</div>
 <% end %>
 
 <% content_for :code, flush: true do %>
-
+<div class="w-full flex justify-center">
+  <%= code_partial("popover/preview", :erb) %>
+</div>
 <% end %>
 
 <%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui filter
+<% end %>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
+<%= code_partial("filter/usage", :erb) %>
+
+<%= render_usage("filter") %>
+
+<% content_for :examples, flush: true do %>
+  <div class="w-full flex justify-center">
+    <%= render "examples/components/popover/code/form" %>
+  </div>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("popover/form", :erb) %>
+<% end %>
+
+<%= render_example %>

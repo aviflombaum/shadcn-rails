@@ -2,6 +2,7 @@
 
 import { Controller } from "@hotwired/stimulus";
 import { createPopper } from "@popperjs/core";
+import { useClickOutside } from "stimulus-use";
 
 export default class UIPopover extends Controller {
   static values = {
@@ -9,9 +10,8 @@ export default class UIPopover extends Controller {
   };
   static targets = ["content", "wrapper", "trigger"];
 
-  // Sets the popover offset using Stimulus data map objects.
-
   connect() {
+    useClickOutside(this);
     this.popperInstance = createPopper(this.triggerTarget, this.contentTarget, {
       placement: this.contentTarget.dataset.side || "bottom",
       modifiers: [
@@ -35,6 +35,10 @@ export default class UIPopover extends Controller {
   hide() {
     this.contentTarget.classList.add("hidden");
     this.contentTarget.dataset.state = "closed";
+  }
+
+  clickOutside(event) {
+    this.hide();
   }
 
   // Toggle the popover on demand

@@ -2,17 +2,28 @@
       description: "Displays a form input field or a component that looks like an input field." %>
 
 <% content_for :preview, flush: true do %>
-  <%= render_input name: "sample_input", id: "sample_input" %>
+<div class="w-full flex justify-center">
+  <%= render_code_preview('input') %>
+</div>
 <% end %>
 
 <% content_for :code, flush: true do %>
-
+  <%= code_partial("input/preview", :erb) %>
 <% end %>
 
 <%= render_preview %>
 
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui input
+<% end %>
+
 <%= content_for :examples, flush: true do %>
   <%= render_input name: "sample_input", id: "sample_input", style: :borderless %>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("input/borderless", :erb) %>
 <% end %>
 
 <%= render_example %>

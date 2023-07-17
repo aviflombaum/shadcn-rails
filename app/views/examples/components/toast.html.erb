@@ -3,13 +3,21 @@
 
 <% content_for :preview, flush: true do %>
   <%= render_button "Trigger Toast", variant: "outline", data: {controller: "ui--toast", action: "ui--toast#test"} %>
-  <%= render_toast header: "Scheduled: Catch up",
-    description: "Friday, February 10, 2023 at 5:57 PM",
-    action: render_button("Undo", variant: :outline) %>
+  <%= render_code_preview('toast') %>
 <% end %>
 
 <% content_for :code, flush: true do %>
-
+  <%= code_partial("toast/preview", :erb) %>
 <% end %>
 
 <%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui toast
+<% end %>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
+<%= code_partial("toast/usage", :erb) %>
+
+<%= render_usage("toast") %>

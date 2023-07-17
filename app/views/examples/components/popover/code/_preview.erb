@@ -1,0 +1,13 @@
+<%= render_popover do %>
+  <%= popover_trigger do %>
+    <%= render_button "Open Popover", variant: :outline %>
+  <% end %>
+  <%= popover_content do %>
+    <div class="grid gap-4">
+      <div class="space-y-2">
+        <h4 class="font-medium leading-none">Heading</h4>
+        <p class="text-sm text-muted-foreground">Popovers stay open until you click the button or anywhere else on the document. </p>
+      </div>
+    </div>
+  <% end %>
+<% end %>

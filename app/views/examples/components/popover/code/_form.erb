@@ -1,0 +1,23 @@
+<%= render_popover do %>
+  <%= popover_trigger do %>
+    <%= render_button "Open Popover", variant: :outline %>
+  <% end %>
+  <%= popover_content do %>
+    <div class="grid gap-4">
+      <div class="space-y-2">
+        <h4 class="font-medium leading-none">Dimensions</h4>
+        <p class="text-sm text-muted-foreground">Set the dimensions for the layer.</p>
+      </div>
+      <div class="grid gap-2">
+        <div class="grid grid-cols-3 items-center gap-4">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="width">Width</label><input
+            class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 col-span-2 h-8"
+            id="width"
+            value="100%">
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
