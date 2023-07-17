@@ -1,0 +1,9 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Label component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/label_helper.rb") %></li>
+  <li><%= code("app/views/components/ui/_label.html.erb") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+The method <%= code("render_label") %> defined in <%= code("app/helpers/components/label_helper.rb") %> accepts two keyword arguments, <%= code("name") %> and <%= code("label") %>. The <%= code("name") %> argument is used to generate the <%= code("for") %> attributes. The <%= code("label") %> argument is used as the text for the label.</p>
