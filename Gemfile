@@ -81,7 +81,3 @@ gem "sassc", "~> 2.4"
 gem "redcarpet", "~> 3.6"
 
 gem "rouge", "~> 4.1"
-
-group :production do
-  gem "logtail-rails", "~> 0.2.3"
-end
