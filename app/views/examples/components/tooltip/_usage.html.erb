@@ -1,0 +1,11 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Tooltip component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/tooltip_helper.rb") %></li>
+  <li><%= code("app/javascript/controllers/ui/tooltip_controller.js") %></li>
+  <li><%= code("app/views/components/ui/_tooltip.html.erb") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+<%= code("render_tooltip") %> accepts a block that contains calls to <%= code("tooltip_trigger") %> and <%= code("tooltip_content") %> each accepting a block for their respective content.
+The <%= code("tooltip_trigger") %> is the element that upon hovering over, will reveal the <%= code("tooltip_content") %>.

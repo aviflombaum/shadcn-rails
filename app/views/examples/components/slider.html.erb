@@ -2,11 +2,25 @@
       description: "An input where the user selects a value from within a given range." %>
 
 <% content_for :preview, flush: true do %>
-  <%= render_slider name: "sample_slider", id: "sample_slider", value: 23 %>
+  <div class="w-full flex justify-center">
+    <%= render_code_preview('slider') %>
+  </div>
 <% end %>
 
 <% content_for :code, flush: true do %>
-
+<div class="w-full flex justify-center">
+  <%= code_partial("slider/preview", :erb) %>
+</div>
 <% end %>
 
 <%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui slider
+<% end %>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
+<%= code_partial("slider/usage", :erb) %>
+
+<%= render_usage("slider") %>

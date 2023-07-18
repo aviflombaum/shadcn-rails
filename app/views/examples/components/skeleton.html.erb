@@ -2,11 +2,25 @@
       description: "Use to show a placeholder while content is loading." %>
 
 <% content_for :preview, flush: true do %>
-  <%= render_skeleton %>
+  <div class="w-full flex justify-center">
+    <%= render_code_preview('skeleton') %>
+  </div>
 <% end %>
 
 <% content_for :code, flush: true do %>
-
+<div class="w-full flex justify-center">
+  <%= code_partial("skeleton/preview", :erb) %>
+</div>
 <% end %>
 
 <%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui skeleton
+<% end %>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
+<%= code_partial("skeleton/usage", :erb) %>
+
+<%= render_usage("skeleton") %>

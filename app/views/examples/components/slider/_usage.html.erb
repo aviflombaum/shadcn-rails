@@ -1,0 +1,11 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Slider component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/slider_helper.rb") %></li>
+  <li><%= code("app/javascript/controllers/ui/slider_controller.js") %></li>
+  <li><%= code("app/views/components/ui/_slider.html.erb") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+<%= code("render_slider") %> accepts one keyword argument for the <%= code("name") %> of the slider element. It optionally accepts a <%= code("value") %> keyword for the starting value of the slider.
+The javascript controller is responsible for maintaining the state and visual of the slider from the underlying range input.</p>
