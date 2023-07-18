@@ -1,0 +1,19 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Dropdown Menu component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/dropdown_menu_helper.rb") %></li>
+  <li><%= code("app/views/components/ui/_dropdown_menu.html.erb") %></li>
+  <li><%= code("app/javascript/controllers/ui/dropdown-menu_controller.js") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+The method <%= code("render_dropdown_menu") %> defined in <%= code("app/helpers/components/dropdown_menu_helper.rb") %>
+accepts a block for the two inner components, <%= code("dropdown_menu_trigger") %> and <%= code("dropdown_menu_content") %>. Each of those accepts a block for their respective content.</p>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+Within the <%= code("dropdown_menu_content") %> block, you can use the following methods:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("dropdown_menu_label") %> - accepts an argument for the label section of the dropdown menu. This is optional.</li>
+  <li><%= code("dropdown_menu_item") %> - an arbitrary amount of these can be used for each menu item you want to include. This method either accepts a string or a block for the content you want.</li>
+</ul>

@@ -1,0 +1,6 @@
+<%= render_alert_dialog(
+  trigger: render_button("Open Dialog", variant: :outline, data: {action: "ui--dialog#open" }),
+  continue: render_button("Continue"),
+  label: "Are you absolutely sure?",
+  description: "This action cannot be undone. This will permanently delete your account and remove your data from our servers.",
+) %>

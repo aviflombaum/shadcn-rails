@@ -3,24 +3,38 @@
 
 <%= content_for :preview, flush: true do %>
   <% render_dropdown_menu do %>
-      <%= dropdown_menu_trigger do %>
-        <%= render_button "Open Dropdown", variant: :outline %>
-      <% end %>
-
-      <%= dropdown_menu_content do %>
-        <%= dropdown_menu_label "My Account" %>
-        <%= render_separator class: "my-1" %>
-        <%= dropdown_menu_item "Profile" %>
-        <%= dropdown_menu_item  do %>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4">
-            <rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line>
-          </svg>
-          <span>Billing</span>
-          <span class="ml-auto text-xs tracking-widest opacity-60">⌘B</span>
-        <% end %>
-        <%= dropdown_menu_item "Settings" %>
-      <% end %>
+    <%= dropdown_menu_trigger do %>
+      <%= render_button "Open Dropdown", variant: :outline %>
     <% end %>
+
+    <%= dropdown_menu_content do %>
+      <%= dropdown_menu_label "My Account" %>
+      <%= render_separator class: "my-1" %>
+      <%= dropdown_menu_item "Profile" %>
+      <%= dropdown_menu_item  do %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4">
+          <rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line>
+        </svg>
+        <span>Billing</span>
+        <span class="ml-auto text-xs tracking-widest opacity-60">⌘B</span>
+      <% end %>
+      <%= dropdown_menu_item "Settings" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("dropdown-menu/preview", :erb) %>
 <% end %>
 
 <%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui dropdown-menu
+<% end %>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
+<%= code_partial("dropdown-menu/usage", :erb) %>
+
+<%= render_usage("dropdown-menu") %>
