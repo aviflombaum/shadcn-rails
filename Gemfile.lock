@@ -113,6 +113,17 @@ GEM
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    logtail (0.1.10)
+      msgpack (~> 1.0)
+    logtail-rack (0.2.0)
+      logtail (~> 0.1)
+      rack (>= 1.2, < 3.0)
+    logtail-rails (0.2.3)
+      actionpack (>= 5.0.0)
+      activerecord (>= 5.0.0)
+      logtail (~> 0.1)
+      logtail-rack (~> 0.1)
+      railties (>= 5.0.0)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -281,6 +292,7 @@ DEPENDENCIES
   htmlbeautifier
   importmap-rails
   jbuilder
+  logtail-rails (~> 0.2.3)
   pry
   pry-rails
   puma (~> 6.0)

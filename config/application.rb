@@ -34,5 +34,7 @@ module ShadcnRails
     # Don't generate system test files.
     config.generators.system_tests = :rspec
     config.generators.test_framework :rspec
+
+    config.logger = Logtail::Logger.create_default_logger("xwCyGaH3oqTfGs6zYwhyNXka") if Rails.env.production?
   end
 end
