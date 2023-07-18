@@ -5,6 +5,9 @@
 [Shadcn on Rails](https://shadcn.themesonrails.com) provides customizable components that you can
 copy and paste into your apps. Free. Open Source. **Use this to build your own component library**.
 
+**If you're using this, [please let me know](https://twitter.com/aviflombaum) so I keep developing
+it.**
+
 ## About
 
 This is **NOT** a component library. It's a collection of re-usable components that you can copy and
