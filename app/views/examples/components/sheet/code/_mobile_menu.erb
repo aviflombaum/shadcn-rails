@@ -1,0 +1,17 @@
+<button
+  type="button"
+  data-state="closed"
+  data-controller="ui--sheet"
+  data-action="click->ui--sheet#toggleOutlet"
+  data--ui-sheet-outlet="#sidebar_sheet">
+    Open Mobile Menu
+</button>
+
+
+<%= render_sheet id: "sidebar_sheet", direction: "left" do %>
+  <div class=" h-full">
+  <%= sheet_content do %>
+    <!-- Mobile Menu -->
+  <% end %>
+  </div>
+<% end %>

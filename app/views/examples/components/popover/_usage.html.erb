@@ -1,0 +1,12 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Popover component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/popover_helper.rb") %></li>
+  <li><%= code("app/views/components/ui/_popover.html.erb") %></li>
+  <li><%= code("app/javascript/controllers/ui/popover_controller.js") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  <%= code("render_popover") %> accepts a block where you call <%= code("popover_trigger") %>, whose block will be the element that triggers the popover and
+  <%= code("popover_content") %> whose block will be the content of the popover.
+<p>

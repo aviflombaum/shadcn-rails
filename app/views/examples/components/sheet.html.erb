@@ -3,17 +3,24 @@
 
 <% content_for :preview, flush: true do %>
   <div class="w-full flex justify-center">
-    <%= render_sheet direction: "right" do %>
-      <%= sheet_trigger do %>
-        <%= render_button("Open Sidebar", variant: :outline) %>
-      <% end %>
-      <%= sheet_content do %>
-        <h2 class="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">The King's Plan</h2>
-        <p class="leading-7 [&:not(:first-child)]:mt-6">The king thought long and hard, and finally came up with <a href="#" class="font-medium text-primary underline underline-offset-4">a brilliant plan</a>: he would tax the jokes in the kingdom.</p>
-        <blockquote class="mt-6 border-l-2 pl-6 italic">"After all," he said, "everyone enjoys a good joke, so it's only fair that they should pay for the privilege."</blockquote>
-      <% end %>
-    <% end %>
+    <%= render_code_preview('sheet') %>
   </div>
 <% end %>
 
+<% content_for :code, flush: true do %>
+<div class="w-full flex justify-center">
+  <%= code_partial("sheet/preview", :erb) %>
+</div>
+<% end %>
+
 <%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui sheet
+<% end %>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
+<%= code_partial("sheet/usage", :erb) %>
+
+<%= render_usage("sheet") %>

@@ -1,0 +1,38 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Sheet component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/sheet_helper.rb") %></li>
+  <li><%= code("app/views/components/ui/_sheet.html.erb") %></li>
+  <li><%= code("app/javascript/controllers//ui/sheet_controller.js") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  The <%= code("render_sheet") %> method accepts a <%= code("direction") %> optional keyword for the direction for the sheet, left (default) or right.
+
+  The <%= code("render_sheet") %> method also accepts a block where you call the <%= code("sheet_trigger") %> and pass it a block that will be the trigger for the sheet and
+  a <%= code("sheet_content") %> method that accepts a block for the content of a sheet.
+</p>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  If you have to define a sheet whose trigger cannot be within the same elements of the sheet content, you can interact with the sheet controller directly.
+</p>
+
+<% content_for :examples, flush: true do %>
+  <button
+    type="button"
+    data-state="closed"
+    data-controller="ui--sheet"
+    data-action="click->ui--sheet#toggleOutlet"
+    data--ui-sheet-outlet="#sidebar_sheet">Open Mobile Menu</button>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <div class="w-full flex justify-center">
+    <%= code_partial("sheet/mobile_menu", :erb) %>
+  </div>
+<% end %>
+
+<%= render_example %>
+
+In the above example the "Open Mobile Menu" button is triggering the sheet whose element matches <%= code("#sidebar_sheet") %>. It does this by calling
+<%= code("click->ui--sheet#toggleOutlet") %>, the <%= code("toggleOutlet") %> method in the sheet controller. The #sidebar_sheet element can be anywhere.
