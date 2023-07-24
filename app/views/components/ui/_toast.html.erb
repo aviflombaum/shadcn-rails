@@ -1,4 +1,8 @@
-<div role="region" aria-label="Notifications (F8)" tabindex="-1" style="" data-controller="ui--toast #{data[:controller]}">
+<div role="region" aria-label="Notifications (F8)" tabindex="-1" style=""
+  id="<%= options[:id] %>"
+  data-controller="ui--toast <%= data[:controller] %>"
+  data-auto="<%= options[:auto] %>"
+  class="hidden">
   <span aria-hidden="true" tabindex="0" style="position: fixed; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; overflow-wrap: normal;"></span>
   <ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]">
     <li role="status"
@@ -9,7 +13,7 @@
       data-ui--toast-target="item"
       data-swipe-direction="right"
       data-duration="5000"
-      class="toast-item hidden group pointer-events-auto relative flex w-full items-center
+      class="<%= tw("toast-item hidden group pointer-events-auto relative flex w-full items-center
             justify-between space-x-4 overflow-hidden rounded-md p-6 pr-8 shadow-lg
              transition-all
              data-[swipe=cancel]:translate-x-0
@@ -20,14 +24,14 @@
              data-[state=closed]:fade-out-80
              data-[state=open]:slide-in-from-top-full
              data-[state=open]:sm:slide-in-from-bottom-full
-             border bg-background"
+             border bg-background #{options[:class]}") %>"
       style="user-select: none; touch-action: none;">
       <div class="grid gap-1">
         <div class="text-sm font-semibold"><%= header %></div>
         <div class="text-sm opacity-90"><%= description %></div>
       </div>
       <%= action %>
-      <button data-action="ui--toast#closeAll" type="button" class="absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.destructive]:text-red-300 group-[.destructive]:hover:text-red-50 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600" toast-close="" data-radix-toast-announce-exclude=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg></button>
+      <button data-action="ui--toast#close" type="button" class="absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.destructive]:text-red-300 group-[.destructive]:hover:text-red-50 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600" toast-close="" data-radix-toast-announce-exclude=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg></button>
     </li>
   </ol>
   <span aria-hidden="true" tabindex="0" style="position: fixed; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; overflow-wrap: normal;"></span>

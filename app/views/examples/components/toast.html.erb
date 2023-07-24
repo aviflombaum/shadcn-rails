@@ -2,8 +2,10 @@
       description: "A succinct message that is displayed temporarily." %>
 
 <% content_for :preview, flush: true do %>
-  <%= render_button "Trigger Toast", variant: "outline", data: {controller: "ui--toast", action: "ui--toast#test"} %>
-  <%= render_code_preview('toast') %>
+  <div class="w-full flex justify-center">
+    <%= render_button "Trigger Toast", variant: "outline", data: {controller: "ui--toast", action: "ui--toast#trigger", target: "#default_toast"} %>
+    <%= render_code_preview('toast') %>
+  </div>
 <% end %>
 
 <% content_for :code, flush: true do %>
@@ -21,3 +23,16 @@
 <%= code_partial("toast/usage", :erb) %>
 
 <%= render_usage("toast") %>
+
+<% content_for :examples, flush: true do %>
+  <div class="w-full flex justify-center">
+    <%= render_button "Trigger Destructive Toast", variant: "outline", data: {controller: "ui--toast", action: "ui--toast#trigger", target: "#alert_toast"} %>
+    <%= render "examples/components/toast/code/destructive" %>
+  </div>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("toast/destructive", :erb) %>
+<% end %>
+
+<%= render_example %>

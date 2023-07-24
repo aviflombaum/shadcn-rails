@@ -8,12 +8,14 @@ module Components::InputHelper
       " focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:border-muted"
     end
     options.reverse_merge!(
-      required: false,
-      disabled: false,
       label: false,
-      readonly: false,
+      required: (options[:required] || false),
+      disabled: (options[:disabled] || false),
+      readonly: (options[:readonly] || false),
       placeholder: (options[:placeholder] || ""),
-      autocomplete: (options[:autocomplete] || "")
+      autocomplete: (options[:autocomplete] || ""),
+      autocapitalize: (options[:autocapitalize] || nil),
+      autocorrect: (options[:autocorrect] || nil)
     )
     render partial: "components/ui/input", locals: {
       type:,
