@@ -30,6 +30,12 @@ Refer to
 [Installation](https://github.com/aviflombaum/shadcn-rails/blob/main/app/views/documentation/installation.html.md)
 or the [Installation](https://shadcn.themesonrails.com/docs/installation) page on the demo site.
 
+## Development
+
+Clone the repo and run `bin/setup` to install dependencies. Then, run `bin/dev` to start the
+tailwind watcher and then run `rails s`. I have to run the server and tailwind separately to keep
+debuggers working.
+
 ## [shadcn-ui](https://ui.shadcn.com)
 
 These components are based on the components provided by [shadcn/ui](https://ui.shadcn.com). Because

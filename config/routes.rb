@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get "/docs/:id" => "documentation#show", :as => :documentation, :format => false
   get "/docs", to: "documentation#index", as: :documentation_index
 
+  # This is just for the forms component
+  resources :users
+
   # Defines the root path route ("/")
   root "application#index"
 end

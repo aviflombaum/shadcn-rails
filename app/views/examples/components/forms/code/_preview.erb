@@ -1,0 +1,13 @@
+<%= render_form_for(@user, class: "w-full") do |form| %>
+  <div class="grid grid-cols-3 items-baseline mb-4">
+    <%= form.label :email, class: "text-right mr-4 text-lg" %>
+    <%= form.text_field :email, class: "col-span-2" %>
+  </div>
+  <div class="grid grid-cols-3 items-baseline">
+    <%= form.label :password, class: "text-right mr-4 text-lg" %>
+    <%= form.password_field :password, class: "col-span-2 mb-8" %>
+  </div>
+  <div class="flex justify-center">
+    <%= form.submit "Create Account" %>
+  </div>
+<% end %>

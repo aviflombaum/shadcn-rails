@@ -1,4 +1,8 @@
 module ComponentsHelper
+  def tw(classes)
+    TailwindMerge::Merger.new.merge(classes)
+  end
+
   PRIMARY_CLASSES = " bg-primary text-primary-foreground hover:bg-primary/80 "
   SECONDARY_CLASSES = " bg-secondary text-secondary-foreground hover:bg-secondary/80 "
   OUTLINE_CLASSES = "  border border-input bg-background hover:bg-accent hover:text-accent-foreground "

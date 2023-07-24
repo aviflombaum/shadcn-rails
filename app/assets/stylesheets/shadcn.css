@@ -214,3 +214,11 @@ input[type="range"]::-ms-track {
   overflow: hidden;
   transition: all 0.2s;
 }
+
+input.error {
+  @apply border-red-400;
+}
+
+label.error {
+  @apply text-destructive;
+}
