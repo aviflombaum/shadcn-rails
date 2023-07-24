@@ -1,0 +1,28 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Forms component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/form_builders/shadcn_form_builder.rb") %></li>
+  <li><%= code("app/helpers/components/forms_helper.rb") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  The <code>ShadcnFormBuilder</code> is a custom form builder that extends the
+  <code>FormBuilder</code> class. It adds the following methods that provide the form with inputs and controls:
+<p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("label") %></li>
+  <li><%= code("text_field") %></li>
+  <li><%= code("password_field") %></li>
+  <li><%= code("email_field") %></li>
+</ul>
+</p>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  To use these methods which generate the styled, ActiveModel backed form, you use the <%= code("render_form_for") %> or <%= code("render_form_with") %> methods provided by <%= code("app/helpers/components/forms_helper.rb") %>.
+  These methods yield the common <code>FormBuilder</code> instance that you can use to generate the controls and inputs above.
+</p>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  If a form field or attribute fails validation, its label and input will be given an <code>error</code> class to allow for styling. The default <code>error</code> style is defined in <%= code("app/assets/stylesheets/shadcn.css") %>
+</p>
