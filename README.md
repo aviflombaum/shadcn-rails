@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/shadcn-ui.svg)](https://badge.fury.io/rb/shadcn-ui)
 
-[Shadcn on Rails](https://shadcn.themesonrails.com) provides customizable components that you can
+[Shadcn on Rails](https://shadcn.rails-components.com) provides customizable components that you can
 copy and paste into your apps. Free. Open Source. **Use this to build your own component library**.
 
 **If you're using this, [please let me know](https://twitter.com/aviflombaum) so I keep developing
@@ -28,7 +28,7 @@ Use this as a reference to build your own component libraries.
 
 Refer to
 [Installation](https://github.com/aviflombaum/shadcn-rails/blob/main/app/views/documentation/installation.html.md)
-or the [Installation](https://shadcn.themesonrails.com/docs/installation) page on the demo site.
+or the [Installation](https://shadcn.rails-components.com/docs/installation) page on the demo site.
 
 ## Development
 
