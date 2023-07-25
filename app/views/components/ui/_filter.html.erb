@@ -2,7 +2,7 @@
 <%= render_card do %>
   <div class="flex items-center">
   <%= content_for :filter_icon %>
-  <%= render_input name: "filter", placeholder: "Filter items...", style: :borderless, class: input_class, data: {"ui--filter-target": "source", action: "input->ui--filter#filter"} %></div>
+  <%= render_input name: "filter", placeholder: "Filter items...", variant: :borderless, class: input_class, data: {"ui--filter-target": "source", action: "input->ui--filter#filter"} %></div>
   <%= render_separator %>
   <div class="<%= options[:class] %>">
     <%= content_tag :div, role: "group" do
