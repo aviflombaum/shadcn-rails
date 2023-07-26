@@ -1,6 +1,22 @@
-<%= render_alert_dialog(
-  trigger: render_button("Open Dialog", variant: :outline, data: {action: "ui--dialog#open" }),
-  continue: render_button("Continue"),
-  label: "Are you absolutely sure?",
-  description: "This action cannot be undone. This will permanently delete your account and remove your data from our servers.",
-) %>
+<%= render_alert_dialog do %>
+  <%= alert_dialog_trigger do %>
+    <%= render_button("Open Dialog", variant: :outline) %>
+  <% end %>
+
+  <%= alert_dialog_content do %>
+  <div class="flex flex-col space-y-2 text-center sm:text-left">
+    <h2 class="text-lg font-semibold">Are you absolutely sure?</h2>
+    <p class="text-sm text-muted-foreground">
+      This action cannot be undone. This will permanently delete your account and remove your data from our servers.
+    </p>
+  </div>
+  <% end %>
+
+  <%= alert_dialog_cancel do %>
+    <%= render_button("Cancel", variant: :outline) %>
+  <% end %>
+
+  <%= alert_dialog_continue do %>
+    <%= render_button("Continue") %>
+  <% end %>
+<% end %>

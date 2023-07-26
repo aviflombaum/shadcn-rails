@@ -1,7 +1,7 @@
 <div data-controller="ui--dialog">
+  <div data-action="click->ui--dialog#open"><%= content_for(:alert_dialog_trigger) %></div>
   <%= render "components/ui/shared/backdrop", as: "backdrop" %>
 
-  <%= trigger %>
   <div
     role="alertdialog"
     data-state="closed"
@@ -9,12 +9,16 @@
     tabindex="-1"
     style="pointer-events: auto"
     data-ui--dialog-target="dialog">
-    <div class="flex flex-col space-y-2 text-center sm:text-left">
-      <h2 class="text-lg font-semibold"><%= label %></h2>
-      <p class="text-sm text-muted-foreground"><%= description %></p>
-    </div>
+      <div>
+        <%= content_for(:alert_dialog_content) %>
+      </div>
     <div class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
-      <%= cancel %> <%= continue %>
+      <div data-action="click->ui--dialog#close">
+        <%= content_for(:alert_dialog_cancel) %>
+      </div>
+      <div data-action="click->ui--dialog#close">
+        <%= content_for(:alert_dialog_continue) %>
+      </div>
     </div>
   </div>
 </div>

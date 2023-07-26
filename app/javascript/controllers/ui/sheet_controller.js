@@ -1,5 +1,5 @@
 import UIDialog from "controllers/ui/dialog_controller";
-import "@kanety/stimulus-static-actions";
+import "https://ga.jspm.io/npm:@kanety/stimulus-static-actions@1.0.1/dist/index.modern.js";
 
 export default class extends UIDialog {
   // Handles a button triggering the sheet in a different

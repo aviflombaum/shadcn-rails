@@ -24,7 +24,8 @@
       "app/helpers/components/alert-dialog_helper.rb",
       "app/views/components/ui/_alert-dialog.html.erb",
       "app/javascript/controllers/ui/alert-dialog_controller.js"
-    ]
+    ],
+    "dependencies": [{ "component": "dialog" }]
   },
   "badge": {
     "name": "badge",

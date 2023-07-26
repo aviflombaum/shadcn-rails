@@ -1,6 +1,6 @@
 // Inspired by https://github.com/kanety/stimulus-dialog
 import { Controller } from "@hotwired/stimulus";
-import "@kanety/stimulus-static-actions";
+import "https://ga.jspm.io/npm:@kanety/stimulus-static-actions@1.0.1/dist/index.modern.js";
 
 export default class UIDialog extends Controller {
   static targets = ["dialog", "modal", "focus", "drag", "backdrop", "closeButton"];

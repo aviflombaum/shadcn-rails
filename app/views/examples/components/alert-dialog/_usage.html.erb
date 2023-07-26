@@ -1,0 +1,24 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Alert Dialog component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/alert_dialog_helper.rb") %></li>
+  <li><%= code("app/views/components/ui/_alert_dialog.html.erb") %></li>
+</ul>
+
+And relies on <%= code("app/javascript/controllers/ui/dialog_controller.js") %>.
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+The method <%= code("render_alert_dialog") %> defined in <%= code("app/helpers/components/alert_dialog_helper.rb") %>
+accepts a block for the inner components  of the dialog. It renders the partial
+<%= code("app/views/components/ui/_alert_dialog.html.erb") %> which contains the model structure and
+and the 2 actions buttons of continue and cancel.
+</p>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+The modal is composed of 4 components with corresponding helper methods, <%= code("alert_dialog_trigger") %>,
+which accepts a block for the element that will trigger the modal, and <%= code("alert_dialog_content") %>,
+which accepts a block for the body of the modal and the two actions for the modal, <%= code("alert_dialog_cancel") %> for the element that you would like to cancel the dialog interaction, for example a button, and <%= code("alert_dialog_continue") %> for the element you would like to use to continue to interaction. Note, you should feel free to bind your own data actions to these buttons as they are enclosed in an element that will handle closing the modal on click.
+</p>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+See <a href="/docs/components/dialog">Dialog</a> for more context as this component inherits functionality from that one.</p>

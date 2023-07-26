@@ -1,9 +1,8 @@
 // Inspired by: https://github.com/excid3/tailwindcss-stimulus-components/blob/master/src/popover.js
 
 import { Controller } from "@hotwired/stimulus";
-import { createPopper } from "@popperjs/core";
-import { useDebounce } from "stimulus-use";
-import { useHover } from "stimulus-use";
+import { createPopper } from "https://ga.jspm.io/npm:@popperjs/core@2.11.8/lib/index.js";
+import { useDebounce, useHover } from "https://ga.jspm.io/npm:stimulus-use@0.51.3/dist/index.js";
 
 export default class UIHoverCardController extends Controller {
   static debounces = ["mouseEnter", "mouseLeave"];
