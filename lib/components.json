@@ -112,6 +112,17 @@
       "app/views/components/ui/shared/_menu_item.html.erb"
     ]
   },
+  "forms": {
+    "name": "forms",
+    "type": "components:ui",
+    "files": ["app/helpers/components/forms_helper.rb", "app/form_builders/shadcn_form_builder.rb"],
+    "dependencies": [
+      { "component": "input" },
+      { "component": "label" },
+      { "component": "textarea" },
+      { "component": "button" }
+    ]
+  },
   "hover-card": {
     "name": "hover-card",
     "type": "components:ui",
