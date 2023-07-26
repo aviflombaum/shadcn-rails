@@ -32,7 +32,7 @@ The components need a few things in order to render and function properly
    package.json if you need via `echo '{}' >> package.json`.
 
 ```
-npm install -D tailwind-animate
+npm install -D tailwindcss-animate
 ```
 
 These are the requirements if you want to add them individually:
