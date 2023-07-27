@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    shadcn-ui (0.0.4)
+    shadcn-ui (0.0.5)
 
 GEM
   remote: https://rubygems.org/

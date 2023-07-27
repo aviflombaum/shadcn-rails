@@ -1,0 +1,7 @@
+<% items = [{:value => "Ruby on Rails", name: "Ruby on Rails"}, {:value => "Next.js", name: "Next.js"}, {:value => "Remix.run", name: "Remix.run"}] %>
+
+<%= render_combobox items do %>
+  <%= combobox_trigger do %>
+    Select framework
+  <% end %>
+<% end %>

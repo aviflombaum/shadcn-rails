@@ -72,6 +72,15 @@
       "app/javascript/controllers/ui/collapsible_controller.js"
     ]
   },
+  "combobox": {
+    "name": "combobox",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/combobox_helper.rb",
+      "app/views/components/ui/_combobox.html.erb"
+    ],
+    "dependencies": [{ "component": "popover" }, { "component": "filter" }]
+  },
   "command": {
     "name": "command",
     "type": "components:ui",
