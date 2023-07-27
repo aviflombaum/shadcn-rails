@@ -48,3 +48,4 @@ node_modules
 # rspec failure tracking
 .rspec_status
 bin/deploy
+.env
