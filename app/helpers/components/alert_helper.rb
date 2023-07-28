@@ -1,12 +1,16 @@
 module Components::AlertHelper
-  def render_alert(title:, description:, variant: :default, icon: true)
+  def render_alert(title:, description: nil, variant: :default, icon: true)
     alert_classes = case variant.to_sym
     when :default
       "[&>svg]:text-foreground bg-background text-foreground"
     when :error, :danger, :alert, :destructive
       "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive"
-    else
-      "border-#{variant}/50 text-#{variant} dark:border-#{variant} [&>svg]:text-#{variant}"
+    when :success
+      "border-success/50 text-success dark:border-success [&>svg]:text-success"
+    when :info
+      "border-info/50 text-info dark:border-info [&>svg]:text-info"
+    when :attention
+      "border-attention/50 text-attention dark:border-attention [&>svg]:text-attention"
     end
     render "components/ui/alert", title:, description:, alert_classes:, variant:, icon:
   end
