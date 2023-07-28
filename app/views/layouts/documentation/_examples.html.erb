@@ -1,6 +1,6 @@
 
 
-    <div class="group relative my-4 flex flex-col space-y-2" data-controller="tabs">
+    <div class="group relative my-4 flex flex-col space-y-2" data-controller="ui--tabs">
       <div
         dir="ltr"
         data-orientation="horizontal"
@@ -15,7 +15,7 @@
             style="outline: none">
             <button
               type="button"
-              data-tabs-target="tab"
+              data-ui--tabs-target="tab"
               role="tab"
               aria-selected="true"
               aria-controls="content-preview"
@@ -23,28 +23,26 @@
               id="trigger-preview"
               class="inline-flex items-center justify-center whitespace-nowrap py-1 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
               tabindex="-1"
-              data-orientation="horizontal"
-              data-radix-collection-item="">
+              data-orientation="horizontal">
               Preview</button>
             <button
               type="button"
               role="tab"
-              data-tabs-target="tab"
+              data-ui--tabs-target="tab"
               aria-selected="false"
               aria-controls="content-code"
               data-state="inactive"
               id="trigger-code"
               class="inline-flex items-center justify-center whitespace-nowrap py-1 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
               tabindex="-1"
-              data-orientation="horizontal"
-              data-radix-collection-item="">
+              data-orientation="horizontal">
               Code
             </button>
           </div>
         </div>
         <div
           data-state="active"
-          data-tabs-target="panel"
+          data-ui--tabs-target="panel"
           data-orientation="horizontal"
           role="tabpanel"
           aria-labelledby="trigger-preview"
@@ -61,7 +59,7 @@
         </div>
         <div
           data-state="inactive"
-          data-tabs-target="panel"
+          data-ui--tabs-target="panel"
           data-orientation="horizontal"
           role="tabpanel"
           aria-labelledby="trigger-code"

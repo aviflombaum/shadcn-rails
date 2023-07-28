@@ -1,0 +1,13 @@
+<div class="group" data-controller="ui--tabs">
+  <div
+    role="tablist"
+    aria-orientation="horizontal"
+    class="h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground grid w-full grid-cols-2"
+    tabindex="0"
+    data-orientation="horizontal"
+    style="outline: none">
+    <%= content_for :tab_list %>
+  </div>
+
+  <%= content_for :tab_panels %>
+</div>

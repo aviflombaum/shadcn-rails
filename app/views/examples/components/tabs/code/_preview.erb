@@ -1,0 +1,14 @@
+<%= render_tabs do %>
+  <%= tab_list do %>
+    <%= tab "Account" %>
+    <%= tab "Password", active: true %>
+  <% end %>
+  <%= tab_panels do %>
+    <%= tab_panel do %>
+      <%= render "examples/components/tabs/code/account" %>
+    <% end %>
+    <%= tab_panel active: true do %>
+      <%= render "examples/components/tabs/code/password" %>
+    <% end %>
+  <% end %>
+<% end %>

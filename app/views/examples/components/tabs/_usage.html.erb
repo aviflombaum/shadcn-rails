@@ -1,0 +1,15 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Tabs component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/tabs_helper.rb") %></li>
+  <li><%= code("app/javascript/controllers/ui/tabs_controllers.rb") %></li>
+  <li><%= code("app/views/components/ui/_tabs.html.erb") %></li>
+  <li><%= code("app/views/components/ui/tabs/_tab.html.erb") %></li>
+  <li><%= code("app/views/components/ui/tabs/_panel.html.erb") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  <%= code("render_tabs") %> accepts two key blocks, <%= code("tab_list") %> and <%= code("tab_panel") %>.
+  Within <%= code("tab_list") %> call <%= code("tab") %> for each tab, accepting the text you want for the tab and making one of them <%= code("active: true") %> to determine the starting active state of the tab.
+  Within <%= code("tab_panel") %> call <%= code("tab_panel") %> for each tab panel, accepting a block for the content of the panel and making one of them <%= code("active: true") %> to determine the starting active state of the panels (generally corresponding to the active tab).
+</p>

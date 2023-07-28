@@ -282,6 +282,8 @@
     "files": [
       "app/helpers/components/tabs_helper.rb",
       "app/views/components/ui/_tabs.html.erb",
+      "app/views/components/ui/tabs/_tab.html.erb",
+      "app/views/components/ui/tabs/_panel.html.erb",
       "app/javascript/controllers/ui/tabs_controller.js"
     ]
   },

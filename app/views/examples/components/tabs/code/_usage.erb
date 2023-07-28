@@ -1,0 +1,12 @@
+<%= render_tabs do %>
+  <%= tab_list do %>
+    <%= tab title %>
+    <%= tab title, active: true %>
+  <% end %>
+  <%= tab_panels do %>
+    <%= tab_panel do %>
+    <% end %>
+    <%= tab_panel active: true do %>
+    <% end %>
+  <% end %>
+<% end %>

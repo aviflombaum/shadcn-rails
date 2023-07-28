@@ -1,0 +1,8 @@
+<div
+  data-state="<%= options[:state] %>"
+  data-ui--tabs-target="panel"
+  data-orientation="horizontal"
+  role="tabpanel"
+  class="data-[state=inactive]:hidden">
+  <%= content_for :panel %>
+</div>

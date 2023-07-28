@@ -8,7 +8,7 @@
       id="examples">
       Examples
     </h2>
-    <div class="group relative my-4 flex flex-col space-y-2" data-controller="tabs">
+    <div class="group relative my-4 flex flex-col space-y-2" data-controller="ui--tabs">
       <div
         dir="ltr"
         data-orientation="horizontal"
@@ -23,7 +23,7 @@
             style="outline: none">
             <button
               type="button"
-              data-tabs-target="tab"
+              data-ui--tabs-target="tab"
               role="tab"
               aria-selected="true"
               aria-controls="content-preview"
@@ -37,7 +37,7 @@
             <button
               type="button"
               role="tab"
-              data-tabs-target="tab"
+              data-ui--tabs-target="tab"
               aria-selected="false"
               aria-controls="content-code"
               data-state="inactive"
@@ -52,7 +52,7 @@
         </div>
         <div
           data-state="active"
-          data-tabs-target="panel"
+          data-ui--tabs-target="panel"
           data-orientation="horizontal"
           role="tabpanel"
           aria-labelledby="trigger-preview"
@@ -69,7 +69,7 @@
         </div>
         <div
           data-state="inactive"
-          data-tabs-target="panel"
+          data-ui--tabs-target="panel"
           data-orientation="horizontal"
           role="tabpanel"
           aria-labelledby="trigger-code"
