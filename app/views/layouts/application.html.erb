@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title><%= page_title %></title>
     <meta
       name="viewport"
       content="width=device-width,initial-scale=1">
-    <!--prettier-ignore-->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
@@ -13,6 +12,12 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= content_for :stylesheets %>
     <%= javascript_importmap_tags %>
+
+    <%= display_meta_tags(
+          description: "An open-source frontend themed component library for Ruby on Rails based on shadcn/ui.",
+          keywords: "shadcn/ui, rails components, ruby on rails, rails themes, viewcomponent, shadcn, ror themes, rails designs.",
+          og: {title: :title, description: :description, image: "/public/og.png"}, twitter: {image: "/public/og.png"}
+        ) %>
   </head>
 
   <body>
@@ -20,12 +25,28 @@
       <%= render 'layouts/shared/header' %>
       <div class="flex-1">
         <div class="border-b">
-          <div
-            class="container flex-1 items-start ">
+          <div class="container flex-1 items-start">
             <!--prettier-ignore-->
             <%= yield %>
           </div>
         </div>
+        <footer class="py-6 md:px-8 md:py-0">
+          <div
+            class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+            <p class="text-center text-sm leading-loose text-muted-foreground md:text-left">
+              A
+              <a
+                href="https://rails-components.com"
+                target="_blank"
+                rel="noreferrer"
+                class="font-medium underline underline-offset-4">Rails Components</a> Project by               <a
+                href="https://twitter.com/aviflombaum"
+                target="_blank"
+                rel="noreferrer"
+                class="font-medium underline underline-offset-4">aviflombaum</a>.
+            </p>
+          </div>
+        </footer>
       </div>
     </div>
   </body>

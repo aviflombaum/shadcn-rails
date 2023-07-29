@@ -6,6 +6,11 @@ module ApplicationHelper
       @page_title << "#{component_name} - " if component_name.present?
     end
     @page_title << "shadcn/ui on Rails"
+
+    set_meta_tags(
+      title: @page_title
+    )
+
     @page_title
   end
 

@@ -124,6 +124,8 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.2)
+    meta-tags (2.18.0)
+      actionpack (>= 3.2.0, < 7.1)
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.18.1)
@@ -286,6 +288,7 @@ DEPENDENCIES
   htmlbeautifier
   importmap-rails
   jbuilder
+  meta-tags
   pry
   pry-rails
   puma (~> 6.0)
