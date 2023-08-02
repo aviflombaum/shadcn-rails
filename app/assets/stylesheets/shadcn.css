@@ -121,7 +121,7 @@ input[type="number"]:focus {
 input[type="range"] {
   -webkit-appearance: none;
   margin-right: 15px;
-  width: 200px;
+  min-width: 200px;
   height: 7px;
   background: #f4f4f5;
   border-radius: 5px;

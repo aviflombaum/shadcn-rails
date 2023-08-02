@@ -1,2 +1,6 @@
 
-<input type="range" min="1" max="100" value="50" style="background-size: 50% 100%" data-controller="ui--slider" data-action="input->ui--slider#updateRange">
+<input type="range" min="1" max="100"
+      value="<%= value %>" id="<%= id %>" name="<%= name %>"
+      style="background-size: <%= value %>% 100%"
+      data-controller="ui--slider" data-action="input->ui--slider#updateRange"
+      class="<%= options[:class] %>">
