@@ -1,11 +1,12 @@
 <div class="space-y-2">
-  <h1 class="scroll-m-20 text-4xl font-bold tracking-tight"><%= title %></h1>
+  <h1 class="scroll-m-20  flex justify-between">
+    <span class="text-4xl font-bold tracking-tight"><%= title %></span>
+    <%= render_button "Edit", variant: :ghost, class: "text-sm", as: :link, href: "https://github.com/aviflombaum/shadcn-rails/blob/main/app/views/examples/components/#{params[:component]}.html.erb" %>
+  </h1>
   <p class="text-lg text-muted-foreground">
     <span
       data-br=":r24:"
       data-brr="1"
-      style="display: inline-block; vertical-align: top; text-decoration: inherit"
-      ><%= description %></span
-    >
+      style="display: inline-block; vertical-align: top; text-decoration: inherit"><%= description %></span>
   </p>
 </div>
