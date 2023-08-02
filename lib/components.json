@@ -136,8 +136,8 @@
     "name": "hover-card",
     "type": "components:ui",
     "files": [
-      "app/helpers/components/hover-card_helper.rb",
-      "app/views/components/ui/_hover-card.html.erb",
+      "app/helpers/components/hover_card_helper.rb",
+      "app/views/components/ui/_hover_card.html.erb",
       "app/javascript/controllers/ui/hover-card_controller.js"
     ]
   },
