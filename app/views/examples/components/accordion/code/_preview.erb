@@ -1,3 +1,11 @@
-<%= render_accordion title: "Did you know?", description: "You can wrap shadcn helpers in any
-component library you want!" %>
-<%= render_accordion title: "Use the generators.", description: "Add components with #{code("rails g shadcn_ui add accordion")}".html_safe %>
+<%= render_accordion title: "Did you know?",
+  description: "You can wrap shadcn helpers in any component library you want!" %>
+
+<%= render_accordion do %>
+  <%= accordion_title do %>
+    Use the generators
+  <% end %>
+  <%= accordion_description do %>
+    Add components with <%= code("rails g shadcn_ui add accordion") %>
+  <% end %>
+<% end %>

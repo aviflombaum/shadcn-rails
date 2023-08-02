@@ -8,6 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Avi Flombaum"]
   spec.email = ["git@avi.nyc"]
 
+  spec.homepage = "https://shadcn.rails-components.com"
   spec.summary = "Provides the shadcn-ui component library to a Ruby on Rails application."
   spec.description = "This gem is a documentation site and gem that will copy components from the shadcn-ui library into a Ruby on Rails application."
   spec.homepage = "https://github.com/aviflombaum/shadcn-rails"
@@ -31,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
+  spec.add_dependency "tailwind_merge"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html

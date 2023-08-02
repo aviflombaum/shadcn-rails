@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     shadcn-ui (0.0.5)
+      tailwind_merge
 
 GEM
   remote: https://rubygems.org/
