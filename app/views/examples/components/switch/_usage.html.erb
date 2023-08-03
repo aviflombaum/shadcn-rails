@@ -1,0 +1,11 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Switch component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/switch_helper.rb") %></li>
+  <li><%= code("app/javascript/controllers/ui/switch_controller.js") %></li>
+  <li><%= code("app/views/components/ui/_switch.html.erb") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+<%= code("render_switch") %> accepts one argument for the text near the switch and two keyword arguments for the <%= code("id") %> of the button and <%= code("name") %> of the hidden input element used to pass the form value of the state. It optionally accepts a <%= code("state") %> keyword for the starting value of the switch.
+The javascript controller is responsible for the toggle effect by changing the <%= code("data-state") %> of the underlying elements.</p>
