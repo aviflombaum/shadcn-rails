@@ -67,7 +67,7 @@ class ShadcnUiGenerator < Rails::Generators::Base
 
     available_components.each do |component, _|
       description = "# A #{component} component"
-      banner_line = "rails generate shadcn-ui #{component}:install #{" " * (20 - component.length)} #{description}"
+      banner_line = "rails generate shadcn-ui #{component} #{" " * (20 - component.length)} #{description}"
       puts banner_line
     end
   end

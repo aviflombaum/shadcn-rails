@@ -30,11 +30,7 @@
   "badge": {
     "name": "badge",
     "type": "components:ui",
-    "files": [
-      "app/helpers/components/badge_helper.rb",
-      "app/views/components/ui/_badge.html.erb",
-      "app/javascript/controllers/ui/badge_controller.js"
-    ]
+    "files": ["app/helpers/components/badge_helper.rb"]
   },
   "button": {
     "name": "button",
@@ -225,11 +221,7 @@
   "separator": {
     "name": "separator",
     "type": "components:ui",
-    "files": [
-      "app/helpers/components/separator_helper.rb",
-      "app/views/components/ui/_separator.html.erb",
-      "app/javascript/controllers/ui/separator_controller.js"
-    ]
+    "files": ["app/helpers/components/separator_helper.rb"]
   },
   "sheet": {
     "name": "sheet",

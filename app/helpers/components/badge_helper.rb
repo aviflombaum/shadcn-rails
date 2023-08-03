@@ -15,6 +15,9 @@ module Components::BadgeHelper
     end
     badge_classes << " #{varianet_classes}"
     text = label if label.present?
-    render "components/ui/badge", text:, badge_classes:, data:, **options
+
+    content_tag :div, class: badge_classes do
+      text
+    end
   end
 end
