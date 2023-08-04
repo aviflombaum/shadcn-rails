@@ -120,7 +120,7 @@ class ShadcnUiGenerator < Rails::Generators::Base
     if File.exist?(tailwind_file_path)
       true
     else
-      abort "shadcn-ui requires Tailwind CSS. Please include tailwindcss-rails in your Gemfile and run `rails g tailwind:install` to install Tailwind CSS."
+      abort "shadcn-ui requires Tailwind CSS. Please include tailwindcss-rails in your Gemfile and run `rails g tailwindcss:install` to install Tailwind CSS."
     end
   end
 
