@@ -117,7 +117,7 @@ by being at the end. And obviously feel free to inspect shadcnConfig and keep on
 ## End
 
 That's it! You are now set to start
-[installing components via the generator]("/documentation/generators") and rendering them into your
+[installing components via the generator](/docs/generators) and rendering them into your
 views.
 
 # Manual Installation
