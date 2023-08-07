@@ -31,6 +31,7 @@ export default class extends Controller {
 
   // Implement your own file upload strategy here...
   uploadFile(file) {
+    console.log("Received file for upload: ", file);
     console.log("Implement your own file upload strategy here...");
     //   const formData = new FormData();
     //   formData.append("file", file);
