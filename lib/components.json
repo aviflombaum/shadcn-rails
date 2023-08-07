@@ -117,6 +117,15 @@
       "app/views/components/ui/shared/_menu_item.html.erb"
     ]
   },
+  "dropzone": {
+    "name": "dropzone",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/dropzone_helper.rb",
+      "app/views/components/ui/_dropzone.html.erb",
+      "app/javascript/controllers/ui/dropzone_controller.js"
+    ]
+  },
   "forms": {
     "name": "forms",
     "type": "components:ui",

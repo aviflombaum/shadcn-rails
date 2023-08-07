@@ -1,0 +1,16 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Dropzone component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/dropzone_helper.rb") %></li>
+  <li><%= code("app/views/components/ui/_dropzone.html.erb") %></li>
+  <li><%= code("app/javascript/controllers/ui/dropzone_controller.js") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  The method <%= code("render_dropzone") %> defined in <%= code("app/helpers/components/dropzone_helper.rb") %> will render the dropzone widget that is bound to the Stimulus controller.
+  Upon triggering the file dialog or dragging and dropping files, the controller will delegate the files individually to a function, <%= code("uploadFile") %>. It is up to you to define what to do when a a file is to be uploaded.
+<p>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+To implement fully, edit the <%= code("uploadFile") %> function in <%= code("app/javascript/controllers/ui/dropzone_controller.js") %>. This function is called for each file that is to be uploaded. The function is passed the file object.
+</p>
