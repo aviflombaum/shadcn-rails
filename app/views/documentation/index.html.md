@@ -34,4 +34,4 @@ needs without any unnecessary abstraction.
 
 The gem provides a generator for you to use in your application to facilitate copying the code from
 this application to yours. It also enforces some setup for you as the component files alone in
-isolation won't always work. [Learn more about the generator](/documentation/generators).
+isolation won't always work. [Learn more about the generator](/docs/generators).
