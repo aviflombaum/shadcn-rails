@@ -2,7 +2,7 @@ class ShadcnFormBuilder < ActionView::Helpers::FormBuilder
   def label(method, options = {})
     error_class = @object.errors[method].any? ? "error" : ""
     options[:class] = @template.tw("#{options[:class]} #{error_class}")
-    @template.render_label(name: "#{object_name}[#{method}]", label: method.capitalize, **options)
+    @template.render_label(name: "#{object_name}[#{method}]", label: label_for(@object, method), **options)
   end
 
   def text_field(method, options = {})
@@ -40,5 +40,12 @@ class ShadcnFormBuilder < ActionView::Helpers::FormBuilder
 
   def submit(value = nil, options = {})
     @template.render_button(value, **options)
+  end
+
+  private
+
+  def label_for(object, method)
+    return method.capitalize if object.nil?
+    object.class.human_attribute_name(method)
   end
 end
