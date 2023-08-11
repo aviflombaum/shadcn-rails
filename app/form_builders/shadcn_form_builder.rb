@@ -6,7 +6,8 @@ class ShadcnFormBuilder < ActionView::Helpers::FormBuilder
   end
 
   def text_field(method, options = {})
-    options[:class] << " error" if @object.errors[method].any?
+    error_class = @object.errors[method].any? ? "error" : ""
+    options[:class] = @template.tw("#{options[:class]} #{error_class}")
     @template.render_input(
       name: "#{object_name}[#{method}]",
       id: "#{object_name}_#{method}",
