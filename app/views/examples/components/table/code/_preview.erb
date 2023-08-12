@@ -1,0 +1,35 @@
+<% @tracks = [
+  {title: "Total Eclipse of the Heart", artist: "Bonnie Tyler"},
+  {title: "I Will Always Love You", artist: "Whitney Houston"},
+  {title: "I Wanna Dance with Somebody", artist: "Whitney Houston"},
+  {title: "I Will Survive", artist: "Gloria Gaynor"},
+  {title: "My Heart Will Go On", artist: "Celine Dion"},
+] %>
+
+<%= render_table do %>
+  <%= table_head do %>
+    <%= table_header "", class: "w-1" %>
+    <%= table_header class: "" do %>
+      Title
+    <% end %>
+    <%= table_header "Artist" %>
+  <% end %>
+  <%= table_body do %>
+    <% @tracks.each.with_index do |track, i| %>
+      <%= table_row do %>
+        <%= table_column do %>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="10 8 16 12 10 16 10 8"></polygon>
+          </svg>
+        <% end %>
+        <%= table_column do %>
+          <%= track[:title] %>
+        <% end %>
+        <%= table_column track[:artist] %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
