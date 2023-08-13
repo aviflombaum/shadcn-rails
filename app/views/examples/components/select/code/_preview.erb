@@ -1,0 +1,8 @@
+<%= render_select name: "fruits", selected: "Apple" do |select| %>
+  <%= select.option value: "Banana" do %>
+    <!-- Banana SVG -->
+    Banana
+  <% end %>
+  <%= select.option label: "Apple", value: "Apple" %>
+  <%= select.option label: "Strawberry", value: "Strawberry" %>
+<% end %>
