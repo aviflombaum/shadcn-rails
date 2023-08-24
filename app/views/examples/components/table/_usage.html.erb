@@ -1,0 +1,23 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Table component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/table_helper.rb") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  The table component is so far unique in that it is entirely provided by <%= code("app/helpers/components/table_helper.rb") %>. This helper introduces methods that rely on <%= code("content_tag") %> to create the markup for the table. To edit anything about the rendered table, look there.
+</p>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  <%= code("app/helpers/components/table_helper.rb") %> introduces the following methods that can be used to create a table.
+
+  <ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-md">
+    <li><%= code("render_table") %> accepts an optional caption as the first argument along with the block for the rest of the table components.</li>
+    <li><%= code("table_head") %> accepts a block for the content of the <%= code("thead") %> row.</li>
+    <li><%= code("table_header") %> accepts the header content inline or in a block. This will be rendered within the <%= code("thead") %> for that column.</li>
+    <li><%= code("table_body") %> accepts a block for the content of the <%= code("tbody") %>.</li>
+    <li><%= code("table_row") %> accepts a block for the content of the <%= code("tr") %>.</li>
+    <li><%= code("table_column") %> accepts the column content inline or in a block. This will be rendered within the <%= code("td") %> for the column.</li>
+  </ul>
+
+</p>
