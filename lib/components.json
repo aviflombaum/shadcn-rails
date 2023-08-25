@@ -102,7 +102,8 @@
       "app/helpers/components/dialog_helper.rb",
       "app/views/components/ui/_dialog.html.erb",
       "app/javascript/controllers/ui/dialog_controller.js"
-    ]
+    ],
+    "dependencies": ["app/views/components/ui/shared/_backdrop.html.erb"]
   },
   "dropdown-menu": {
     "name": "dropdown-menu",
