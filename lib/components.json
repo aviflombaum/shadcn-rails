@@ -21,11 +21,10 @@
     "name": "alert-dialog",
     "type": "components:ui",
     "files": [
-      "app/helpers/components/alert-dialog_helper.rb",
-      "app/views/components/ui/_alert-dialog.html.erb",
-      "app/javascript/controllers/ui/alert-dialog_controller.js"
+      "app/helpers/components/alert_dialog_helper.rb",
+      "app/views/components/ui/_alert_dialog.html.erb"
     ],
-    "dependencies": [{ "component": "dialog" }]
+    "dependencies": [{ "component": "dialog" }, "app/views/components/ui/shared/_backdrop.html.erb"]
   },
   "badge": {
     "name": "badge",
