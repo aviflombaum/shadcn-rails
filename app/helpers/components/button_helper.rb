@@ -14,6 +14,7 @@ module Components::ButtonHelper
       " hover:bg-accent hover:text-accent-foreground  "
     end
     button_classes << " #{varianet_classes} #{options[:class]}"
+    button_classes = tw(button_classes)
     text = label if label.present?
     text = capture(&block) if block
     render "components/ui/button", text:, button_classes:, as:, href:, data:, **options
