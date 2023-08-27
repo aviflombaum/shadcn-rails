@@ -126,6 +126,15 @@
       "app/javascript/controllers/ui/dropzone_controller.js"
     ]
   },
+  "filter": {
+    "name": "filter",
+    "type": "components:ui",
+    "files": [
+      "app/helpers/components/filter_helper.rb",
+      "app/views/components/ui/_filter.html.erb",
+      "app/javascript/controllers/ui/filter_controller.js"
+    ]
+  },
   "forms": {
     "name": "forms",
     "type": "components:ui",
