@@ -1,0 +1,22 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Select component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/select_helper.rb") %></li>
+  <li><%= code("app/components/shadcn/select_component.rb") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  The select component is implemented as a component object defined in <%= code("app/components/shadcn/select_component.rb") %>.
+  This ruby class is initialized from the helper defined in <%= code("app/helpers/components/select_helper.rb") %>, <%= code "render_select" %>.
+</p>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  The <%= code("render_select") %> method accepts a <%= code("name") %> keyword argument for the name of the form field.
+  An optional argument of <%= code "selected" %> can contain the value of the option to be selected by default.
+</p>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+  <%= code("render_select") %> yields an instance of the <%= code "Shadcn::SelectComponent" %> that can be used to build <%= code "option" %>s for the select.
+  <%= code "option" %> on the component instance accepts a <%= code "label" %> argument for the label text to be displayed for the option whose value will be the <%= code "value" %> on the component instance yields a new option object that accepts a <%= code "label" %> and <%= code "value" %> argument.
+  <%= code "option" %> also accepts a block that can be used to create the label.
+</p>

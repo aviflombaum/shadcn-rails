@@ -232,8 +232,7 @@
     "type": "components:ui",
     "files": [
       "app/helpers/components/select_helper.rb",
-      "app/views/components/ui/_select.html.erb",
-      "app/javascript/controllers/ui/select_controller.js"
+      "app/components/shadcn/select_component.rb"
     ]
   },
   "separator": {
