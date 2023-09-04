@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    shadcn-ui (0.0.10)
+    shadcn-ui (0.0.12)
       tailwind_merge (~> 0.7)
 
 GEM
