@@ -5,7 +5,7 @@
 
   <div
     role="dialog"
-    data-state="closed"
+    data-state="<%= options[:state]%>"
     data-ui--sheet-target="dialog"
     class="<%= tw("data-[state=closed]:hidden data-[state=open]:block fixed z-50 gap-4 bg-background p-6 shadow-lg
                   transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300
