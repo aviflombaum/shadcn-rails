@@ -1,4 +1,4 @@
-class ShadcnFormBuilder < ActionView::Helpers::FormBuilder
+class Shadcn::FormBuilder < ActionView::Helpers::FormBuilder
   def label(method, options = {})
     error_class = @object.errors[method].any? ? "error" : ""
     options[:class] = @template.tw("#{options[:class]} #{error_class}")

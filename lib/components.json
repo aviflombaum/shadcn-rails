@@ -138,7 +138,7 @@
   "forms": {
     "name": "forms",
     "type": "components:ui",
-    "files": ["app/helpers/components/forms_helper.rb", "app/form_builders/shadcn_form_builder.rb"],
+    "files": ["app/helpers/components/forms_helper.rb", "app/components/shadcn/form_builder.rb"],
     "dependencies": [
       { "component": "input" },
       { "component": "label" },
