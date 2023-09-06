@@ -49,3 +49,6 @@ node_modules
 .rspec_status
 bin/deploy
 .env
+# Rubymine
+/.idea/*
+
