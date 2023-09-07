@@ -61,6 +61,9 @@ export default class UIDialog extends Controller {
   closeBy(target) {
     this.toggleClass(false);
 
+    if (target.getAttribute('data-ui--dialog-target') === 'modal') {
+      document.body.classList.remove("overflow-hidden");
+    }
     this.dispatch("closed", { detail: { target: target } });
   }
 
