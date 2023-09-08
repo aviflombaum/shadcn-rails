@@ -23,4 +23,32 @@ module ApplicationHelper
     end
     link_to text, path, class: classes
   end
+
+  def generate_sidebar_content(html_content)
+    doc = Nokogiri::HTML.fragment(html_content)
+
+    doc.css('div.preview h2, div.preview h3').remove
+
+    items = []
+    current_h2 = nil
+
+    doc.css('h2, h3').each do |header|
+      item = {
+        tag: header.name,
+        text: header.text,
+        anchor: header['id'] || header.text.parameterize
+      }
+
+      if header.name == "h2"
+        current_h2 = item
+        items << current_h2
+        current_h2[:subitems] = []
+      elsif current_h2 && header.name == "h3"
+        current_h2[:subitems] << item
+      end
+    end
+
+    items
+  end
+
 end
