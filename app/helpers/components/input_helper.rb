@@ -10,7 +10,7 @@ module Components::InputHelper
     options[:class] = tw(options[:class])
 
     options.reverse_merge!(
-      label: (options[:lable] || false),
+      label: (options[:label] || false),
       required: (options[:required] || false),
       disabled: (options[:disabled] || false),
       readonly: (options[:readonly] || false),
