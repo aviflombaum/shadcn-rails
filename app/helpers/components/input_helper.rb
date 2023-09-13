@@ -17,7 +17,8 @@ module Components::InputHelper
       placeholder: (options[:placeholder] || ""),
       autocomplete: (options[:autocomplete] || ""),
       autocapitalize: (options[:autocapitalize] || nil),
-      autocorrect: (options[:autocorrect] || nil)
+      autocorrect: (options[:autocorrect] || nil),
+      autofocus: (options[:autofocus] || nil)
     )
     render partial: "components/ui/input", locals: {
       type:,
