@@ -1,0 +1,36 @@
+<div class="hidden text-sm xl:block">
+  <div class="sticky top-16 -mt-10 pt-4">
+    <div dir="ltr" class="relative overflow-hidden pb-10" style="position: relative; --radix-scroll-area-corner-width: 0px; --radix-scroll-area-corner-height: 0px;">
+      <style>[data-radix-scroll-area-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-scroll-area-viewport]::-webkit-scrollbar{display:none}</style><div data-radix-scroll-area-viewport="" class="h-full w-full rounded-[inherit]" style="overflow: hidden scroll;">
+      <div style="min-width: 100%; display: table;">
+        <div class="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
+          <div class="space-y-2">
+            <p class="font-medium">On This Page</p>
+            <ul class="m-0 list-none">
+              <% sidebar_items = generate_sidebar_content(content) %>
+              <% sidebar_items.each do |item| %>
+                <li class="mt-0 pt-2">
+                  <a href="#<%= item[:anchor]%>" class="inline-block no-underline transition-colors hover:text-foreground font-medium text-foreground">
+                    <%= item[:text] %>
+                  </a>
+                  <% if item[:subitems].present? %>
+                    <ul class="m-0 list-none pl-4">
+                      <% item[:subitems].each do |subitem| %>
+                        <li class="mt-0 pt-2">
+                          <a href="#<%= subitem[:anchor] %>" class="inline-block no-underline transition-colors hover:text-foreground text-muted-foreground">
+                            <%= subitem[:text] %>
+                          </a>
+                        </li>
+                      <% end %>
+                    </ul>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
