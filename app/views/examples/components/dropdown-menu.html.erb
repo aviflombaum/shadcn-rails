@@ -2,7 +2,7 @@
       description: "Displays a menu to the user — such as a set of actions or functions — triggered by a button." %>
 
 <%= content_for :preview, flush: true do %>
-  <% render_dropdown_menu do %>
+  <%= render_dropdown_menu do %>
     <%= dropdown_menu_trigger do %>
       <%= render_button "Open Dropdown", variant: :outline %>
     <% end %>
