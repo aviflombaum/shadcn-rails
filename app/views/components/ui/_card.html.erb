@@ -1,4 +1,4 @@
-<div class="rounded-lg border bg-card text-card-foreground shadow-sm w-[350px] <%= options[:class] %>">
+<div class="<%= tw("rounded-lg border bg-card text-card-foreground shadow-sm w-[350px]", options[:class]) %">
   <% if title || subtitle %>
   <div class="flex flex-col space-y-1.5 p-6">
     <% if title %>
