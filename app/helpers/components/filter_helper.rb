@@ -10,7 +10,7 @@ module Components::FilterHelper
     render "components/ui/filter", items: items, options: options, input_class: input_class, content: content
   end
 
-  def list_item(:value, :name, :selected)
+  def list_item(value:, name:, selected:)
      "#{name}"
   end
 end
