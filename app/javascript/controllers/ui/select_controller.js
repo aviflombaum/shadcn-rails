@@ -1,7 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import { useClickOutside } from "https://ga.jspm.io/npm:stimulus-use@0.51.3/dist/index.js";
 
-
 export default class UISelectController extends Controller {
   static targets = ["value", "menu", "wrapper"]
   static values = { value: String }
@@ -120,17 +119,3 @@ export default class UISelectController extends Controller {
     option.scrollIntoView({ behavior: 'instant', block: 'nearest', inline: 'start' })
   }
 }
-
-
-// <div data-controller="ui--select" data-ui--select-target="wrapper" data-action="keydown->ui--select#key click->ui--date-picker#clickOption change->ui--date-picker#monthSelect">
-// <div class="relative">
-//   <button data-action="ui--select#toggle" data-ui--date-picker-target="month" class="py-2 px-3 rounded-md flex items-center justify-between w-full text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
-//     <span data-ui--select-target="value">${isoDate.getMonthName()}</span>
-//     <svg class="w-4 h-4 mt-1 stroke-slate-400" fill="none"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-//   </button>
-//   <div data-ui--select-target="menu" data-action="click->ui--select#select"
-//     class="absolute z-10 bg-white rounded-md shadow-lg mt-2 w-30 py-1 hidden overflow-auto max-h-60">
-//     ${this.monthOptions(+isoDate.mm)}
-//   </div>
-// </div>
-// </div>
