@@ -1,0 +1,22 @@
+<%= render_component_header title: "Date Picker",
+      description: "Displays a calendar to pick a date — triggered by a button." %>
+
+<%= content_for :preview, flush: true do %>
+  <%= render_date_picker name: 'date', value:'2024-05-01' %>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("date-picker/preview", :erb) %>
+<% end %>
+
+<%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui date-picker
+<% end %>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
+<%= code_partial("date-picker/usage", :erb) %>
+
+<%= render_usage("date-picker") %>
