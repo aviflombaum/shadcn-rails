@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import { useClickOutside } from "https://ga.jspm.io/npm:stimulus-use@0.51.3/dist/index.js";
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from "../../utils/bodyScrollLock.js"
 
 export default class UISelectController extends Controller {
   static targets = ["value", "menu", "wrapper"]
@@ -9,6 +10,10 @@ export default class UISelectController extends Controller {
     useClickOutside(this);
     this.valueTarget.textContent = this.valueValue || this.valueTarget.textContent || "Select an option"
     this.selectedOption = null
+  }
+
+  disconnect() {
+    clearAllBodyScrollLocks()
   }
 
   clickOutside(event) {
@@ -25,6 +30,9 @@ export default class UISelectController extends Controller {
 
     if (!this.menuTarget.classList.contains("hidden")) {
       this.adjustScrollPosition()
+      disableBodyScroll(this.menuTarget)
+    } else {
+      enableBodyScroll(this.menuTarget)
     }
 
     Array.from(optionList).forEach(function(child){
