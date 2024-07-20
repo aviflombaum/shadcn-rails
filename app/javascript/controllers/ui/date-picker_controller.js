@@ -1,5 +1,3 @@
-// Imported from:  https://github.com/airblade/stimulus-datepicker/blob/main/src/datepicker.js
-
 import { Controller } from '@hotwired/stimulus'
 import IsoDate from '../../utils/iso_date'
 import { useClickOutside } from "https://ga.jspm.io/npm:stimulus-use@0.51.3/dist/index.js";
@@ -182,6 +180,7 @@ export default class UIDatePickerController extends Controller {
 
   clickOutside(event) {
     event.preventDefault()
+    event.stopPropagation()
     if (!this.isCalendarOpenValue) return
     if (event.target.closest('[data-ui--date-picker-target="calendar"]')) return
     if (this.isSelectOpenValue) return
