@@ -1,5 +1,5 @@
-<%= content_tag as, role: "group" do
-  items.each do |item| %>
+<%= content_tag as, role: "group" do %>
+  <% items.each do |item| %>
     <%= list_item(value: item[:value], name: item[:name], selected: item[:selected]) %>
-  <% end
-end %>
+  <% end %>
+<% end %>
