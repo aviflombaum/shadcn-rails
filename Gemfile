@@ -82,5 +82,5 @@ gem "redcarpet", "~> 3.6"
 
 gem "rouge", "~> 4.1"
 
-gem "tailwind_merge", "~> 0.7.4"
+gem "tailwind_merge", "~> 0.12"
 gem "meta-tags"

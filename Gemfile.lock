@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    shadcn-ui (0.0.13)
-      tailwind_merge (~> 0.7)
+    shadcn-ui (0.0.14)
+      tailwind_merge (~> 0.12)
 
 GEM
   remote: https://rubygems.org/
@@ -252,7 +252,7 @@ GEM
     sqlite3 (1.6.3-x86_64-linux)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
-    tailwind_merge (0.7.4)
+    tailwind_merge (0.12.0)
       lru_redux (~> 1.1)
     tailwindcss-rails (2.0.29-arm64-darwin)
       railties (>= 6.0.0)
@@ -306,7 +306,7 @@ DEPENDENCIES
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
-  tailwind_merge (~> 0.7.4)
+  tailwind_merge (~> 0.12)
   tailwindcss-rails
   turbo-rails
   tzinfo-data
