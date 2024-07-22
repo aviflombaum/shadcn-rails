@@ -2,7 +2,7 @@
 
 import { Controller } from "@hotwired/stimulus";
 import IsoDate from "../../utils/iso_date";
-import { useClickOutside } from "https://ga.jspm.io/npm:stimulus-use@0.52.2/dist/index.js";
+import { useClickOutside } from "stimulus-use";
 
 // All dates are local, not UTC.
 export default class UIDatePickerController extends Controller {
