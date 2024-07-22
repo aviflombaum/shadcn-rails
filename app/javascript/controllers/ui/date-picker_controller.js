@@ -1,7 +1,7 @@
 // Imported from:  https://github.com/airblade/stimulus-datepicker/blob/main/src/datepicker.js
 
 import { Controller } from "@hotwired/stimulus";
-import IsoDate from "../../utils/iso_date";
+import IsoDate from "utils/iso_date";
 import { useClickOutside } from "stimulus-use";
 
 // All dates are local, not UTC.

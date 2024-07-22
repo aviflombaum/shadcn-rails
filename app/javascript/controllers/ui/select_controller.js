@@ -1,10 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
 import { useClickOutside } from "stimulus-use";
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from "../../utils/bodyScrollLock.js";
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from "utils/bodyScrollLock";
 
 export default class UISelectController extends Controller {
   static targets = ["value", "menu", "wrapper"];
