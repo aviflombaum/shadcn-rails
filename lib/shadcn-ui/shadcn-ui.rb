@@ -2,7 +2,10 @@
 
 require_relative "version"
 
-module ShadncUi
+require_relative "railtie"
+
+require_relative "engine"
+
+module ShadcnUi
   class Error < StandardError; end
-  # Your code goes here...
 end

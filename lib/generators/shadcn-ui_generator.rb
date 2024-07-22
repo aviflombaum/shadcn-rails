@@ -151,18 +151,6 @@ class ShadcnUiGenerator < Rails::Generators::Base
     end
   end
 
-  def insert_import_line(file_path, line)
-    file_contents = File.read(file_path)
-    new_contents = file_contents.gsub(/@tailwind\s+utilities;/, "\\0\n#{line}\n")
-    File.write(file_path, new_contents)
-  end
-
-  def insert_import_first_line(file_path, line)
-    file_contents = File.read(file_path)
-    new_contents = "#{line}\n#{file_contents}"
-    File.write(file_path, new_contents)
-  end
-
   def check_for_shadcn_tailwind_js
     shadcn_tailwind_path = "config/shadcn.tailwind.js"
     if File.exist?(File.expand_path(File.join(target_rails_root, shadcn_tailwind_path)))
@@ -194,6 +182,18 @@ class ShadcnUiGenerator < Rails::Generators::Base
 
       FileUtils.cp(source_path, destination_path)
     end
+  end
+
+  def insert_import_line(file_path, line)
+    file_contents = File.read(file_path)
+    new_contents = file_contents.gsub(/@tailwind\s+utilities;/, "\\0\n#{line}\n")
+    File.write(file_path, new_contents)
+  end
+
+  def insert_import_first_line(file_path, line)
+    file_contents = File.read(file_path)
+    new_contents = "#{line}\n#{file_contents}"
+    File.write(file_path, new_contents)
   end
 end
 
