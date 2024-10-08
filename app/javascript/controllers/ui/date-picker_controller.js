@@ -282,7 +282,7 @@ export default class UIDatePickerController extends Controller {
   //
   // @param isoDate [IsoDate] the date of interest
   render(isoDate, animate) {
-    const cal = `<div class="absolute z-10 p-3 rounded-md border bg-white" data-ui--date-picker-target="calendar" data-action="keydown->ui--date-picker#key" role="dialog" aria-modal="true" aria-label="${this.text(
+    const cal = `<div class="absolute z-10 p-3 rounded-md border bg-white dark:bg-black" data-ui--date-picker-target="calendar" data-action="keydown->ui--date-picker#key" role="dialog" aria-modal="true" aria-label="${this.text(
       "chooseDate",
     )}">
       <div class="flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0 overscroll-contain">
@@ -304,7 +304,7 @@ export default class UIDatePickerController extends Controller {
                     <svg class="w-4 h-4 mt-1 stroke-slate-400" fill="none"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                   </button>
                   <div data-ui--select-target="menu" data-action="click->ui--select#select"
-                    class="absolute z-10 bg-white rounded-md shadow-lg mt-2 w-30 py-1 hidden overflow-auto overscroll-contain max-h-60">
+                    class="absolute z-10 bg-white dark:bg-black rounded-md shadow-lg mt-2 w-30 py-1 hidden overflow-auto overscroll-contain max-h-60">
                     ${this.monthOptions(+isoDate.mm)}
                   </div>
                 </div>
@@ -318,7 +318,7 @@ export default class UIDatePickerController extends Controller {
                     <svg class="w-4 h-4 mt-1 stroke-slate-400" fill="none"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                   </button>
                   <div data-ui--select-target="menu" data-action="click->ui--select#select"
-                    class="absolute z-10 bg-white rounded-md shadow-lg mt-2 w-20 py-1 hidden overflow-auto overscroll-contain max-h-60 scrollbar:!h-1.5 scrollbar:bg-transparent scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 scrollbar-track:!rounded">
+                    class="absolute z-10 bg-white dark:bg-black rounded-md shadow-lg mt-2 w-20 py-1 hidden overflow-auto overscroll-contain max-h-60 scrollbar:!h-1.5 scrollbar:bg-transparent scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 scrollbar-track:!rounded">
                     ${this.yearOptions(+isoDate.yyyy)}
                   </div>
                 </div>
