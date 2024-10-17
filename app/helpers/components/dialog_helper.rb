@@ -1,7 +1,7 @@
 module Components::DialogHelper
   def render_dialog(**options, &block)
     content = capture(&block) if block
-    render "components/ui/dialog", content: content, **options
+    render "components/ui/dialog", content: content, options: options
   end
 
   def dialog_trigger(&block)
