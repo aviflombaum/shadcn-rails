@@ -71,6 +71,7 @@ export default class extends Controller {
 
     this.toggleClass(toggler, content, true);
     this.toggleText(toggler, true);
+    this.toggleAriaExpanded(toggler, true)
   }
 
   hide(toggler, content, transition = true) {
@@ -85,6 +86,7 @@ export default class extends Controller {
 
     this.toggleClass(toggler, content, false);
     this.toggleText(toggler, false);
+    this.toggleAriaExpanded(toggler, false)
   }
 
   transitionEnd(e) {
@@ -111,6 +113,10 @@ export default class extends Controller {
       text = toggler.getAttribute("data-accordion-closed-text-param");
     }
     if (text) toggler.innerHTML = text;
+  }
+
+  toggleAriaExpanded(toggler, opened) {
+    toggler.ariaExpanded = opened ? "true" : "false";
   }
 
   isOpened(toggler) {
