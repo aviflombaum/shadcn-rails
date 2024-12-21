@@ -4,6 +4,7 @@
     <%= content_for(:hover_card_trigger) %>
     <div
       class="hidden absolute transform -translate-x-1/2 left-1/2 translate-y-full -bottom-2 group-hover/hover-card:block z-50 rounded-md border bg-hover_card p-4 text-hover_card-foreground shadow-md outline-none <%= content_for(:hover_card_content_class) %>"
+      role="dialog"
       tabindex="-1">
       <%= content_for(:hover_card_content) %>
     </div>
