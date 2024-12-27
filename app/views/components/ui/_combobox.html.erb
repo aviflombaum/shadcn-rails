@@ -1,11 +1,15 @@
 <%= render_popover do %>
   <%= popover_trigger do %>
     <button class="inline-flex items-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-[200px] justify-between" role="combobox" aria-expanded="false" type="button" aria-haspopup="dialog" data-state="closed">
-      <%= content_for :trigger %>
+      <%= content_for id %>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 h-4 w-4 shrink-0 opacity-50"><path d="m7 15 5 5 5-5"></path><path d="m7 9 5-5 5 5"></path></svg>
     </button>
   <% end %>
   <%= popover_content class: "border-none p-0" do %>
-    <%= render_filter items %>
+    <% if multiple.present? %>
+      <%= render_filter_multiple items %>
+    <% else %>
+      <%= render_filter items %>
+    <% end %>
   <% end %>
 <% end %>
