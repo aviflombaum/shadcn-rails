@@ -1,7 +1,15 @@
 <% items = [{:value => "Ruby on Rails", name: "Ruby on Rails"}, {:value => "Next.js", name: "Next.js"}, {:value => "Remix.run", name: "Remix.run"}] %>
 
-<%= render_combobox items do %>
-  <%= combobox_trigger do %>
-    Select framework
+<div class="flex flex-col space-y-4">
+  <%= render_combobox id: "combobox_1", items: items do %>
+    <%= combobox_trigger do %>
+      Single combobox
+    <% end %>
   <% end %>
-<% end %>
+
+  <%= render_combobox id: "combobox_2", items: items, multiple: true do %>
+    <%= combobox_trigger do %>
+      Multiple combobox
+    <% end %>
+  <% end %>
+</div>
