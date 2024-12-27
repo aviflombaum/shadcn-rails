@@ -1,0 +1,30 @@
+<% countries = [
+  {
+    code: "+1",
+    flag: "🇺🇸"
+  },
+  {
+    code: "+47",
+    flag: "🇬🇧"
+  },
+  {
+    code: "+54",
+    flag: "🇦🇷"
+  }
+]
+%>
+<div data-controller="ui--phone-number-input">
+  <select
+    form=""
+    data-action="input->ui--phone-number-input#userChangedInput"
+    data-ui--phone-number-input-target="country"
+  >
+    <% countries.each do |country| %>
+      <option value="<%=country["code"]%>"><%= country[:code] + " " + country[:flag]%></option>
+    <% end %>
+  <select>
+
+
+  <input type="tel" class="min-h-4 px-3 " data-action="input->ui--phone-number-input#userChangedInput" data-ui--phone-number-input-target="phone">
+  <input type="hidden" name=<%=name%> value:<%=value%> data-ui--phone-number-input-target="input">
+</div>

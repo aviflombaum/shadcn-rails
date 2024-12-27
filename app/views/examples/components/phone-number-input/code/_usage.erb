@@ -1,0 +1,16 @@
+# Inline
+<%= render_accordion(title:, description:) %>
+
+# Description Block
+<%= render_accordion(title:) do %>
+
+<% end %>
+
+# Title and Description Block
+<%= render_accordion do %>
+  <%= accordion_title do %>
+  <% end %>
+
+  <%= accordion_description do %>
+  <% end %>
+<% end %>

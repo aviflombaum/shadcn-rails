@@ -1,0 +1,24 @@
+<%= render_component_header title: "Phone Number Input",
+      description: "Displays a form input field or a component that looks like an input field." %>
+
+<% content_for :preview, flush: true do %>
+<div class="w-full flex justify-center">
+  <%= render_code_preview('phone-number-input') %>
+</div>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("input/preview", :erb) %>
+<% end %>
+
+<%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui input
+<% end %>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
+
+
+<%= render_example %>
