@@ -1,0 +1,45 @@
+<%
+  items = [{:value => "Ruby on Rails", name: "Ruby on Rails"}, {:value => "Next.js", name: "Next.js"}, {:value => "Remix.run", name: "Remix.run"}]
+%>
+
+<%= render_component_header title: "Filter Multiple",
+      description: "Similar to Filter component but with the ability to select multiple items." %>
+
+<%= content_for :preview, flush: true do %>
+<div class="w-full flex justify-center">
+  <%= render_code_preview('filter_multiple') %>
+</div>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("filter_multiple/preview", :erb) %>
+<% end %>
+
+<%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui filter_multiple
+<% end %>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
+<%= code_partial("filter_multiple/usage", :erb) %>
+
+<%= render_usage("filter_multiple") %>
+
+<% content_for :examples, flush: true do %>
+  <div class="w-full flex justify-center">
+  <%= render_filter_multiple items, class: "p-1" do %>
+    <%= filter_icon do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4 shrink-0 opacity-50 ml-2"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+    <% end %>
+  <% end %>
+  </div>
+<% end %>
+
+<% content_for :code, flush: true do %>
+  <%= code_partial("filter/icon.html", :erb) %>
+<% end %>
+
+
+<%= render_example %>

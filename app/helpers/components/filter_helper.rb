@@ -3,11 +3,11 @@ module Components::FilterHelper
     content_for :filter_icon, capture(&block), flush: true
   end
 
-  def render_filter(items, **options, &block)
+  def render_filter(items, multiple: false, **options, &block)
     content_for :filter_icon, "", flush: true
     content = capture(&block) if block
     input_class = content_for?(:filter_icon) ? "pl-1" : ""
-    render "components/ui/filter", items: items, options: options, input_class: input_class, content: content
+    render "components/ui/filter", items: items, options: options, input_class: input_class, content: content, multiple: multiple
   end
 
   def list_item(value:, name:, selected:)

@@ -1,0 +1,14 @@
+<p class="leading-7 [&:not(:first-child)]:mt-6">The Filter Multiple component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/filter_multiple_helper.rb") %></li>
+  <li><%= code("app/views/components/ui/_filter_multiple.html.erb") %></li>
+  <li><%= code("app/javascript/controllers/ui/filter_multiple_controller.js") %></li>
+</ul>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">
+The method <%= code("render_filter_multiple") %> method accepts one mandtory argument, an array of hashes that each have a <%= code("value") %> and name <%= code("name") %>.</p>
+
+<p class="leading-7 [&:not(:first-child)]:mt-6">You can optionally also call <%= code("filter_icon") %> within a block passed to <%= code("render_filter_multiple") %> to render an icon to the left of the filter input.</p>
+
+<p>This component gets used in the Combobox Multiple and Command components as well as potentially others.</p>

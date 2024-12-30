@@ -1,0 +1,18 @@
+<div data-controller="ui--filter-multiple">
+  <%= render_card do %>
+    <div class="flex items-center">
+      <%= content_for :filter_icon %>
+      <%= render_input name: "filter multiple", placeholder: "Filter items...", variant: :borderless, class: input_class, data: {"ui--filter-multiple-target": "source", action: "input->ui--filter-multiple#filter"} %>
+    </div>
+    <%= render_separator %>
+    <div class="<%= options[:class] %> max-h-48 overflow-y-auto">
+      <%= content_tag :div, role: "group" do %>
+        <% items.each do |item| %>
+          <label data-ui--filter-multiple-target="item" class="block cursor-pointer p-2">
+            <input type='checkbox' name='<%= item[:name] %>' value='<%= item[:value] %>' <%= 'checked' if item[:selected] %> class="mr-2"> <%= item[:name] %>
+          </label>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
