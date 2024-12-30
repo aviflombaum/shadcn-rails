@@ -11,7 +11,13 @@ export default class UIDialog extends Controller {
   ];
 
   initialize() {}
-  connect() {}
+  
+  connect() {
+    if (this.dialogTarget.dataset.state === "open") {
+      this.openBy(this.dialogTarget);
+    }
+  }
+
   open(e) {
     this.openBy(e.target);
     e.preventDefault();
