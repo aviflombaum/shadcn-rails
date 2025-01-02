@@ -10,9 +10,7 @@
 The method <%= code("render_filter") %> method accepts one mandatory argument, an array of hashes that each have a <%= code("value") %> and name <%= code("name") %>.</p>
 
 <p class="leading-7 [&:not(:first-child)]:mt-6">
-You can also use the <%= code("mode") %> argument to specify how filtering should work. The available options are <%= code(":starts_with") %> and <%= code(":includes") %>. 
-By default, the filtering mode will be set to <%= code(":starts_with") %>, which matches items that begin with the specified text. 
-If you prefer to match items containing the specified text anywhere, use <%= code(":includes") %>.
+You can also use the <%= code("pattern") %> argument to provide a regular expression as a string. It requires the placeholder <%=code("{input}") %> to dynamically insert a term into the regex. By default, it is set to <%=code("^{input}") %>, meaning the input term will match only at the beginning of a string. Ensure <%=code("{input}") %> is included in custom patterns to maintain proper functionality.
 </p>
 
 

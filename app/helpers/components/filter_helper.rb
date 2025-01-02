@@ -4,7 +4,7 @@ module Components::FilterHelper
   end
 
   def render_filter(items, **options, &block)
-    options[:mode] = :starts_with unless [:includes, :starts_with].include?(options[:mode])
+    options[:pattern] ||= "^{input}"
     content_for :filter_icon, "", flush: true
     content = capture(&block) if block
     input_class = content_for?(:filter_icon) ? "pl-1" : ""
