@@ -1,4 +1,4 @@
-<div data-controller="ui--dialog">
+<div data-controller="ui--dialog" data-action="keydown->ui--dialog#handleFocusEvent">
   <div data-action="click->ui--dialog#open"><%= content_for(:dialog_trigger) %></div>
 
   <%= render "components/ui/shared/backdrop", as: "modal" %>
