@@ -3,7 +3,7 @@
   <div class="pt-2 -mt-2">
     <%= content_for(:tooltip_trigger) %>
     <div
-      class="hidden absolute transform -translate-x-1/2 left-1/2 -translate-y-full -top-2 group-hover/tooltip:block z-50 rounded-md border bg-tooltip p-4 text-tooltip-foreground shadow-md outline-none <%= content_for(:tooltip_content_class) %>"
+      class="hidden absolute transform -translate-x-1/2 left-1/2 -translate-y-full -top-2 group-hover/tooltip:block z-50 rounded-md border bg-tooltip p-4 text-tooltip-foreground shadow-md outline-none whitespace-nowrap <%= content_for(:tooltip_content_class) %>"
       role="dialog"
       tabindex="-1">
       <%= content_for(:tooltip_content) %>
