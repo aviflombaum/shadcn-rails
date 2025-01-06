@@ -10,8 +10,7 @@ export default class UIFilter extends Controller {
 
   filter(event) {
     let lowerCaseFilterTerm = this.sourceTarget.value.toLowerCase();
-    const pattern = this.patternValue.replace("{input}", lowerCaseFilterTerm);
-    const regex = new RegExp(pattern);
+    const regex = new RegExp(this.patternValue.replace("{input}", lowerCaseFilterTerm));
     if (this.hasItemTarget) {
       this.itemTargets.forEach((el, i) => {
         let filterableKey = el.innerText.toLowerCase();
