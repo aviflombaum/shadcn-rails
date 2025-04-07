@@ -1,3 +1,8 @@
 #!/usr/bin/env sh
 
+if ! gem list overmind -i --silent; then
+  echo "Installing overmind..."
+  gem install overmind
+fi
+
 overmind start -f Procfile.dev
