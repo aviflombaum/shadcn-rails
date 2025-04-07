@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus";
 import "https://ga.jspm.io/npm:@kanety/stimulus-static-actions@1.0.1/dist/index.modern.js";
 
 export default class UIDialog extends Controller {
-  static targets = ["dialog", "modal", "focus", "drag", "backdrop", "closeButton"];
+  static targets = ["dialog", "modal", "focus", "drag", "backdrop", "closeButton", "content"];
   static actions = [
     ["element", "keydown@window->closeByKey"],
     ["modal", "click->closeByModal"],
@@ -49,8 +49,7 @@ export default class UIDialog extends Controller {
   }
 
   openBy(target) {
-    this.toggleClass(true);
-
+    this.toggleElements(true);
     if (this.hasFocusTarget) {
       this.focusTarget.focus();
     }
@@ -59,39 +58,52 @@ export default class UIDialog extends Controller {
   }
 
   closeBy(target) {
-    this.toggleClass(false);
-
+    this.toggleElements(false);
     if (target.getAttribute('data-ui--dialog-target') === 'modal') {
       document.body.classList.remove("overflow-hidden");
     }
     this.dispatch("closed", { detail: { target: target } });
   }
 
-  // Refactor Me
-  // This needs to be combined with the toggle method in sheet_controller
-  toggleClass(visible) {
-    if (visible) {
-      this.dialogTarget.classList.remove("hidden");
-      this.dialogTarget.dataset.state = "open";
-      if (this.hasBackdropTarget) {
-        this.backdropTarget.classList.remove("hidden");
-        this.backdropTarget.dataset.state = "open";
-      }
-      if (this.hasModalTarget) {
-        this.modalTarget.classList.remove("hidden");
-        this.modalTarget.dataset.state = "open";
-      }
-    } else {
-      this.dialogTarget.classList.add("hidden");
-      this.dialogTarget.dataset.state = "closed";
-      if (this.hasBackdropTarget) {
-        this.backdropTarget.classList.add("hidden");
-        this.backdropTarget.dataset.state = "closed";
-      }
-      if (this.hasModalTarget) {
-        this.modalTarget.classList.add("hidden");
-        this.modalTarget.dataset.state = "closed";
-      }
+  toggleElements(visible, { dialog, modal, backdrop, content, body = document.body } = {}) {
+    // Use provided elements or fall back to targets
+    const dialogEl = dialog || (this.hasDialogTarget ? this.dialogTarget : null);
+    const modalEl = modal || (this.hasModalTarget ? this.modalTarget : null);
+    const backdropEl = backdrop || (this.hasBackdropTarget ? this.backdropTarget : null);
+    const contentEl = content || (this.hasContentTarget ? this.contentTarget : null);
+
+    // Handle body overflow
+    if (body) {
+      body.classList.toggle("overflow-hidden", visible);
     }
+    
+    // Handle content scrolling
+    if (contentEl) {
+      contentEl.classList.toggle("overflow-y-scroll", visible);
+      contentEl.classList.toggle("h-full", visible);
+    }
+    
+    // Handle dialog visibility
+    if (dialogEl) {
+      dialogEl.classList.toggle("hidden", !visible);
+      dialogEl.dataset.state = visible ? "open" : "closed";
+    }
+    
+    // Handle modal visibility
+    if (modalEl) {
+      modalEl.classList.toggle("hidden", !visible);
+      modalEl.dataset.state = visible ? "open" : "closed";
+    }
+    
+    // Handle backdrop visibility
+    if (backdropEl) {
+      backdropEl.classList.toggle("hidden", !visible);
+      backdropEl.dataset.state = visible ? "open" : "closed";
+    }
+  }
+
+  // Legacy method for backward compatibility?
+  toggleClass(visible) {
+    this.toggleElements(visible);
   }
 }
