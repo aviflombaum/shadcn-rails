@@ -1,17 +1,11 @@
-<div data-controller="ui--tooltip">
-  <div class="tooltip-trigger"
-       data-ui--tooltip-target="trigger">
+<div class="group/tooltip relative">
+  <%# Phantom div to increase the interaction area without affect the render size %>
+  <div class="pt-2 -mt-2">
     <%= content_for(:tooltip_trigger) %>
-  </div>
-
-  <div class="tooltip-wrapper" data-ui--tooltip-target="wrapper">
-    <div data-side="top"
-         data-ui--tooltip-target="content"
-         data-align="center"
-         data-state="closed"
-         role="dialog"
-         class="hidden z-50 rounded-md border bg-tooltip p-4 text-tooltip-foreground shadow-md outline-none <%= content_for(:tooltip_content_class) %>"
-         tabindex="-1">
+    <div
+      class="hidden absolute transform -translate-x-1/2 left-1/2 -translate-y-full -top-2 group-hover/tooltip:block z-50 rounded-md border bg-tooltip p-4 text-tooltip-foreground shadow-md outline-none whitespace-nowrap <%= content_for(:tooltip_content_class) %>"
+      role="dialog"
+      tabindex="-1">
       <%= content_for(:tooltip_content) %>
     </div>
   </div>

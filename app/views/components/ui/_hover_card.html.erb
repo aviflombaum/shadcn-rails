@@ -1,17 +1,11 @@
-<div data-controller="ui--hover-card">
-  <div class="hover_card-trigger"
-       data-ui--hover-card-target="trigger">
+<div class="group/hover-card relative">
+  <%# Phantom div to increase the interaction area without affect the render size %>
+  <div class="pt-2 -mt-2">
     <%= content_for(:hover_card_trigger) %>
-  </div>
-
-  <div class="hover_card-wrapper" data-ui--hover-card-target="wrapper">
-    <div data-side="bottom"
-         data-ui--hover-card-target="content"
-         data-align="center"
-         data-state="closed"
-         role="dialog"
-         class="hidden z-50 rounded-md border bg-hover_card p-4 text-hover_card-foreground shadow-md outline-none <%= content_for(:hover_card_content_class) %>"
-         tabindex="-1">
+    <div
+      class="hidden absolute transform -translate-x-1/2 left-1/2 translate-y-full -bottom-2 group-hover/hover-card:block z-50 rounded-md border bg-hover_card p-4 text-hover_card-foreground shadow-md outline-none <%= content_for(:hover_card_content_class) %>"
+      role="dialog"
+      tabindex="-1">
       <%= content_for(:hover_card_content) %>
     </div>
   </div>
