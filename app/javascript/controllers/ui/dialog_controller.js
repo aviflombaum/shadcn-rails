@@ -31,6 +31,21 @@ export default class UIDialog extends Controller {
     e.preventDefault();
   }
 
+  handleFocusEvent(e) {
+    let target = this.dialogTarget;
+    let shiftPressed = e.shiftKey;
+    // If TAB is pressed
+    if (e.keyCode === 9) {
+      let focusableElements = target.querySelectorAll("a[href], button");
+      let borderElem = shiftPressed
+        ? focusableElements[0]
+        : focusableElements[focusableElements.length - 1];
+      if (document.activeElement === borderElem) {
+        e.preventDefault();
+      }
+    }
+  }
+
   closeByKey(e) {
     if (e.keyCode == 27) {
       this.closeBy(e.target);
