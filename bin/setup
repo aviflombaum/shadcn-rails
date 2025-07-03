@@ -30,4 +30,9 @@ FileUtils.chdir APP_ROOT do
 
   puts "\n== Restarting application server =="
   system! "bin/rails restart"
+
+  if Gem::Specification.find_all_by_name('overmind').empty?
+    puts "\n== Installing overmind =="
+    system! "gem install overmind"
+  end
 end
