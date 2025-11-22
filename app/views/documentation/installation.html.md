@@ -16,6 +16,12 @@ bundle install
 
 ## Install and Setup Dependencies
 
+Once the gem is added, use the generator to setup shadcn in your application.
+
+```sh
+rails g shadcn-ui:install
+```
+
 ### TailwindCSS
 
 The components need a few things in order to render and function properly
