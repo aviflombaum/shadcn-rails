@@ -8,6 +8,12 @@ copy and paste into your apps. Free. Open Source. **Use this to build your own c
 **If you're using this, [please let me know](https://twitter.com/aviflombaum) so I keep developing
 it.**
 
+## Not Under Active Development
+
+I'm so happy people loved this project. shadcn-ui has moved a lot and there is no way to keep up with it. The patterns for building components in this library are useful and should be maintained, but as a separate component library.
+
+If anyone wants to help take over this project and contribute please reach out.
+
 ## About
 
 This is **NOT** a component library. It's a collection of re-usable components that you can copy and
