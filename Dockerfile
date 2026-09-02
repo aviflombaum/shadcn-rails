@@ -9,6 +9,9 @@
 #      empty, the path gem's gemspec stops matching the lockfile, and frozen mode aborts
 #      with "The gemspecs for path gems changed". The install therefore runs unfrozen.
 #      Versions are still pinned by Gemfile.lock; only the path gem's file list differs.
+#      The same gemspec is re-evaluated by bundler/setup at boot, so git ships in the
+#      runtime image too. Building spec.files with Dir.glob instead would remove both
+#      needs, but that changes what a released gem packages, so it is left alone here.
 #   2. Tailwind is built from config/shadcn.tailwind.js, which requires real npm packages
 #      (@tailwindcss/forms, typography, aspect-ratio, container-queries, tailwindcss-animate).
 #      app/assets/builds is gitignored, so the CSS does not exist until it is built here.
@@ -53,8 +56,12 @@ RUN SECRET_KEY_BASE=dummy ./bin/rails assets:precompile
 
 FROM base
 
+# git is needed at RUNTIME as well as at build time: the Gemfile's `gemspec` directive
+# makes bundler/setup re-evaluate shadcn-ui.gemspec on every boot, and that gemspec shells
+# out to `git ls-files`. Without the binary every process dies in config/boot.rb with
+# "There was an error while loading shadcn-ui.gemspec: No such file or directory - git".
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libsqlite3-0 && \
+    apt-get install --no-install-recommends -y curl git libsqlite3-0 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
