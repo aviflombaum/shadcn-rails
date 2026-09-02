@@ -1,5 +1,4 @@
-# .git is deliberately NOT ignored: shadcn-ui.gemspec builds spec.files from
-# `git ls-files`, and bundler's frozen mode rejects the build without it.
+.git
 .github
 .gitignore
 /log/*

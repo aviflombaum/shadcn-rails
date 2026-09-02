@@ -4,10 +4,11 @@
 # the build in three ways that a generated Dockerfile would get wrong:
 #
 #   1. The Gemfile uses `gemspec`, so bundler evaluates shadcn-ui.gemspec during
-#      `bundle install`. That gemspec builds spec.files from `git ls-files`, so the build
-#      needs the git binary, the gemspec's own lib/, AND a real .git directory. Without
-#      .git the file list comes back empty, the path gem's gemspec no longer matches the
-#      lockfile, and frozen mode aborts with "The gemspecs for path gems changed".
+#      `bundle install`, and that gemspec builds spec.files from `git ls-files`. There is
+#      no .git here -- Coolify strips it from the build context -- so the list comes back
+#      empty, the path gem's gemspec stops matching the lockfile, and frozen mode aborts
+#      with "The gemspecs for path gems changed". The install therefore runs unfrozen.
+#      Versions are still pinned by Gemfile.lock; only the path gem's file list differs.
 #   2. Tailwind is built from config/shadcn.tailwind.js, which requires real npm packages
 #      (@tailwindcss/forms, typography, aspect-ratio, container-queries, tailwindcss-animate).
 #      app/assets/builds is gitignored, so the CSS does not exist until it is built here.
@@ -34,8 +35,8 @@ RUN apt-get update -qq && \
 # The gemspec is evaluated at bundle time and requires lib/shadcn-ui/shadcn-ui.rb.
 COPY Gemfile Gemfile.lock shadcn-ui.gemspec ./
 COPY lib lib
-COPY .git .git
-RUN bundle install && \
+RUN bundle config set --local frozen false && \
+    bundle install && \
     rm -rf ~/.bundle "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
 
 # Tailwind plugins are real npm packages, needed before the CSS build.
@@ -48,9 +49,6 @@ RUN bundle exec bootsnap precompile app/ lib/
 
 # Builds Tailwind (tailwindcss-rails hooks tailwindcss:build into this) and digests assets.
 RUN SECRET_KEY_BASE=dummy ./bin/rails assets:precompile
-
-# .git was only needed so the gemspec could enumerate its files; keep it out of the image.
-RUN rm -rf .git
 
 
 FROM base
