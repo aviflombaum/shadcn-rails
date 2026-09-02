@@ -1,0 +1,9 @@
+.git
+.github
+.gitignore
+/log/*
+/tmp/*
+/node_modules
+/public/assets
+/spec
+/.vscode
