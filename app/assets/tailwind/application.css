@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../stylesheets/shadcn.css";
+
+@layer base {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;
+  }
+}
+
+article.documentation h1 {
+  @apply scroll-m-20 text-4xl font-bold tracking-tight;
+}
+
+article.documentation p + h1 {
+  @apply mt-12;
+}
+article.documentation h2 {
+  @apply scroll-m-20 text-3xl font-bold tracking-tight my-8;
+}
+
+article.documentation h3 {
+  @apply scroll-m-20 text-2xl font-bold tracking-tight my-4;
+}
+
+article.documentation h4 {
+  @apply scroll-m-20 text-xl font-bold tracking-tight my-2;
+}
+
+article.documentation subtitle {
+  @apply text-lg text-muted-foreground;
+}
+article.documentation p {
+  @apply leading-7 [&:not(:first-child)]:mt-6;
+}
+
+article.documentation :where(code):not(:where([class~="not-prose"] *)):before {
+  content: "";
+}
+
+article.documentation :where(code):not(:where([class~="not-prose"] *)):after {
+  content: "";
+}
+
+article.documentation p a {
+  @apply underline hover:text-pink;
+}
+
+article.documentation pre {
+  @apply max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 dark:bg-zinc-900 text-white py-4 px-8 rounded-lg my-4;
+}
+
+article.documentation p > code {
+  @apply text-white bg-black p-1 rounded;
+}

@@ -44,9 +44,6 @@ class ShadcnUiGenerator < Rails::Generators::Base
     puts "Checking for shadcn import..."
     check_for_shadcn_css_import
 
-    puts "Checking for shadcn.tailwind.js..."
-    check_for_shadcn_tailwind_js
-
     puts "Checking for component_helper.rb"
     check_for_component_helper
   end
@@ -115,12 +112,21 @@ class ShadcnUiGenerator < Rails::Generators::Base
   end
 
   def check_for_tailwind
-    tailwind_file_path = File.join(target_rails_root, "app/assets/stylesheets/application.tailwind.css")
+    # Tailwind v4 uses app/assets/tailwind/application.css
+    tw4_path = File.join(target_rails_root, "app/assets/tailwind/application.css")
+    # Tailwind v3 used app/assets/stylesheets/application.tailwind.css
+    tw3_path = File.join(target_rails_root, "app/assets/stylesheets/application.tailwind.css")
 
-    if File.exist?(tailwind_file_path)
+    if File.exist?(tw4_path)
+      @tailwind_css_path = tw4_path
+      true
+    elsif File.exist?(tw3_path)
+      @tailwind_css_path = tw3_path
+      puts "WARNING: Detected Tailwind v3 file layout. Consider upgrading to tailwindcss-rails ~> 4.0"
+      puts "         and running `rails tailwindcss:upgrade` to migrate to the new file structure."
       true
     else
-      abort "shadcn-ui requires Tailwind CSS. Please include tailwindcss-rails in your Gemfile and run `rails g tailwindcss:install` to install Tailwind CSS."
+      abort "shadcn-ui requires Tailwind CSS v4. Please include tailwindcss-rails (~> 4.0) in your Gemfile and run `rails tailwindcss:install` to install Tailwind CSS."
     end
   end
 
@@ -138,48 +144,24 @@ class ShadcnUiGenerator < Rails::Generators::Base
   end
 
   def check_for_shadcn_css_import
-    tailwind_file_path = File.join(target_rails_root, "app/assets/stylesheets/application.tailwind.css")
+    return unless @tailwind_css_path && File.file?(@tailwind_css_path)
 
-    if File.file?(tailwind_file_path)
-      matched_file = File.readlines(tailwind_file_path).any? { |s| s.include?("shadcn.css") }
-      if !matched_file
-        puts "Importing shadcn.css into application.tailwind.css..."
-        insert_import_first_line(tailwind_file_path, "@import \"shadcn.css\";")
-      end
-    else
-      puts "application.tailwind.css does not exist."
+    matched_file = File.readlines(@tailwind_css_path).any? { |s| s.include?("shadcn.css") }
+    if !matched_file
+      puts "Importing shadcn.css into #{File.basename(@tailwind_css_path)}..."
+      insert_import_after_tailwind(@tailwind_css_path, '@import "../stylesheets/shadcn.css";')
     end
   end
 
-  def insert_import_line(file_path, line)
+  def insert_import_after_tailwind(file_path, line)
     file_contents = File.read(file_path)
-    new_contents = file_contents.gsub(/@tailwind\s+utilities;/, "\\0\n#{line}\n")
-    File.write(file_path, new_contents)
-  end
-
-  def insert_import_first_line(file_path, line)
-    file_contents = File.read(file_path)
-    new_contents = "#{line}\n#{file_contents}"
-    File.write(file_path, new_contents)
-  end
-
-  def check_for_shadcn_tailwind_js
-    shadcn_tailwind_path = "config/shadcn.tailwind.js"
-    if File.exist?(File.expand_path(File.join(target_rails_root, shadcn_tailwind_path)))
-      puts "...found shadcn.tailwind.js"
-      true
+    # Insert after the last @import line at the top of the file
+    if file_contents.match?(/^@import /)
+      new_contents = file_contents.sub(/((?:@import [^\n]+\n)+)/, "\\1#{line}\n")
     else
-      source_path = File.expand_path(File.join("../../", shadcn_tailwind_path), __dir__)
-      destination_path = File.expand_path(File.join(target_rails_root, shadcn_tailwind_path))
-      puts "...copying shadcn.tailwind.js to config/shadcn.tailwind.js"
-      puts "Make sure to include shadcn.tailwind.js in your tailwind.config.js"
-      puts "const shadcnConfig = require('./shadcn.tailwind.js');"
-      puts "module.exports = {
-  ...shadcnConfig,
-};"
-
-      FileUtils.cp(source_path, destination_path)
+      new_contents = "#{line}\n#{file_contents}"
     end
+    File.write(file_path, new_contents)
   end
 
   def check_for_component_helper
@@ -196,6 +178,3 @@ class ShadcnUiGenerator < Rails::Generators::Base
     end
   end
 end
-
-# Two things - you need the helper helpers
-# you have to put @import on the 3rd line after the tailwind directives? Is that possible? It's because of border-border...worse case you can just use the actual styles

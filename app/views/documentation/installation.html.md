@@ -16,103 +16,49 @@ bundle install
 
 ## Install and Setup Dependencies
 
-### TailwindCSS
+### TailwindCSS v4
 
-The components need a few things in order to render and function properly
+The components require Tailwind CSS v4 and the `tailwindcss-rails` gem v4+.
 
-1. Tailwindcss must be installed in your application. If it's not already, I recommend just using
-   the `tailwindcss-rails` gem and running its installer to bootstrap your application with
-   TailwindCSS.
+1. Tailwind CSS must be installed in your application. If it's not already, add `tailwindcss-rails`
+   (`~> 4.0`) to your Gemfile and run its installer:
 
-2. A few tailwindcss npm packages are required by the theme and the best way to get them is to add
-   them to your package.json or even if you're application doesn't use node packages because you use
-   importmaps or something else, having a package.json will still work only to allow the tailwind
-   cli to compile the themes. The easiest way I've found to include everything you need is by
-   including only one package that will include the rest of them, `tailwind-animate`. Create a
-   package.json if you need via `echo '{}' >> package.json`.
-
-```
-npm install -D tailwindcss-animate
+```sh
+./bin/bundle add tailwindcss-rails
+./bin/rails tailwindcss:install
 ```
 
-These are the requirements if you want to add them individually:
+2. One npm package is needed for component animations. Create a `package.json` if you don't have
+   one via `echo '{}' >> package.json`, then install:
 
 ```
-@tailwindcss/forms
-@tailwindcss/aspect-ratio
-@tailwindcss/typography
-@tailwindcss/container-queries
-tailwindcss-animate
+npm install tw-animate-css
 ```
+
+**Note:** Tailwind v4 has many old v3 plugins built-in (forms, typography, aspect-ratio,
+container-queries). You no longer need to install them separately.
 
 ### shadcn CSS - Required
 
 #### shadcn.css
 
-These steps were not automated and are required to be done manually.
+The generator will automatically copy `app/assets/stylesheets/shadcn.css` to your application.
+This file contains all the CSS variables (using OKLCH color space), the `@theme inline` block
+that exposes them to Tailwind, and base styles.
 
-The components also require a few CSS variables to be set in order to render properly. It's a two
-step process, first, the gem installation should have added `app/assets/stylesheets/shadcn.css` to
-your application. You need to make sure this is included within `application.tailwind.css`, which
-should have happened automatically, but double check.
+You need to make sure `shadcn.css` is imported in your `app/assets/tailwind/application.css`
+file. The generator should handle this automatically, but double check that your file looks
+like this:
 
-```
-@import "shadcn.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-#### shadcn.tailwind.js
-
-The installation also should have added a `config/shadcn.tailwind.js` file to your application. This
-file is required to be included in your `tailwind.config.js` file. The best way to include it is to
-`require` it in your `tailwind.config.js` file and expand the configuration settings. This is what a
-newly setup `tailwind.config.js` file should look like after the inclusion of the
-`shadcn.tailwind.js` settings.
-
-```js
-const defaultTheme = require("tailwindcss/defaultTheme");
-const shadcnConfig = require("./shadcn.tailwind.js");
-
-module.exports = {
-  content: [
-    "./public/*.html",
-    "./app/helpers/**/*.rb",
-    "./app/javascript/**/*.js",
-    "./app/views/**/*.{erb,haml,html,slim}",
-  ],
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
-      },
-    },
-  },
-  plugins: [
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/container-queries"),
-  ],
-  ...shadcnConfig,
-};
+```css
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../stylesheets/shadcn.css";
 ```
 
-You could also just use the shadcnConfig as the default Tailwind settings needed are also defined
-there..
-
-```js
-const shadcnConfig = require("./shadcn.tailwind.js");
-
-module.exports = {
-  ...shadcnConfig,
-};
-```
-
-After that feel free to add further customizatios to your tailwind config. For an existing tailwind
-config, just add shadcnConfig to the end of the config object. It will override any settings needed
-by being at the end. And obviously feel free to inspect shadcnConfig and keep only what's reui
+**Note:** Tailwind v4 uses a CSS-first configuration approach. There is no `tailwind.config.js`
+or `shadcn.tailwind.js` file needed. All theme configuration is handled via `@theme inline`
+inside `shadcn.css`.
 
 ## End
 
@@ -149,197 +95,27 @@ Components are styled using Tailwind CSS. You need to install Tailwind CSS in yo
 
 ### Add dependencies
 
-If you haven't already, install Tailwind into your rails application by adding `tailwindcss-rails`
-to your `Gemfile` and install tailwind into your app:
+If you haven't already, install Tailwind v4 into your rails application:
 
 ```sh
 ./bin/bundle add tailwindcss-rails
 ./bin/rails tailwindcss:install
-```
-
-Then install ./bin/rails tailwindcss:install
-
-### Configure tailwind.config.js
-
-Here's what my `tailwind.config.js` file looks like:
-
-```js
-const defaultTheme = require("tailwindcss/defaultTheme");
-
-module.exports = {
-  darkMode: ["class"],
-  content: [
-    "./public/*.html",
-    "./app/helpers/**/*.rb",
-    "./app/javascript/**/*.js",
-    "./app/views/**/*.{erb,haml,html,slim}",
-  ],
-  theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
-    extend: {
-      colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      fontFamily: {
-        sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans],
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: 0 },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
-    },
-  },
-  plugins: [
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/container-queries"),
-    require("tailwindcss-animate"),
-  ],
-};
+npm install tw-animate-css
 ```
 
 ### Configure styles
 
-Add the following to your app/assets/stylesheets/application.tailwind.css file.
+Tailwind v4 uses a CSS-first configuration approach. There is no `tailwind.config.js` needed.
+
+Copy `shadcn.css` from this repo to `app/assets/stylesheets/shadcn.css` in your application.
+This file contains CSS variables (OKLCH colors), the `@theme inline` block, and base styles.
+
+Then ensure your `app/assets/tailwind/application.css` imports it:
 
 ```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 210 40% 98%;
-
-    --ring: 215 20.2% 65.1%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
-
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
-
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
-
-    --popover: 224 71% 4%;
-    --popover-foreground: 215 20.2% 65.1%;
-
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
-
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 1.2%;
-
-    --secondary: 222.2 47.4% 11.2%;
-    --secondary-foreground: 210 40% 98%;
-
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-
-    --ring: 216 34% 17%;
-
-    --radius: 0.5rem;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
-  }
-}
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../stylesheets/shadcn.css";
 ```
 
 ### Copy Component Files

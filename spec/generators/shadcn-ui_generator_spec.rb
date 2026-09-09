@@ -12,7 +12,8 @@ RSpec.describe ShadcnUiGenerator, type: :generator do
     FileUtils.mkdir_p("#{rails_root}/app/helpers/components")
     FileUtils.mkdir_p("#{rails_root}/app/javascript/controllers/ui")
     FileUtils.mkdir_p("#{rails_root}/app/assets/stylesheets")
-    FileUtils.touch("#{rails_root}/app/assets/stylesheets/application.tailwind.css")
+    FileUtils.mkdir_p("#{rails_root}/app/assets/tailwind")
+    FileUtils.touch("#{rails_root}/app/assets/tailwind/application.css")
   end
 
   after(:all) do
@@ -47,19 +48,12 @@ RSpec.describe ShadcnUiGenerator, type: :generator do
     expect(File).to exist("#{rails_root}/app/assets/stylesheets/shadcn.css")
   end
 
-  it "copies shadcn.tailwind.js to the config" do
-    generator = described_class.new([component_name, rails_root])
-    generator.send(:preprocess_sources)
-
-    expect(File).to exist("#{rails_root}/config/shadcn.tailwind.js")
-  end
-
-  it "inserts the import line into application.tailwind.css if missing" do
-    tailwind_css_path = "#{rails_root}/app/assets/stylesheets/application.tailwind.css"
+  it "inserts the import line into application.css if missing" do
+    tailwind_css_path = "#{rails_root}/app/assets/tailwind/application.css"
 
     generator = described_class.new([component_name, rails_root])
     generator.send(:preprocess_sources)
 
-    expect(File.read(tailwind_css_path)).to include('@import "shadcn.css";')
+    expect(File.read(tailwind_css_path)).to include('shadcn.css')
   end
 end

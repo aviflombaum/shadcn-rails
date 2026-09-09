@@ -16,7 +16,7 @@ module MarkdownHandler
 
   def self.call(template, source)
     compiled_source = erb.call(template, source)
-    "Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(with_toc_data: true), extensions = {fenced_code_blocks: true}).render(begin;#{compiled_source};end).html_safe"
+    "Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(with_toc_data: true), extensions = {fenced_code_blocks: true}).render(begin;#{compiled_source};end.to_s).html_safe"
   end
 end
 

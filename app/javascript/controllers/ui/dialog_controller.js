@@ -94,7 +94,7 @@ export default class UIDialog extends Controller {
     
     // Handle content scrolling
     if (contentEl) {
-      contentEl.classList.toggle("overflow-y-scroll", visible);
+      contentEl.classList.toggle("overflow-y-auto", visible);
       contentEl.classList.toggle("h-full", visible);
     }
     

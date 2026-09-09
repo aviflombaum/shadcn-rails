@@ -5,6 +5,8 @@
 [Shadcn on Rails](https://shadcn.rails-components.com) provides customizable components that you can
 copy and paste into your apps. Free. Open Source. **Use this to build your own component library**.
 
+**Requires Tailwind CSS v4** via [`tailwindcss-rails`](https://github.com/rails/tailwindcss-rails) `~> 4.0`.
+
 **If you're using this, [please let me know](https://twitter.com/aviflombaum) so I keep developing
 it.**
 

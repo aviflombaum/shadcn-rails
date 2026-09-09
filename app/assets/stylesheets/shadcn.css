@@ -1,70 +1,110 @@
-:root {
-  --font-sans: "Inter var";
+@custom-variant dark (&:is(.dark *));
 
-  --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --primary: 240 5.9% 10%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 240 4.8% 95.9%;
-  --secondary-foreground: 240 5.9% 10%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --accent: 240 4.8% 95.9%;
-  --accent-foreground: 240 5.9% 10%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --ring: 240 5% 64.9%;
-  --radius: 0.5rem;
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 
-  --success: 132, 95.3%, 33.3%, 0.74;
-  --success-foreground: 109 55% 28%;
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-attention: var(--attention);
+  --color-attention-foreground: var(--attention-foreground);
+  --color-pink: var(--pink);
 
-  --info: 223 78% 42%;
-  --info-foreground: 225 100% 50%;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 
-  --attention: 45 90% 45%;
-  --attention-foreground: 60 98.4% 48.8% 0.82;
+  --font-sans: "Inter var", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-@layer base {
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 85.7% 97.3%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --radius: 0.5rem;
 
-    --success: 109 55% 28%;
-    --success-foreground: 109 55% 28%;
+:root {
+  --radius: 0.625rem;
 
-    --attention: 45, 90%, 45%, 0.8;
-    --attention-foreground: 60 98.4% 48.8% 0.82;
-  }
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+
+  --success: oklch(0.62 0.19 145);
+  --success-foreground: oklch(0.49 0.16 145);
+  --info: oklch(0.48 0.2 260);
+  --info-foreground: oklch(0.45 0.24 264);
+  --attention: oklch(0.75 0.18 85);
+  --attention-foreground: oklch(0.88 0.2 95);
+  --pink: oklch(0.7 0.32 328);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+
+  --success: oklch(0.49 0.16 145);
+  --success-foreground: oklch(0.49 0.16 145);
+  --info: oklch(0.48 0.2 260);
+  --info-foreground: oklch(0.45 0.24 264);
+  --attention: oklch(0.75 0.18 85);
+  --attention-foreground: oklch(0.88 0.2 95);
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
@@ -104,12 +144,6 @@ input[type="range"] {
   font-family: Arial, sans-serif;
 }
 
-/* input[type="range"]:focus,
-input[type="number"]:focus {
-  box-shadow: 0 0 3px 1px #4b81dd;
-  outline: none;
-} */
-
 input[type="range"] {
   -webkit-appearance: none;
   margin-right: 15px;
@@ -121,7 +155,6 @@ input[type="range"] {
   background-repeat: no-repeat;
 }
 
-/* Input Thumb */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 20px;
@@ -154,18 +187,6 @@ input[type="range"]::-ms-thumb {
   box-shadow: 0 0 2px 0 #000;
   transition: background 0.3s ease-in-out;
 }
-
-/* input[type="range"]::-webkit-slider-thumb:hover {
-  background: #a1a1aa;
-}
-
-input[type="range"]::-moz-range-thumb:hover {
-  background: #a1a1aa;
-}
-
-input[type="range"]::-ms-thumb:hover {
-  background: #a1a1aa;
-} */
 
 input[type="range"]::-moz-range-track {
   -webkit-appearance: none;
