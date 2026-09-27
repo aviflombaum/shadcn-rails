@@ -3,6 +3,7 @@ PATH
   specs:
     shadcn-ui (0.0.14)
       tailwind_merge (~> 0.12)
+      tailwindcss-rails (< 4.0)
 
 GEM
   remote: https://rubygems.org/
