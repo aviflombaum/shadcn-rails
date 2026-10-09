@@ -28,6 +28,9 @@ RSpec.describe ShadcnUiGenerator, type: :generator do
   end
 
   it "copies the dependency files to the correct destination" do
+    generator = described_class.new([component_name, rails_root])
+    generator.send(:install_component)
+
     expect(File).to exist("#{rails_root}/app/views/components/ui/shared/_backdrop.html.erb")
   end
 end
