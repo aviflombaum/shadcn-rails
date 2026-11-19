@@ -17,7 +17,7 @@
 #      app/assets/builds is gitignored, so the CSS does not exist until it is built here.
 #   3. Rails 7.0, so precompilation wants SECRET_KEY_BASE rather than SECRET_KEY_BASE_DUMMY.
 
-ARG RUBY_VERSION=3.2.2
+ARG RUBY_VERSION=3.4.13
 FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim AS base
 
 WORKDIR /rails
